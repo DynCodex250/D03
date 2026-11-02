@@ -97,6 +97,9 @@ export_role_from_graph_xml(
 
 ---
 
+
+
+
 ### **Test-Ergebnis mit realen Daten:**
 
 Getestet sowohl für Rollen mit direkten Duties (`ProdProductionSupervisor`) als auch für Rollen mit Subrollen (`XXXX_Debitorenbuchhaltung`):
@@ -106,3 +109,62 @@ Getestet sowohl für Rollen mit direkten Duties (`ProdProductionSupervisor`) als
 - **SecurityConfiguration-XML erzeugt:** `SecurityConfiguration/ProdProductionSupervisor.xml` ✅
 - **ZIP-Archiv erzeugt:** `ProdProductionSupervisor.zip` ✅
 - **Subrollen-Trennung:** Duties und Privilegien aus Subrollen verbleiben sauber in den Subrollen, direkte Duties/Privilegien werden der Rolle direkt zugeordnet ✅
+
+### **Neue optionale Parameter:**
+
+```r
+find_menu_item_security(
+  menu_item            = NULL,  # Auch als securable_name / SECURABLENAME
+  privilege_identifier = NULL,  # Auch als PRIVILEGEIDENTIFIER
+  duty_identifier      = NULL,  # Auch als DUTYIDENTIFIER
+  role_identifier      = NULL,  # Auch als ROLEIDENTIFIER / ROLEIDENTIFIE
+  role_name            = NULL,  # Auch als ROLENAME
+  con                  = NULL,  # Aktive DB-Verbindung (optional)
+  graph                = NULL,  # Bereits geladener Lizenzgraph (optional)
+  path                 = NULL,  # Pfad zu Graph-Dateien (optional)
+  exact                = TRUE,  # Exakt oder Teilstring/Regex
+  quiet                = FALSE
+)
+```
+
+---
+
+### **Highlights & Flexibilität:**
+1. **Beliebige Kombinationen möglich:** Man kann nach einem Menu Item suchen und gleichzeitig nach Rolle, Duty oder Privileg filtern – oder auch direkt ohne `menu_item` nur nach einer bestimmten Duty/Rolle suchen (z. B. alle enthaltenen Menu Items samt Lizenz).
+2. **Unterstützung beider Schreibweisen:** Sowohl R-typische Parameter (`role_identifier`, `duty_identifier`, ...) als auch die originalen Spaltennamen der Tabelle (`ROLEIDENTIFIER`, `DUTYIDENTIFIER`, `PRIVILEGEIDENTIFIER`, `ROLENAME`, `SECURABLENAME`) werden direkt über `...` akzeptiert.
+3. **Optimiert für Online (SQL) & Offline (Graph-Dateien):**
+   - Im SQL-Modus (`con`) wird die dynamische `WHERE`-Klausel direkt serverseitig mit `AND` für alle angegebenen Spalten aufgebaut.
+   - Im Graph-/Excel-Modus (`graph` oder automatische Erkennung) wird der Dataframe vektorisiert über alle Kriterien gefiltert.
+
+---
+
+### **Anwendungsbeispiele:**
+
+```r
+# 1. Menu Item filtern nach einer bestimmten Rolle:
+find_menu_item_security(
+  menu_item       = "FactureIncomingDocRegister_IT",
+  role_identifier = "LedgerAccountant"
+)
+
+# 2. Direkt mit den Tabellenspalten als Parameter aufrufen:
+find_menu_item_security(
+  DUTYIDENTIFIER = "ProdProductionOrderFeedbackMaintain"
+)
+
+# 3. Alle Menu Items und Lizenzen einer Rolle auflisten:
+find_menu_item_security(
+  ROLEIDENTIFIER = "ProdProductionSupervisor"
+)
+
+# 4. Nach Privileg suchen:
+find_menu_item_security(
+  PRIVILEGEIDENTIFIER = "CustomJournalTableMaintain_IT"
+)
+
+# 5. Suche nach Rollenname:
+find_menu_item_security(
+  ROLENAME = "Accounting manager",
+  exact    = FALSE
+)
+```
