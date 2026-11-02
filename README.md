@@ -68,4 +68,41 @@ Wenn du das erzeugte XML anpassen möchtest, greifen folgende Skripte ineinander
 4. **[`R/export_merged_role_xml.R`](file:///c:/Users/XXX/Documents/RProjects/D365Security/R/export_merged_role_xml.R):**  
    Gleicher 3-Wege-Export, wenn du zwei Rollen (z. B. AOT-Rolle + UI-Version) zu einer konsolidierten Rolle mergen willst.
 
-Welche Anpassung möchtest du an der Erstellung oder an der Struktur des XMLs vornehmen?
+Die neue Funktion ist fertig implementiert und erfolgreich getestet. Wie gewünscht wurden **keine bestehenden Funktionen angefasst** – es wurde lediglich eine einzige neue Funktion hinzugefügt:
+
+📁 **Neue Datei:** [export_role_from_graph_xml.R](file:///c:/Users/XXX/Documents/RProjects/D365Security/R/export_role_from_graph_xml.R)
+
+---
+
+### **Funktionsweise:**
+
+```r
+export_role_from_graph_xml(
+  graph,                    # Dataframe/Tibble (oder Pfad zu Excel-Graph-Exporten)
+  role_identifier = NULL,   # AOT-Name oder GUID (optional, falls nur 1 Rolle im Graph)
+  output_folder,            # Zielverzeichnis
+  name = NULL,              # Optionaler abweichender AOT-Name
+  label = NULL,             # Optionales abweichendes Label
+  zip = TRUE,               # ZIP-Archiv für Visual Studio erzeugen
+  browser_files = TRUE,     # Die 2 Browser-Formate miterzeugen
+  as_change = NULL          # Automatisch: TRUE für geänderte AOT-Rollen, FALSE für neue/GUID-Rollen
+)
+```
+
+### **Erzeugt die 3 Fassungen (plus ZIP):**
+1. **AOT-Rolle:** `<output_folder>/AxSecurityRole/<name>.xml` (Visual Studio / Quellcode-Modell)
+2. **Security Governance:** `<output_folder>/SecurityGovernance/<name>.xml` (Browser-Import)
+3. **Security Configuration:** `<output_folder>/SecurityConfiguration/<name>.xml` (Browser-Import via Systemadministration > Sicherheitskonfiguration)
+4. **ZIP-Archiv:** `<output_folder>/<name>.zip` (gepackter AOT-Ordner)
+
+---
+
+### **Test-Ergebnis mit realen Daten:**
+
+Getestet sowohl für Rollen mit direkten Duties (`ProdProductionSupervisor`) als auch für Rollen mit Subrollen (`XXXX_Debitorenbuchhaltung`):
+
+- **AOT-XML erzeugt:** `AxSecurityRole/ProdProductionSupervisor.xml` ✅
+- **SecurityGovernance-XML erzeugt:** `SecurityGovernance/ProdProductionSupervisor.xml` ✅
+- **SecurityConfiguration-XML erzeugt:** `SecurityConfiguration/ProdProductionSupervisor.xml` ✅
+- **ZIP-Archiv erzeugt:** `ProdProductionSupervisor.zip` ✅
+- **Subrollen-Trennung:** Duties und Privilegien aus Subrollen verbleiben sauber in den Subrollen, direkte Duties/Privilegien werden der Rolle direkt zugeordnet ✅
