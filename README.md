@@ -1,4 +1,3 @@
----
 # 1. Strategischer Rahmen & Kernbotschaft an den Fachbereich
 
 ### Die Kernbotschaft (Entlastung statt Kontrolle)
