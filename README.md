@@ -66,8 +66,8 @@ Gemäß dem Protokoll mit dem Testmanager benötigt **Service Plus** einen ganzh
 │ 1. STELLE               z. B. „Servicetechniker Plus“ (in D06)         │
 │         │                                                              │
 │         ▼                                                              │
-│ 2. ROLLEN               • Kern: Servicetechnik Rückmeldung (Activity) │
-│                         • Zusatz: Ersatzteilbestellung (SCM)          │
+│ 2. ROLLEN               • Kern: Servicetechnik Rückmeldung (Activity)  │
+│                         • Zusatz: Ersatzteilbestellung (SCM)           │
 │         │                                                              │
 │         ▼                                                              │
 │ 3. STELLENBESCHREIBUNG   Täglicher Alltag, genutzte Prozesse,          │
