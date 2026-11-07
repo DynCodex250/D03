@@ -1,0 +1,987 @@
+
+
+Wer entscheidet, wer arbeitet, wer wird gefragt – bei Rollen, Berechtigungen und Lizenzen
+
+IT D365
+
+Erster Entwurf, Stand 31.10.2026
+
+
+
+1. Wozu dieses Dokument?
+
+Der Steckbrief legt fest, wer bei Rollen, Berechtigungen und Lizenzen in D365FO entscheidet, wer die Arbeit macht, wer vorher gefragt und wer danach informiert wird. Er ist das Ergebnis von Phase 0 der Berechtigungs- und Lizenzstrategie (D01) und gilt für beide Stränge: die Gesellschaften, die bereits live sind (Strang A: T+, P+), und die neue Gesellschaft (Strang B: S+). Die Bereitstellung unterscheidet sich: Strang A bringt bereinigte Rollen in Wellen nach Prod, sobald ihr Test bestanden ist; Strang B geht in Phase 6 zum Go-Live produktiv.
+
+Stand: erster Entwurf. Die Zuständigkeiten sind ein Vorschlag der IT. Namen, Sitzungstakt und die Abstimmung mit Datenschutz und Betriebsrat sind noch offen (Abschnitt 9). Der Lenkungskreis nimmt den Steckbrief ab.
+
+2. RACI: ein Buchstabe, eine Bedeutung
+
+Buchstabe
+
+Bedeutung
+
+Regel
+
+A – Accountable
+
+entscheidet und steht für das Ergebnis gerade
+
+genau einer je Zeile
+
+R – Responsible
+
+erledigt die Arbeit
+
+einer oder mehrere
+
+C – Consulted
+
+wird vorher gefragt; seine Meinung fließt ein
+
+ 
+
+I – Informed
+
+erfährt das Ergebnis
+
+ 
+
+„A/R“ heißt: entscheidet und erledigt selbst.
+
+3. Beteiligte
+
+Damit keine Verwechslung mit den Rollen in D365 entsteht, heißen die Funktionen im Projekt hier Beteiligte.
+
+Kürzel
+
+Beteiligte
+
+Aufgabe im Berechtigungskonzept
+
+ITL
+
+IT-Leitung
+
+beschließt Strategie, Lizenzbudget und Zukauf von Speicher; letzte Stufe der Eskalation. verantwortet das Berechtigungskonzept und seinen Betrieb
+
+PL
+
+Projektleitung
+
+plant Termine und Personal, steuert Umstellung und Go-Live
+
+SA
+
+Security Architect (IT D365)
+
+entwirft und baut Rollen, wertet Lizenzen und Nutzung mit dem Werkzeug aus, gibt Rollen technisch frei
+
+OW
+
+Prozessverantwortliche als Owner der Rolle je Gesellschaft (D05) und je gesperrtem Objekt (D18)
+
+verantworten den Inhalt einer Rolle, nehmen sie ab und bestätigen ihre Zuweisungen bei der Rezertifizierung. Geben Zusatzrollen und Ausnahmen frei; können dieselbe Person sein wie der Owner
+
+KU
+
+Key-User
+
+arbeiten in den Workshops mit (D08), zeichnen Aufgaben auf (D09), testen
+
+TM
+
+Testmanager
+
+verantwortet Testkonzept, Testfälle und Fehlermanagement (D11, D12)
+
+HR
+
+Personalabteilung
+
+pflegt die Stellen (D06) und meldet Eintritt, Wechsel und Austritt
+
+LM
+
+Lizenzmanager
+
+bestellt Lizenzen und prüft die Lizenzberichte im Power Platform Admin Center (PPAC)
+
+BET
+
+IT-Betrieb / Support
+
+weist Rollen zu und entzieht sie, vergibt den Notfallzugriff
+
+Dazu kommen Revision bzw. Wirtschaftsprüfer, Datenschutzbeauftragter und Betriebsrat. Sie arbeiten nicht im Projekt mit, werden aber zu festen Themen gefragt (Abschnitt 5).
+
+4. RACI-Matrix
+
+4.1 Projekt (Phasen 0 bis 6)
+
+Aufgabe oder Entscheidung
+
+ITL
+
+PL
+
+SA
+
+OW
+
+KU
+
+TM
+
+HR
+
+LM
+
+BET
+
+Strategie beschließen (D01)
+
+A/C
+
+C
+
+R
+
+I
+
+ 
+
+I
+
+ 
+
+C
+
+ 
+
+Zuständigkeiten und Besetzung festlegen (D02)
+
+A/C
+
+R
+
+R
+
+C
+
+ 
+
+C
+
+I
+
+I
+
+I
+
+Bestands- und Lizenzanalyse, Rangliste der teuersten Rollen (D03, D04)
+
+I/A
+
+ 
+
+R
+
+I
+
+ 
+
+ 
+
+ 
+
+C
+
+ 
+
+Doppelte Rollen zusammenführen (D20): Merge-Rolle als einzige Arbeitsgrundlage für Analyse, Bereinigung und Funktionstrennung; keine Zuweisung
+
+
+
+ 
+
+A/R
+
+I
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+UI-Aufgaben und UI-Rechte durch AOT-Pendants ersetzen; Inventur der UI-Objekte (D22, D23, D24)
+
+
+
+ 
+
+A/R
+
+I
+
+ 
+
+C
+
+ 
+
+ 
+
+ 
+
+Lizenzprofil je Benutzer: Telemetrie gegen PPAC, wer eine Lizenz verlieren könnte (D21)
+
+
+
+ 
+
+R
+
+I
+
+ 
+
+ 
+
+ 
+
+R
+
+ 
+
+Prozess-Rollen-Matrix füllen (D19)
+
+ 
+
+ 
+
+R
+
+A/C
+
+R
+
+ 
+
+ 
+
+ 
+
+ 
+
+Aufgaben und Ziel-Lizenz je Rolle festlegen (D05, Workshop 2)
+
+
+
+ 
+
+R
+
+A/C
+
+R
+
+I
+
+ 
+
+C
+
+ 
+
+Stellen mit ihren Rollen verknüpfen (D06)
+
+ 
+
+ 
+
+R
+
+A/C
+
+ 
+
+ 
+
+R
+
+ 
+
+I
+
+Funktionstrennung (D07) und Sperrliste (D18) bestätigen (Workshop 3)
+
+I
+
+ 
+
+R
+
+A/A
+
+C
+
+ 
+
+ 
+
+ 
+
+ 
+
+Owner und Freigeber je Rolle und Gesellschaft benennen (D05, Workshop 3)
+
+I
+
+ 
+
+C
+
+A/C
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Rollen bauen; Namensregel und „eine Lizenz je Rolle“ prüfen (D10)
+
+A
+
+ 
+
+R
+
+ 
+
+ 
+
+I
+
+ 
+
+ 
+
+ 
+
+Testkonzept und Testfälle (D11, D12)
+
+ 
+
+ 
+
+R
+
+C
+
+R
+
+A
+
+ 
+
+ 
+
+ 
+
+Rolle abnehmen (Workshop 4)
+
+ 
+
+ 
+
+C
+
+I/A
+
+R
+
+C
+
+ 
+
+ 
+
+ 
+
+Fehlende Funktion im Test nachbessern: in die Rolle oder als Zusatzrolle (Strang A, D11, Spielregel 11)
+
+ 
+
+ 
+
+A/R
+
+I/R
+
+R
+
+C
+
+ 
+
+C
+
+ 
+
+Umstellung einer bereinigten Rolle freigeben (Strang A, D11)
+
+ 
+
+ 
+
+R
+
+A/I
+
+ 
+
+C
+
+ 
+
+ 
+
+I
+
+Rückfall auf die bisherigen Rollen entscheiden und einspielen (Strang A, Spielregel 12)
+
+I
+
+ 
+
+A/R
+
+C
+
+ 
+
+I
+
+ 
+
+ 
+
+R
+
+Umstellung in Wellen und Zuweisungen zum Go-Live (D13)
+
+ 
+
+A
+
+R
+
+C
+
+I
+
+C
+
+ 
+
+ 
+
+R
+
+Lizenzbudget und Bestellung der neuen Gesellschaft (D16)
+
+A/C
+
+C
+
+C
+
+ 
+
+ 
+
+ 
+
+ 
+
+R
+
+ 
+
+Datenbankkapazität und Zukauf von Speicher (D17)
+
+A/R
+
+C
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+C
+
+R
+
+4.2 Betrieb (Phase 7)
+
+Aufgabe oder Entscheidung
+
+ITL
+
+SA
+
+OW
+
+KU
+
+TM
+
+HR
+
+LM
+
+BET
+
+Neue oder geänderte Rolle: fachlich freigeben
+
+ 
+
+C
+
+A
+
+C
+
+ 
+
+ 
+
+ 
+
+ 
+
+Neue oder geänderte Rolle: technisch freigeben (Namensregel, eine Lizenz je Rolle, Sperrliste, Lizenzbericht)
+
+
+
+A/R
+
+I
+
+ 
+
+C
+
+ 
+
+ 
+
+ 
+
+Schnelle Anpassung einer Rolle in Prod über die Oberfläche; im AOT nachziehen und die Anpassung danach entfernen (Spielregel 10, D24)
+
+
+
+A/R
+
+C
+
+ 
+
+C
+
+ 
+
+ 
+
+ 
+
+Rollen der Stelle bei Eintritt, Wechsel und Austritt zuweisen oder entziehen (D06)
+
+ 
+
+ 
+
+I
+
+ 
+
+ 
+
+R
+
+ 
+
+R
+
+Zusatzrolle außerhalb der Stelle zuweisen
+
+ 
+
+C
+
+I
+
+ 
+
+ 
+
+ 
+
+ 
+
+R
+
+Ausnahme: gesperrtes Objekt (D18) oder Konflikt der Funktionstrennung (D07)
+
+I
+
+C
+
+I
+
+ 
+
+ 
+
+ 
+
+ 
+
+R
+
+Notfallzugriff mit Fallback-Rolle, 48 Stunden (D14)
+
+A
+
+C
+
+I
+
+ 
+
+ 
+
+ 
+
+ 
+
+R
+
+Rezertifizierung der Zuweisungen und Ausnahmen (D15)
+
+I
+
+R
+
+A
+
+ 
+
+ 
+
+ 
+
+ 
+
+R
+
+Lizenzberichte im PPAC monatlich prüfen und das Lizenzprofil je Benutzer erneuern (D21)
+
+A
+
+R
+
+ 
+
+ 
+
+ 
+
+ 
+
+R
+
+ 
+
+Lizenzen fortlaufend überwachen (Monitoring)
+
+A
+
+R
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Wer entscheidet über Ausnahmen? Für ein gesperrtes Objekt der Freigeber, der in der Sperrliste (D18) dafür eingetragen ist. Für eine Zusatzrolle und für einen Konflikt der Funktionstrennung der Freigeber der Rolle in der Gesellschaft (D05); bei einem Konflikt der Funktionstrennung wird die Revision vorher gefragt. Die IT prüft vorher, welche Lizenz die Ausnahme auslöst und ob sie einen Konflikt der Funktionstrennung schafft (D07). Jede Ausnahme steht mit Grund, Freigeber, Ticket und Laufzeit im Blatt „Ausnahmen“: der Sperrliste (D18) für gesperrte Objekte, der Funktionstrennungs-Matrix (D07) für Konflikte der Funktionstrennung.
+
+5. Revision, Datenschutz und Betriebsrat
+
+Thema
+
+Revision / Wirtschaftsprüfer
+
+Datenschutzbeauftragter
+
+Betriebsrat
+
+Funktionstrennung (D07) und Sperrliste (D18)
+
+C: stimmt den Katalog ab (Workshop 3)
+
+ 
+
+ 
+
+Ausnahmen zu D07 und D18
+
+C bei Konflikten der Funktionstrennung; I über die Liste der Ausnahmen
+
+ 
+
+ 
+
+Nutzungsdaten (Telemetrie) und Lizenzprofil je Benutzer (D04, D21): Zweck, Aufbewahrung, wer sie sieht
+
+ 
+
+C
+
+C
+
+Vertretungsregeln mit Bezug auf Personen, z. B. Recherche im Debitorenstamm
+
+ 
+
+C
+
+C
+
+Notfallzugriff
+
+I: Protokoll der Vergaben
+
+ 
+
+ 
+
+Rezertifizierung
+
+I: Ergebnis
+
+ 
+
+ 
+
+Warum Datenschutz und Betriebsrat? Die Nutzungsdaten zeigen, wer welche Funktion wann geöffnet hat. Die Strategie nutzt sie, um Lizenzen und Rollen zu bereinigen (D04) und um je Benutzer zu zeigen, welche Lizenz seine Arbeit braucht (Lizenzprofil, D21). Daten über einzelne Mitarbeiter sind personenbezogen. Bei technischen Einrichtungen, die Verhalten oder Leistung überwachen können, hat der Betriebsrat ein Mitbestimmungsrecht (§ 87 Abs. 1 Nr. 6 BetrVG). Vorschlag für die Abstimmung:
+
+Zweck: nur Rollen und Lizenzen; keine Kontrolle von Leistung oder Verhalten.
+
+Zugriff: Rohdaten nur für die IT D365; Fachbereiche sehen Namen nur, soweit die Umstellung ihrer Rollen es erfordert.
+
+Aufbewahrung: begrenzt, mit fester Frist; monatlich gesichert, damit auch seltene Arbeiten wie Jahresabschluss und Inventur sichtbar werden.
+
+6. Gremien
+
+Gremium
+
+Teilnehmer
+
+Takt (Vorschlag)
+
+Aufgabe
+
+Lenkungskreis 
+
+IT-Leitung, Security Architect , Testmanager
+
+monatlich, möglichst als Punkt eines bestehenden Lenkungskreises
+
+beschließt Strategie, Lizenzbudget und Zukauf von Speicher; entscheidet Eskalationen
+
+Berechtigungsrunde (neu)
+
+Security Architect , Testmanager, Lizenzmanager; Owner je nach Bereich
+
+alle zwei Wochen bis zum Go-Live, danach monatlich
+
+verfolgt Rangliste, Wellen und offene Punkte; gibt Rollen technisch frei; bereitet Entscheidungen für den Lenkungskreis vor
+
+Fachbereichs-Workshops W1–W4 (D08)
+
+Key-User, Prozessverantwortliche, IT; in W3 die Revision
+
+je Bereich nach dem Plan in D08
+
+Prozess-Rollen-Matrix, Rollen-Entwurf, Funktionstrennung, Abnahme
+
+Rezertifizierung
+
+Owner der Rollen je Gesellschaft, IT D365
+
+halbjährlich oder jährlich (D01, Phase 7)
+
+Zuweisungen und Ausnahmen bestätigen oder entziehen
+
+7. Spielregeln
+
+Genau ein A je Zeile. Wer A ist, entscheidet; wer R ist, arbeitet zu.
+
+Keine Rolle ohne Owner und Freigeber. Jede Rolle hat in jeder Gesellschaft, in der sie vergeben wird, einen Owner und einen Freigeber (D05). Ohne sie wird die Rolle dort nicht neu vergeben.
+
+Vier Augen. Wer eine Rolle oder Ausnahme beantragt, gibt sie nicht selbst frei. Beantragt ein Freigeber für sich selbst, entscheidet die Fachbereichsleitung.
+
+Rechte nach Stelle, nicht nach Kollege. Neue und wechselnde Mitarbeiter erhalten die Rollen ihrer Stelle (D06), nicht „dieselben Rechte wie Kollege X“. Alles darüber hinaus ist eine Zusatzrolle mit Freigabe.
+
+Ausnahmen sind befristet. Sie stehen mit Grund, Freigeber, Ticket und Laufzeit im Blatt „Ausnahmen“ der Sperrliste (D18) oder der Funktionstrennungs-Matrix (D07); die Rezertifizierung prüft sie.
+
+Neue Rollen nur mit beiden Freigaben: fachlich durch den Owner, technisch durch den Security Architect.
+
+Kein Freigeben ohne Lizenzbericht. Jede neue oder geänderte Rolle hat einen Lizenzbericht aus derselben Umgebung, in der sie getestet wird.
+
+Notfallzugriff nur über die Fallback-Rolle mit 48 Stunden Laufzeit; jede Vergabe wird protokolliert.
+
+Erst konsolidieren, dann ändern. Gibt es eine Rolle als AOT-Rolle und als Kopie aus der Oberfläche, wird keine der beiden geändert, bevor sie zusammengeführt sind (D20, Strategie Prinzip 11). Das Zusammenführen ist ein Arbeitsschritt der IT: Die Merge-Rolle ist die eine Grundlage für Analyse, Bereinigung und Funktionstrennung und wird niemandem zugewiesen. Die Benutzer erhalten erst die bereinigte Rolle, mit den Freigaben aus Abschnitt 4. Ebenso werden UI-Aufgaben und UI-Rechte überall durch ihr AOT-Pendant ersetzt (D22 bis D24), von oben nach unten: Rollen, Aufgaben, Rechte.
+
+10. Schnell in der Oberfläche, dauerhaft im AOT. Muss eine Rolle in Prod kurzfristig erweitert werden, damit ein Mitarbeiter eine Aufgabe erledigen kann, geschieht das in der Oberfläche. Der Weg über die Entwicklung (Deployment in INT, Test in INT, Deployment in Prod) kann Wochen dauern. Jede solche Anpassung wird im AOT nachgezogen; sobald die AOT-Fassung in Prod nutzbar ist, wird die Anpassung aus der Oberfläche entfernt. Was noch nachzuziehen ist, zeigen die Inventur der UI-Objekte (D24) für neu angelegte Rollen, Aufgaben und Rechte und die Liste „geändert“ im Export der Sicherheitskonfiguration für geänderte AOT-Rollen.
+
+11. Nachbessern ohne Lizenzsprung. Fehlt im Test eine Funktion, kommt das ins Ticket und wird nachgebessert. Ändert die Funktion die Lizenz nicht, kommt sie in die Rolle. Ändert oder erhöht sie die Lizenz, wird dafür eine Zusatzrolle erstellt; die Rolle bleibt bei ihrer Lizenz, und nur wer die Funktion braucht, erhält die Zusatzrolle.
+
+12. Rückfallweg in Strang A. Eine bereinigte Rolle geht nach bestandenem Test nach Prod, nicht erst in Phase 6. Die bisherigen Rollen bleiben erhalten, bis sie stabil läuft. Fehlt etwas, werden sie wieder eingespielt. Der Rückfall dauert nur so lange wie nötig, denn die bisherigen Rollen verlangen wieder die höheren Lizenzen.
+
+8. Eskalation
+
+Stufe
+
+Wer
+
+Wann
+
+1
+
+Owner der Rolle und Security Architect
+
+Uneinigkeit über Inhalt oder Lizenz einer Rolle; abgelehnte Ausnahme
+
+2
+
+Berechtigungsrunde
+
+keine Einigung auf Stufe 1 innerhalb einer Woche (Vorschlag)
+
+3
+
+IT-Leitung
+
+Budget, Termine, Konflikte zwischen Fachbereichen, keine Einigung auf Stufe 2
+
+Prozess steht in Prod: Der IT-Betrieb vergibt sofort den Notfallzugriff. Die Ursache klären Owner und Security Architect innerhalb der 48 Stunden; danach wird die Rolle korrigiert (kurzfristig in der Oberfläche, Spielregel 10) oder eine Ausnahme beantragt. Ist eine gerade umgestellte Rolle aus Strang A die Ursache, können stattdessen die bisherigen Rollen wieder eingespielt werden (Spielregel 12).
+
+9. Besetzung und offene Punkte
+
+Beteiligte
+
+Name
+
+Vertretung
+
+IT-Leitung
+
+  
+
+ 
+
+Projektleitung
+
+ 
+
+ 
+
+Security Architect (IT D365)
+
+  
+
+ 
+
+Testmanager
+
+ 
+
+ 
+
+Lizenzmanager
+
+ 
+
+ 
+
+IT-Betrieb / Support
+
+ 
+
+ 
+
+Datenschutzbeauftragter
+
+  
+
+ 
+
+Owner und Freigeber je Rolle und Gesellschaft
+
+im Rollenkatalog (D05, Blatt „Owner_je_Gesellschaft“)
+
+ 
+
+Freigeber je gesperrtem Objekt
+
+in der Sperrliste (D18, Blatt „Gesperrte_Objekte“)
+
+ 
+
+Key-User
+
+benennt die Fachbereichsleitung je Bereich
+
+ 
+
+Offene Punkte
+
+Namen und Vertretungen eintragen.
+
+Berechtigungsrunde einrichten; Takt von Berechtigungsrunde und Lenkungskreis bestätigen.
+
+Auswertung der Nutzungsdaten mit Datenschutz und Betriebsrat abstimmen (Abschnitt 5); klären, ob eine Betriebsvereinbarung nötig ist.
+
+Wer entscheidet in einer Gesellschaft, in der für eine Rolle noch kein Freigeber benannt ist? Vorschlag: die Fachbereichsleitung, bis der Freigeber benannt ist.
+
+Sonderrechte in Prod vor dem Go-Live („Golden Config“): Wer gibt die Einstellungen der neuen Gesellschaft mit welchen Rollen ein? Als Ausnahme mit Laufzeit eintragen.
+
+Rezertifizierung halbjährlich oder jährlich?
+
+Steckbrief im Lenkungskreis abnehmen.
