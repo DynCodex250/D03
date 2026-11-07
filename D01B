@@ -1,0 +1,460 @@
+Vorgehensplan, Stakeholder-Einbindung, Gremien, Spielregeln und RACI-Ausnahmemodell für D365FO
+
+Lead D365 Security & Licensing Architect 
+
+1. Management Summary & Zweck der Phase 0
+
+Ausgangslage und Zielsetzung
+
+Die Berechtigungs- und Lizenzoptimierungs-Strategie der WIBU-Gruppe (Dokument D01) verfolgt drei fundamentale Ziele im Gleichklang:
+
+Operative Arbeitsfähigkeit: Jeder Mitarbeiter kann alle Aufgaben seiner Stelle reibungslos ausführen.
+
+Sicherheit, Funktionstrennung & Revision (SoD): Unzulässige Berechtigungskombinationen werden systematisch verhindert; Zugriffe sind transparent und prüfungssicher dokumentiert.
+
+Lizenzkosten-Optimierung: Microsoft setzt die Lizenzpflicht seit Oktober 2026 strikt durch (Zugriffssperren bei Unterlizenzierung). Rollen müssen so geschnitten sein, dass sie nur genau die Lizenzstufe auslösen, die der jeweilige Arbeitsplatz tatsächlich benötigt.
+
+Um dieses anspruchsvolle Programm über die beiden parallelen Projektstränge – Strang A (Sofortmaßnahmen/Bereinigung in den Live-Gesellschaften T+ und P+) und Strang B (Neuer Rollout für die Gesellschaft S+ mit Go-Live Mitte Juni 2027) – erfolgreich umzusetzen, bedarf es vor jedem technischen Rollenbau einer verbindlichen organisatorischen Basis.
+
+Zweck der Phase 0 (Mobilisierung & Governance):
+Festlegung der gemeinsamen Spielregeln, Entscheidungsträger und Stakeholder. Bevor Rollen geändert, geschnitten oder zugewiesen werden, müssen die Leitplanken für Tests, Datenschutz, Mitbestimmung, Revision und Ausnahmegenehmigungen unmissverständlich vereinbart sein.
+
+Die 4 zentralen Handlungsfelder der Mobilisierung
+
+Phase 0 gliedert sich in vier parallele Arbeitspakete:
+
+Handlungsfeld 1 – Abstimmung mit dem Testmanager: Berechtigungstests werden integraler Bestandteil der regulären Testmanagement-Suite (keine nachgelagerten “Alibi-Tests”).
+
+Handlungsfeld 2 – Abstimmung mit Betriebsrat und Datenschutzbeauftragtem: Rechtssichere Vereinbarung zur Nutzung von Telemetrie- und Nutzungsdaten (Azure Application Insights) ausschließlich zum Zweck der Lizenz- und Rollenoptimierung.
+
+Handlungsfeld 3 – Einbindung von Revision und Wirtschaftsprüfer: Frühzeitige Abstimmung und Genehmigung des Funktionstrennungs-Katalogs (SoD) und der Sperrliste sensibler Funktionen.
+
+Handlungsfeld 4 – RACI-Modell & Ausnahme-Governance: Festlegung verbindlicher Entscheidungshierarchien, Eskalationsstufen und Genehmigungsprozesse für Ausnahmen und Notfallzugriffe.
+
+2. Stakeholder-Landkarte & Gremienstruktur
+
+2.1 Übersicht der Projekt- und Governance-Beteiligten
+
+Zur Vermeidung von Verwechslungen mit den technischen Sicherheitsrollen in D365FO werden die beteiligten Funktionen im Projekt als Beteiligte geführt:
+
+Kürzel
+
+Beteiligte / Rolle im Projekt
+
+Hauptverantwortung im Berechtigungskonzept
+
+ITL
+
+IT-Leitung
+
+Beschlussfassung über Gesamtstrategie, Lizenzbudget, Speicherkauf; letzte Eskalationsinstanz. Gesamtverantwortung für Berechtigungsarchitektur und sicheren IT-Betrieb
+
+PL
+
+Projektleitung
+
+Gesamtkoordination, Termin- und Ressourcenplanung, Steuerung der Rollout-Wellen
+
+SA
+
+Lead D365 Security & Licensing Architect
+
+Technisches Rollendesign, Lizenz- und Telemetrieanalysen, AOT-Implementierung, technische Freigaben
+
+OW
+
+Prozessverantwortliche / Rollen-Owner
+
+Fachliche Verantwortung für den Zuschnitt und Inhalt einer Rolle je Gesellschaft (D05); Genehmigung von Sonderrechten, Zusatzrollen und SoD-Ausnahmen (D05, D18)
+
+KU
+
+Key-User
+
+Mitarbeit in den Design-Workshops (D08), Aufzeichnung von Prozessschritten (D09), Fachtests
+
+TM
+
+Testmanager
+
+Gesamtverantwortung für Testkonzept (D11), Testfälle (D12), Testausführung und Defect-Tracking
+
+HR
+
+Personalabteilung (HR)
+
+Zuordnung von Mitarbeitern zu Stellen (D06); Meldekette bei Eintritt, Wechsel, Austritt
+
+LM
+
+Lizenzmanager
+
+Verwaltung des Microsoft-Lizenzbestands, Monitoring im PPAC, Lizenzbestellungen
+
+BET
+
+IT-Betrieb / User-Administration
+
+Operative Zuweisung/Entzug von Rollen nach Genehmigung, Ausgabe von Notfallzugriffen
+
+REV
+
+Revision / Wirtschaftsprüfer
+
+Unabhängiges Audit, Vorab-Abstimmung des SoD-Regelwerks und der Sperrlisten
+
+DSB
+
+Datenschutzbeauftragter
+
+Prüfung der DSGVO-Konformität bei der Auswertung von Nutzungsdaten
+
+BR
+
+Betriebsrat
+
+Wahrnehmung der Mitbestimmungsrechte (§ 87 Abs. 1 Nr. 6 BetrVG) bzgl. Telemetriedaten
+
+2.2 Gremien und Kommunikationsrhythmus
+
++-----------------------------------------------------------------------------------+
+|                         Lenkungskreis:                                            |
+|                  IT-Leitung, Projektleitung (Monatlicher Rhythmus)                |
+|            -> Strategie, Budget, Eskalationen Stufe 3, Speicherkauf               |
++-----------------------------------------------------------------------------------+
+                                         ^
+                                         | Eskalation Stufe 3 / Statusbericht
+                                         |
++-----------------------------------------------------------------------------------+
+|                        Berechtigungsrunde (Operativ)                              |
+|             Security Architect (Lead), Testmanager, Lizenzmanager, Owner          |
+|            (14-tägig bis Go-Live, danach monatlich im Regelbetrieb)               |
+|            -> Tracking der Wellen, technische Freigabe, Eskalationen Stufe 2      |
++-----------------------------------------------------------------------------------+
+        |                                                           |
+        v                                                           v
++---------------------------------------+   +---------------------------------------+
+|  Fachbereichs-Workshops (W1 - W4)     |   |  Bilaterale Abstimmungskreise         |
+|  Key-User, Owner, Security Architect  |   |  - Testmanager (Test-Suite D11/D12)   |
+|  (W1 Erhebung, W2 Design, W3 SoD,     |   |  - Betriebsrat & DSB (Telemetrie/BV)  |
+|   W4 Abnahme - siehe D08)             |   |  - Revision & WP (SoD-Katalog D07/D18)|
++---------------------------------------+   +---------------------------------------+
+
+Lenkungskreis: Tagt monatlich. Entscheidet über Grundsatzfragen, Lizenzbudgets, Zukauf von Kapazitäten sowie Eskalationen, die in der Berechtigungsrunde nicht aufgelöst werden konnten.
+
+Berechtigungsrunde (neu etabliert in Phase 0): Das zentrale operative Arbeitsgremium unter Leitung des Security Architects. Tagt bis zum Go-Live alle zwei Wochen, danach monatlich. Prüft Lizenzanalysen, überwacht die Wellen-Umstellung in Strang A und bereitet Beschlüsse vor.
+
+Fachbereichs-Workshops (W1 bis W4): Strukturierte Arbeitsphasen je Fachbereich zur Erhebung der Aufgaben (W1), Rollenmodellierung (W2), Funktionstrennungsprüfung (W3) und formalen Abnahme (W4) gemäß Workshop-Paket D08.
+
+Bilaterale Fachkreise: Ad-hoc- und Meilenstein-Arbeitstreffen mit Testmanager, Betriebsrat/Datenschutz und Revision.
+
+3. Handlungsfeld 1: Abstimmung mit dem Testmanager (Test-Suite-Integration)
+
+3.1 Grundsatz: Berechtigungen als Kernbestandteil der Test-Suite
+
+In bisherigen Projekten wurden Berechtigungen oft erst kurz vor dem Go-Live getestet oder Benutzer arbeiteten in Testphasen mit der Rolle Systemadministrator. Dieses Vorgehen führt in Produktivumgebungen regelmäßig zu Betriebsunterbrechungen oder unkontrollierten Lizenznachforderungen durch Microsoft.
+
+Verbindliche Festlegung für Phase 0:
+Berechtigungstests sind kein nachgelagerter Sonderfall, sondern integraler Pflichtbestandteil jedes fachlichen Integrationstests und UAT (User Acceptance Test). Kein fachlicher Testfall gilt als bestanden, wenn er nicht mit dem designierten Rollensatz der jeweiligen Stelle erfolgreich durchgeführt wurde.
+
+3.2 Drei Ebenen der Berechtigungsprüfung
+
+Die drei Testebenen für Rollenfreigaben
+
+Testebene
+
+Fokus
+
+Prüfverfahren
+
+Positivtest (Arbeitsfähigkeit)
+
+Kann der Anwender alle Aufgaben seiner Stelle vollständig ausführen?
+
+Ausführung der Ende-zu-Ende-Prozessschritte (D12) mit dem dedizierten Testbenutzer der Stelle.
+
+Negativtest (Least Privilege / Schutz)
+
+Wird dem Anwender der Zugriff auf fremde oder gesperrte Funktionen verwehrt?
+
+Gezielter Aufruf sensibler Menüpunkte (z. B. Sperrliste D18, Stammdaten, Zahlungsläufe); Fehlermeldung ‘Zugriff verweigert’ muss erscheinen.
+
+Lizenz- & Kapazitätsprüfung
+
+Löst die Rolle im System exakt die geplante Lizenzstufe aus?
+
+Automatisierter Abgleich über den D365FO-Lizenzbericht. Keine unerwarteten Commerce-, Finance- oder SCM-Treiber.
+
+3.3 Testinfrastruktur und Testbenutzer-Konzept
+
+Keine Tests mit Systemadministrator: Fachliche Abnahmetests dürfen unter keinen Umständen mit Administratorrechten stattfinden.
+
+Dedizierte Testbenutzer je Stelle: Für jede Stelle im Stellenplan (z. B. STE-003 Innendienst, STE-008 Kundendatenmanagement) wird in der Testumgebung (INT) ein eigener Testbenutzer angelegt (z. B. TEST_STE008).
+
+Herausforderung Testumgebung TST: Da TST zur Einsparung von Datenbankkapazität keine Buchungsdaten enthält, finden prozessuale Buchungstests und Berechtigungsprüfungen primär in der Integrationsumgebung INT statt.
+
+3.4 Umgang mit Testabweichungen (Spielregel 11)
+
+Wird während des Tests festgestellt, dass einem Benutzer ein Menüpunkt oder eine Buchungsfunktion fehlt, greift der definierte Nachbesserungsprozess ohne Lizenzsprung:
+
+Fehlende Funktion im Test festgestellt
+                |
+                v
+Prüfung durch Security Architect:
+Welche Lizenzstufe erfordert die fehlende Funktion?
+                |
+        +-------+-------+
+        |               |
+Gleiche Lizenz       Höhere Lizenz
+(z. B. SCM bleibt)   (z. B. Commerce oder Finance ausgelöst)
+        |               |
+        v               v
+Aufnahme in die      Erstellung einer separaten Zusatzrolle
+Standard-Rolle       (z. B. WIBU_Vertrieb_Preispflege_[Lizenz]).
+(AOT-Update)         Nur Anwender mit echtem Bedarf erhalten
+                     die Zusatzrolle; die Grundrolle bleibt günstig.
+
+4. Handlungsfeld 2: Datenschutz & Betriebsrat (Telemetrie & Nutzungsdaten)
+
+4.1 Notwendigkeit der Telemetrieauswertung
+
+Um Rollen von überflüssigem “Ballast” zu befreien und Mitarbeitern nur genau die Lizenzen zuzuordnen, die sie wirklich benötigen, wertet das Sicherheitswerkzeug die Systemtelemetrie aus (Azure Application Insights und D365-Nutzungsprotokolle).
+
+Ohne diese Daten müsste man sich auf subjektive Schätzungen verlassen, was erfahrungsgemäß dazu führt, dass Sicherheitsrollen “sicherheitshalber” zu groß und damit zu teuer geschnitten werden.
+
+4.2 Mitbestimmung und rechtliche Leitplanken
+
+Die Erfassung von Transaktionsaufrufen und Zeitstempeln berührt die Mitbestimmungsrechte des Betriebsrats gemäß § 87 Abs. 1 Nr. 6 BetrVG (Einführung und Anwendung von technischen Einrichtungen, die dazu bestimmt sind, das Verhalten oder die Leistung der Arbeitnehmer zu überwachen) sowie die Vorgaben der DSGVO (Art. 5 Grundsätze, Art. 6 Rechtmäßigkeit).
+
+4.3 Vereinbarte Schutzmaßnahmen und Transparenz-Garantien
+
+In Phase 0 wird mit Betriebsrat und Datenschutzbeauftragtem folgende Vereinbarung getroffen:
+
+Strikte Zweckbindung:
+
+Die Auswertung dient ausschließlich der technischen Bereinigung von Sicherheitsrollen und der Minimierung von Lizenzkosten.
+
+Eine Leistungs- oder Verhaltenskontrolle (z. B. “Wie viele Aufträge hat Mitarbeiter X pro Tag gebucht?”) ist technisch und organisatorisch ausdrücklich ausgeschlossen und untersagt.
+
+Pseudonymisierung im Analysewerkzeug:
+
+In allen Analyseberichten und Arbeitsdateien (D03 , D04, D21) werden Personenidentifikatoren (E-Mail, Login) durch generische Kennungen (z. B. u1, u2, USER_0815) ersetzt.
+
+Die Zuordnungsschlüssel (anonymization_key.xlsx) werden isoliert in einem geschützten Verzeichnis (Keys/) verwahrt, sind per .gitignore von jeglicher Versionskontrolle ausgeschlossen und nur der IT D365 Administration zugänglich.
+
+Aggregierte Darstellung:
+
+Fachbereichsleitungen erhalten Auswertungen grundsätzlich nur auf Stellenebene oder als anonymisierte Häufigkeitsverteilungen (z. B. “In den letzten 12 Monaten hat niemand in der Stelle Innendienst die Funktion XY aufgerufen”).
+
+Aufbewahrungs- und Löschfristen:
+
+Telemetriedaten werden für maximal 12 Monate vorgehalten, um auch saisonale und jährliche Arbeitsspitzen (z. B. Jahresabschluss, Stichtagsinventur) zuverlässig abzubilden. Nach Abschluss der Rollenkonsolidierung werden Detaildaten gelöscht.
+
+Ergebnis Phase 0: Bereitstellung einer Beschlussvorlage für den Betriebsrat bzw. einer formalen Ergänzungsvereinbarung zur bestehenden IT-Rahmenbetriebsvereinbarung.
+
+5. Handlungsfeld 3: Einbindung der Revision & Wirtschaftsprüfer (SoD & Sperrliste)
+
+5.1 Frühe Prüfungsbegleitung statt nachgelagerter Feststellungen
+
+Ein Kernproblem gewachsener ERP-Systeme sind Funktionstrennungskonflikte (Segregation of Duties – SoD), die oft erst durch externe Wirtschaftsprüfer im Rahmen des Jahresabschlusses beanstandet werden.
+
+In Phase 0 werden die Interne Revision und der Abschlussprüfer aktiv eingebunden, um die Prüfregeln vor dem Bau der Rollen zu auditieren und abzuzeichnen.
+
+5.2 Der SoD-Konfliktkatalog (D07 / SoD_Katalog.xlsx)
+
+Die Konfliktmatrix unterscheidet drei Risikoklassen:
+
+Risikostufe
+
+Bedeutung
+
+Konsequenz im Rollendesign
+
+Kritisch (Rot / High)
+
+Hohes Betrugs- oder Veruntreuungsrisiko (z. B. Kreditor anlegen + Zahlungsfreigabe; Einkauf bestellen + Rechnung freigeben).
+
+Absolutes Design-Verbot. Darf niemals in einer gemeinsamen Rolle oder Standard-Stellenkombination vorkommen.
+
+Wesentlich (Gelb / Medium)
+
+Erhöhtes Fehlerrisiko (z. B. Artikelstammpflege + physische Inventurbuchung).
+
+Wenn organisatorisch unvermeidbar, nur zulässig mit dokumentierter kompensierender Kontrolle.
+
+Gering (Grün / Low)
+
+Geringes Risiko; Prozessüberschneidung.
+
+Erlaubt; wird im Rahmen der jährlichen Rezertifizierung überprüft.
+
+5.3 Die Sperrliste kontrollierter Funktionen (D18)
+
+Einige Transaktionen und Menüpunkte dürfen im Unternehmen nur von einem eng definierten Personenkreis ausgeführt werden (z. B. Nummernkreise ändern, Journalbuchungen stornieren, Bankkonten ändern).
+
+In Phase 0 wird die Sperrliste (D18_Sperrliste.xlsx) mit der Revision abgestimmt.
+
+Alle Microsoft-Standardrollen, die gesperrte Objekte unkontrolliert enthalten, werden für die Zuweisung gesperrt.
+
+Jedes gesperrte Objekt erhält einen definierten Freigeber und einen standardisierten Ersatzweg.
+
+6. Handlungsfeld 4: RACI-Modell & Ausnahme-Governance
+
+6.1 Grundregeln des RACI-Modells
+
+Das in D02 detaillierte RACI-Modell folgt klaren Prinzipien:
+
+Genau ein “A” (Accountable): Für jede Aktivität gibt es genau eine Person/Rolle, die die finale Verantwortung trägt und entscheidet.
+
+Vier-Augen-Prinzip: Niemand kann Berechtigungen für sich selbst freigeben. Beantragt ein Freigeber eine Rolle für sich, entscheidet die nächsthöhere Führungsebene (FBL).
+
+Funktionstrennung bei der Vergabe: Fachliche Freigabe (Rollen-Owner) und technische Umsetzung (IT-Betrieb) sind personell getrennt.
+
+6.2 Wer entscheidet über Ausnahmen?
+
+In der Praxis lassen sich temporäre Ausnahmen (z. B. Vertretung bei Krankheit, Notfälle, Projektphasen) nicht vollständig vermeiden. Das Ausnahmemodell regelt verbindlich:
+
+                            Ausnahme-Antrag
+                                   |
+           +-----------------------+-----------------------+
+           |                                               |
+Antrag auf gesperrtes                           Antrag auf Zusatzrolle
+Objekt (Sperrliste D18)                         oder SoD-Konflikt (D07)
+           |                                               |
+           v                                               v
+Genehmigung durch den                          Genehmigung durch Rollen-Owner
+in D18 benannten Owner                         der Gesellschaft (D05).
+(z. B. Leitung Finanzwesen)                     Bei SoD: Revision wird VORHER
+           |                                    konsultiert (C).
+           +-----------------------+-----------------------+
+                                   |
+                                   v
+                      Technische Prüfung (IT SA):
+
+Welche Lizenzstufe wird ausgelöst?
+
+Entsteht ein neuer SoD-Konflikt?
+
+
+                                   |
+                                   v
+                      Eintragung im Ausnahmeregister:
+
+Begründung & Genehmiger
+
+Befristung (maximal 6 Monate)
+
+Ticket-Nummer & Kompensierende Kontrolle
+
+
+                                   |
+                                   v
+             Temporäre Zuweisung durch IT-Betrieb (BET)
+
+6.3 Notfallzugriff (Emergency / Firefighter Access)
+
+Bleibt ein produktionskritischer Prozess stehen (z. B. Schnittstellenfehler am Wochenende, Abrechnungsstopp):
+
+Der IT-Betrieb schaltet sofort die vordefinierte Fallback-Rolle frei.
+
+Die Laufzeit ist technisch fest auf maximal 48 Stunden begrenzt.
+
+Innerhalb der 48 Stunden klären Security Architect und Rollen-Owner die fachliche Ursache.
+
+7. Phasenplan, Roadmap & Meilensteine der Phase 0
+
+7.1 Detaillierter Ablaufplan
+
+Ablaufplan und Arbeitspakete der Phase 0
+
+Schritt
+
+Aktivität
+
+Beteiligte
+
+Ergebnis_Deliverable
+
+Schritt 0.1
+
+Kick-off & Gremienetablierung
+
+ITL, PL, SA
+
+Einrichtung 14-tägige Berechtigungsrunde; Gremien-Charta
+
+Schritt 0.2
+
+Testmanagement-Alignment
+
+SA, TM, PL
+
+Integrationsplan D11 / D12 in Test-Suite; Rollen-Testuser
+
+Schritt 0.3
+
+Datenschutz- & BR-Vereinbarung
+
+SA, DSB, BR, ITL
+
+Datenschutzkonzept & BV-Eckpunkte Telemetrieauswertung
+
+Schritt 0.4
+
+Revisions-Review SoD & Sperrliste
+
+SA, REV, WP, ITL
+
+Abstimmungsprotokoll SoD-Katalog (D07) und Sperrliste (D18)
+
+Schritt 0.5
+
+Besetzung RACI & Freigeber
+
+PL, FBL, HR, SA
+
+Vollständig besetzte Rollen- und Freigeberlisten in D02/D05
+
+Schritt 0.6
+
+Lenkungskreis-Beschluss (Exit Gate)
+
+LK, ITL, PL
+
+Formale Abnahme von D01, D01B und D02; Freigabe Phase 1 & 2
+
+7.2 Checkliste für das “Exit Gate Phase 0”
+
+Vor dem Übergang in die Umsetzungsphasen (Phase 1 für Strang A, Phase 2 für Strang B) müssen folgende Bedingungen nachweislich erfüllt sein:
+
+Berechtigungsrunde etabliert: Erster Sitzungstermin durchgeführt, Protokoll und Takt vereinbart.
+
+Testkonzept verankert: Testmanager hat die 3 Testebenen (Positiv, Negativ, Lizenz) in den Testmanagement-Plan übernommen.
+
+Mitbestimmung gesichert: Betriebsrat und Datenschutzbeauftragter haben der zweckgebundenen Telemetrieauswertung zugestimmt.
+
+Prüfungsregeln fixiert: Revision hat den SoD-Katalog (D07) und die Sperrliste (D18) freigegeben.
+
+RACI & Freigeber besetzt: Für alle Kernrollen der Gesellschaften stehen Owner und Freigeber fest (D02, D05).
+
+Ausnahmen-Workflow definiert: Das Verfahren für befristete Ausnahmen und 48h-Notfallzugriffe ist im Support etabliert.
+
+8. Anhang: Verknüpfung zu den übrigen Deliverables
+
+Dieses Mobilisierungsdokument D01B bildet die organisatorische Brücke zwischen der Gesamtstrategie (D01) und den operativen Arbeitsergebnissen:
+
+D01_Berechtigungskonzept_Strategie – Das strategische Dachdokument.
+
+D02_RACI_Governance_Steckbrief – Der detaillierte RACI-Steckbrief mit vollständiger Funktionsmatrix.
+
+D05_Rollenkatalog.xlsx – Der zentrale Rollenkatalog mit Zuweisung von Ownern und Freigebern je Gesellschaft.
+
+D06_Stellen_Rollen.xlsx – Die Zuordnung von Stellen zu Rollenpaketen.
+
+D07_Funktionstrennungs_Matrix.xlsx – Die operative SoD-Prüfmatrix.
+
+D08_Workshop_Paket– Leitfaden für die Fachbereichs-Workshops W1–W4.
+
+D11_Testkonzept_Berechtigungen – Das operative Testkonzept für Rollenprüfungen.
+
+D18_Sperrliste.xlsx – Liste gesperrter Standardobjekte und Freigabewege.
