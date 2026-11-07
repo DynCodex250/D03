@@ -1,0 +1,1129 @@
+Strategisches Vorgehen, Rollendesign, Deliverables und Governance für Rollout & Bestand
+
+Lead D365 Security & Licensing Architect ,
+
+
+
+1. Zusammenfassung und Ausgangslage
+
+Worum es geht
+
+Dieses Dokument beschreibt die Berechtigungs- und Lizenzstrategie der WIBU-Gruppe für Dynamics 365 Finance & Supply Chain Management (D365FO). Es legt fest, wie Rollen und Berechtigungen aufgebaut, vergeben und gepflegt werden. Dabei gelten drei Ziele gleichzeitig:
+
+Arbeitsfähigkeit: Die Mitarbeiter können alle Aufgaben ihrer Stelle im System erledigen.
+
+Sicherheit und Revision: Zugriffe sind nachvollziehbar, und unzulässige Funktionskombinationen werden vermieden (Funktionstrennung, englisch Segregation of Duties, kurz SoD).
+
+Lizenzkosten: Jeder Benutzer erhält nur die Lizenz, die seine Aufgaben tatsächlich erfordern.
+
+Das Dokument gilt für die Gesellschaften, die bereits mit D365FO arbeiten (T+, P+), und für die neue Gesellschaft (S+), deren Go-Live für Mitte Juni 2027 geplant ist. Weil Lizenzen und Datenbank-Speicher bei Microsoft zusammenhängen, behandelt es auch die Datenbankkapazität.
+
+Für wen und wie lesen: Das Dokument richtet sich an IT-Leitung, Projektleitung, Fachbereichsleitungen und Testmanagement. Für einen Überblick genügen dieses Kapitel und Kapitel 11 (nächste Schritte). Die Lizenzplanung der neuen Gesellschaft steht in Kapitel 9, die Datenbankkapazität in Kapitel 10. Die übrigen Kapitel beschreiben Vorgehen, Rollendesign, Tests und Betrieb.
+
+Die Strategie in einem Satz
+
+Ein gemeinsamer Rollenkatalog für die ganze WIBU-Gruppe, eingeführt in zwei Strängen: In Strang A werden in den Gesellschaften, die bereits live sind, sofort die teuersten Rollen so bereinigt, dass die Kollegen weiterarbeiten können und weniger Lizenzkosten entstehen; Microsoft setzt die Lizenzpflicht bereits durch. In Strang B startet die neue Gesellschaft von Anfang an mit dem neuen Rollenmodell, gebaut von unten aus den Prozessschritten.
+
+Ausgangslage: die zwei Stränge
+
+Strang A – Gesellschaften, die bereits live sind (T+, P+): Sie arbeiten produktiv mit D365. Ihre Rollen sind über die Jahre gewachsen; die Probleme daraus stehen im nächsten Abschnitt. Strang A hat begonnen und hat hohe Priorität, denn Microsoft setzt die Lizenzpflicht durch: Im Oktober 2026 wurde Kollegen ohne Lizenz der Zugriff auf das System verweigert. Deshalb wartet Strang A nicht auf Phase 6. Bereinigte Rollen gehen in Wellen nach Prod, sobald ihr Test bestanden ist; geprüft wird mit den vorhandenen Testfällen der Prozesse (Kapitel 3 und 5).
+
+Strang B – neue Gesellschaft (S+): Das Einführungsprojekt hat begonnen; der Go-Live ist für Mitte Juni 2027 geplant. Hier kann das Rollenmodell von Anfang an einheitlich, prozessorientiert und lizenzgünstig eingesetzt werden; die neuen Rollen gehen in Phase 6 zum Go-Live produktiv. Fachbereiche wie der Einkauf haben bereits Prozesse mit dem D365-Aufgabenaufzeichner (Task Recorder) erfasst.
+
+Bekannte Probleme
+
+Microsoft setzt die Lizenzpflicht durch: Im Oktober 2026 hat Microsoft Kollegen ohne Lizenz den Zugriff auf das System verweigert. Wer nicht die Lizenz hat, die seine Rollen verlangen, kann nicht mehr arbeiten. Strang A senkt deshalb zuerst, was die Rollen an Lizenzen verlangen.
+
+Kein durchgängiges Berechtigungskonzept: In den Bestandsgesellschaften wurden oft Microsoft-Standardrollen oder breit geschnittene Sammelrollen vergeben, damit die Mitarbeiter schnell arbeiten konnten. Wer welche Rechte warum hat, ist schwer nachzuvollziehen.
+
+Teurere Lizenzen als nötig: Manche Benutzer lösen Lizenzen aus (Finance, SCM oder Commerce), die ihre Aufgaben nicht erfordern. Die Analyse der Innendienst-Rolle zeigt zudem: Die übrigen Rollen derselben Benutzer lösen dieselben Lizenzen aus. Eine einzelne Rolle zu ändern spart deshalb noch nichts; betrachtet wird immer der vollständige Rollensatz eines Mitarbeiters (Kapitel 4). Wer mehr Lizenz hat oder bekommen soll, als seine Arbeit braucht, zeigt das Lizenzprofil je Benutzer aus der Telemetrie (D21).
+
+Funktionstrennung nicht geprüft: Unzulässige Kombinationen, zum Beispiel Lieferanten anlegen und Zahlungen freigeben, werden nicht systematisch gesucht.
+
+Prozesse und Rollen nicht verknüpft: Die Prozessdokumentation nennt je Schritt eine Abteilung (z. B. „IDM“), nicht die ausführende Rolle. Damit ist nicht nachvollziehbar, welche Berechtigung welchem Prozessschritt dient (Kapitel 3).
+
+Doppelte Rollen: Viele Rollen gibt es zweimal: als AOT-Rolle aus der Entwicklung und als Kopie, die in der Oberfläche angelegt wurde (Bezeichner GUID). Beide tun nicht immer dasselbe, und Benutzer haben mal die eine, mal die andere, mal beide. Zudem wurden AOT-Rollen über die Oberfläche geändert. Wer nur eine Version ändert, erreicht die Benutzer der anderen nicht: Rechte und Lizenzen bleiben dort, wie sie waren. Deshalb werden beide Versionen zusammengeführt, bevor irgendetwas an der Rolle geändert wird (Prinzip 11, D20).
+
+Aufgaben und Rechte aus der Oberfläche: Nicht nur Rollen, auch Aufgaben und Rechte wurden in der Oberfläche angelegt (Bezeichner GUID), oft als Kopie eines AOT-Objekts gleichen Namens. Sie stecken als Unterrollen, Aufgaben und Rechte in anderen Rollen und Aufgaben. Ziel ist, jedes dieser UI-Objekte überall durch sein AOT-Pendant zu ersetzen; dafür werden sie verglichen (D22, D23) und ihre Fundstellen inventarisiert (D24).
+
+Datenbankkapazität knapp: Das Kontingent liegt bei knapp 700 GB; die früher angezeigten 1,2 TB waren ein Anzeigefehler, den Microsoft korrigiert hat. Mit der Migrationssandbox für die neue Gesellschaft liegt die Belegung bis zum Go-Live darüber (Kapitel 10, aktuelle Zahlen in D17).
+
+Eingeschränkt nutzbare Testumgebung: Um Speicher zu sparen, ist TST eine Kopie ohne Buchungsdaten. Tests, die offene Belege oder Bestände brauchen, laufen dort nicht (Kapitel 5).
+
+Das Wichtigste in Kürze
+
+Strang A läuft: Drei Rollen sind auf SCM reduziert und im Test:
+
+ _WIBU Verkauf Innendienst Mitarbeiter, 
+
+_WIBU Einkauf Mitarbeiter und 
+
+_WIBU Stammdaten Kunden Manager. 
+
+Lassen die Tests es zu, gehen sie Mitte November 2026 live. Fehlt danach etwas, werden die bisherigen Rollen wieder eingespielt (Kapitel 3, Phase 1).
+
+Lizenzbudget der neuen Gesellschaft: Für die 185 geplanten Benutzer rund 20.300 € im Monat, also rund 244.000 € im Jahr, ab dem Go-Live. Müssen die Servicetechniker nur Daten ansehen, sinkt der Betrag auf rund 15.800 € im Monat. Es ist eine erste Schätzung (Kapitel 9).
+
+Datenbankkapazität: Das Kontingent von rund 700 GB reicht bis zum Go-Live nicht, vor allem wegen der zusätzlichen Migrationssandbox. Die Lücke schließen kostenlose Erweiterungen von Microsoft, die Bereinigung der Projektumgebungen und, falls nötig, ein Zukauf von Speicher. Nach dem Go-Live bringen die neuen Lizenzen genug zusätzlichen Platz (Kapitel 10, aktuelle Zahlen in D17).
+
+Was jetzt zu entscheiden ist
+
+Go-Live der ersten drei Rollen (Strang A): Gehen die drei auf SCM reduzierten Rollen nach den Tests Mitte November 2026 live?
+
+Bereinigung der Projektumgebungen: PRJ und Migrationssandbox werden bereinigt, bevor die laufende kostenlose Kapazitätserweiterung Mitte November endet.
+
+Servicetechniker: Welche Tätigkeiten übernehmen sie im System? Davon hängt ab, ob die günstigere Team-Member-Lizenz reicht.
+
+Commerce: Nutzt die neue Gesellschaft Retail-Rabatte und -Preise? Nur dann brauchen Innendienst und Vertrieb die Commerce-Lizenz.
+
+Speicher bis zum Go-Live: Ob und in welchem Umfang Speicher für die Zeit ohne kostenlose Erweiterung zugekauft wird.
+
+2. Leitprinzipien der Berechtigungsarchitektur
+
+Begriffe
+
+Die Begriffe folgen dem Berechtigungskonzept der WiBU-IT: Eine Tätigkeit ist eine Aufgabe, keine Rolle. Rollen werden von unten aus Aufgaben gebaut.
+
+Begriff
+
+Bedeutung
+
+Stelle
+
+kommt aus der Personalverwaltung, z. B. „Leitung Logistik“. Eine Stelle ist eine Sammlung von Rollen (D06).
+
+Rolle
+
+z. B. „Wareneingang / Wareneinlagerung“. Eine Rolle ist eine Sammlung von Aufgaben (D05).
+
+Aufgabe (Tätigkeit)
+
+eine Sammlung von Rechten in D365 (Duty), z. B. „Bestellungen pflegen“.
+
+Recht
+
+kleinste Einheit in D365 (Privilege), z. B. Zugriff auf einen Menüpunkt.
+
+Prozessschritt
+
+ein Schritt aus der Prozessdokumentation; je Schritt stehen die ausführenden Rollen fest (D19).
+
+Kontrollierte Funktion
+
+Funktion, die nur ausgewählte Personen nutzen, z. B. Stammdatenpflege (D18).
+
+Leitprinzipien
+
+Um ein audit- und zukunftssicheres Berechtigungskonzept zu etablieren, gelten unverrückbare architektonische Leitprinzipien:
+
+Architektonische Leitprinzipien
+
+Prinzip
+
+Bedeutung
+
+Single License Role Principle
+
+Jede benutzerdefinierte Rolle löst maximal genau EINE definierte Lizenzstufe aus (z. B. nur Team Member, nur Activity oder nur SCM).
+
+Strikte Trennung von View und Maintain
+
+Lesende Rechte (Inquire/View) und verändernde/buchende Rechte (Maintain/Operate) werden niemals in derselben Duty oder Rolle vermischt.
+
+Atomare Rollenteilung bei Mehrfachbedarfen
+
+Benötigt eine Stelle Tätigkeiten aus zwei Lizenzklassen (z. B. Auskunft über Kunden + Pflegen von Bestellungen), erhält sie zwei spezialisierte Rollen statt einer teuren Mischrolle.
+
+Keine Modifikation von MS-Standardobjekten
+
+Microsoft-Standardrollen, -Duties und -Privilegien bleiben unberührt. Eigene Objekte erhalten das Kundenpräfix (z. B. WIBU_).
+
+Zentraler Katalog mit Legal Entity Zuweisung
+
+Rollen werden konzerneinheitlich definiert; der Rollenname enthält keine Gesellschaft. Unterschiede zwischen Gesellschaften werden über ‘Organisationen zuweisen’ (Legal Entities) gesteuert, nicht über Rollenkopien. Wer in einer Gesellschaft Owner einer Rolle ist, steht im Rollenkatalog (D05).
+
+Least Privilege & Need-to-Know
+
+Benutzer erhalten ausschließlich die Rechte, die für ihre operative Stellenbeschreibung zwingend erforderlich sind.
+
+SoD & Testbarkeit als Designbedingung
+
+Keine Rolle wird freigegeben, bevor SoD-Konflikte geprüft und Testfälle mit dezidierten Rollen-Testbenutzern erfolgreich absolviert wurden.
+
+Lizenzentscheidungen mit ihrer Kapazitätswirkung bewerten
+
+Jede Lizenz bringt Datenbankkapazität mit (laut Planung 5 GB je Volllizenz, 1 GB je Activity-Lizenz). Solange Kapazität zugekauft werden muss, wird eine Herabstufung gegen die verlorene Kapazität gerechnet. Das Entfernen einer Attach-Lizenz ist kapazitätsneutral.
+
+Jeder Prozessschritt nennt seine ausführenden Rollen
+
+In der Prozessdokumentation steht je Schritt, wer ihn verantwortet und welche Rolle(n) ihn im System ausführen, mit Namen aus dem Rollenkatalog (D05). So lässt sich jede Berechtigung auf einen Prozessschritt zurückführen: Eine Rolle ohne Prozessschritt wird nicht gebraucht, ein Schritt ohne Rolle ist eine Lücke (D19).
+
+10. Kontrollierte Funktionen nur bewusst vergeben (Sperrliste)
+
+Rechte, Aufgaben und Rollen mit Funktionen, die nur ausgewählte Personen nutzen (z. B. Stammdatenpflege, Bestandskorrektur), stehen auf der Sperrliste (D18). Jede Microsoft-Standardrolle, die eine solche Aufgabe oder ein solches Recht enthält, ist ebenfalls gesperrt. Vergeben wird nur mit Antrag, Freigabe und Eintrag als Ausnahme; für jedes gesperrte Objekt steht ein Ersatz fest.
+
+11. Erst konsolidieren, dann ändern
+
+Gibt es eine Rolle als AOT-Rolle und als Kopie aus der Oberfläche, werden beide zusammengeführt, bevor die Rolle geändert, bereinigt oder neu lizenziert wird: Die neue Rolle <AOT-Name>_MERGED enthält alles, was eine der Versionen gewährt. Sie ist die eine Arbeitsgrundlage: Analyse, Bereinigung und Prüfung der Funktionstrennung laufen nur noch auf ihr. Zugewiesen wird sie niemandem; die Benutzer beider Versionen erhalten erst die bereinigte Rolle. Die alten Versionen bleiben als Rückfallweg erhalten, bis die bereinigte Rolle stabil läuft, und werden dann entfernt. Paare ohne Unterschiede werden nicht angefasst. Jedes Paar steht mit Ergebnis und Änderung in D20. Ebenso werden UI-Aufgaben und UI-Rechte überall durch ihr AOT-Pendant ersetzt; ohne Pendant wird zuerst ein AOT-Objekt angelegt (D22 bis D24).
+
+3. Phasenplan & Strategisches Vorgehen (Step-by-Step)
+
+Die Einführung gliedert sich in 8 strukturierte Phasen. Die Bereitstellung der Rollen hängt vom Strang ab:
+
+Strang A bringt bereinigte Rollen in Wellen nach Prod, sobald ihr Test bestanden ist, die ersten ab Mitte November 2026 (Phase 1). Er wartet nicht auf die Phasen 3 bis 6.
+
+Strang B durchläuft die Phasen 2 bis 5 und geht in Phase 6 zum Go-Live produktiv.
+
+Beide Stränge treffen sich in Phase 7, dem Regelbetrieb.
+
++-----------------------------------------------------------------------------------+
+| Phase 0: Mobilisierung & Governance (RACI, Testmanager, Revisions-Einbindung)      |
++-----------------------------------------------------------------------------------+
+                          |
+        +-----------------+-----------------+
+        |                                   |
+        v                                   v
++-----------------------------+   +-----------------------------+
+| STRANG A: Live-Mandanten    |   | STRANG B: Neuer Rollout     |
+| Phase 1: teuerste Rollen    |   | Phase 2: Rollen von unten   |
+| bereinigen, testen und      |   | aus Prozessschritten und    |
+| in Wellen nach Prod bringen |   | Aufgabenaufzeichnungen      |
+| (ab Mitte November 2026,    |   +-----------------------------+
+| mit Rückfallweg)            |                  |
++-----------------------------+                  v
+        |                         +-----------------------------+
+        |                         | Phase 3: Workshops          |
+        |                         | W1 Erhebung, W2 Design,     |
+        |                         | W3 SoD, W4 Sign-off         |
+        |                         +-----------------------------+
+        |                                        |
+        |                                        v
+        |                         +-----------------------------+
+        |                         | Phase 4: Technischer Build  |
+        |                         | & AOT-Umsetzung             |
+        |                         +-----------------------------+
+        |                                        |
+        |                                        v
+        |                         +-----------------------------+
+        |                         | Phase 5: Integriertes       |
+        |                         | Testing (Lead: Testmanager) |
+        |                         +-----------------------------+
+        |                                        |
+        |                                        v
+        |                         +-----------------------------+
+        |                         | Phase 6: Rollout & Migration|
+        |                         | (Strang B Go-Live)          |
+        |                         +-----------------------------+
+        |                                        |
+        +-----------------+----------------------+
+                          |
+                          v
++-----------------------------------------------------------------------------------+
+| Phase 7: Regelbetrieb, Rezertifizierung & Lizenz-Governance                       |
++-----------------------------------------------------------------------------------+
+
+Phase 0: Mobilisierung & Governance
+
+Zweck: Festlegung der Spielregeln, Gremien und Stakeholder.
+
+Aktivitäten:
+
+Abstimmung mit dem Testmanager: Berechtigungstests werden integraler Bestandteil der Testmanagement-Suite.
+
+Abstimmung mit dem Betriebsrat und dem Datenschutzbeauftragten (bzgl. Auswertung von Nutzungsdaten/Telemetrie).
+
+Einbindung der Revision / Wirtschaftsprüfer zur Abstimmung des SoD-Katalogs.
+
+Definition des RACI-Modells (Wer entscheidet über Ausnahmen?).
+
+Phase 1: Lizenzen sichern und Kosten senken in den Bestandsgesellschaften (Strang A)
+
+Zweck: Die Kollegen behalten ihren Zugriff, und die Lizenzkosten sinken, ohne dass sie in ihrer Arbeit eingeschränkt werden. Microsoft setzt die Lizenzpflicht bereits durch; diese Phase hat deshalb hohe Priorität und wartet nicht auf die übrigen Phasen. Begonnen wird mit den teuersten Rollen.
+
+Stand 31.10.2026: Drei Rollen sind auf SCM reduziert und im Test: _WIBU Verkauf Innendienst Mitarbeiter, _WIBU Einkauf Mitarbeiter und _WIBU Stammdaten Kunden Manager (diese Rolle hatte auch Finance-Menüpunkte). Geprüft wird, ob sie Mitte November 2026 live gehen können.
+
+Vorgehen:
+
+Doppelte Rollen konsolidieren: Das Werkzeug vergleicht jede AOT-Rolle mit ihren Kopien aus der Oberfläche (eigene Aufgaben, Rechte, Unterrollen und direkte Zugriffsrechte) und schreibt das Ergebnis je Paar nach D20. Paare ohne Unterschiede bleiben unangetastet. Für Paare mit Unterschieden erzeugt es die Rolle <AOT-Name>_MERGED. Sie wird geprüft und in INT importiert und ist von da an die Arbeitsgrundlage: Die folgenden Schritte und die Prüfung der Funktionstrennung (D07) arbeiten nur noch mit ihr (Prinzip 11). Zugewiesen wird sie niemandem; die Benutzer behalten ihre Rollen, bis die bereinigte Rolle getestet ist und beide alten Versionen ersetzt. Ebenso für UI-Aufgaben und UI-Rechte: Das Werkzeug sucht je UI-Objekt das AOT-Pendant gleichen Namens und vergleicht beide (D22 Aufgaben, D23 Rechte); die Inventur zeigt, wo jedes UI-Objekt steckt (D24). Ersetzt wird von oben nach unten: Rollen, dann Aufgaben, dann Rechte.
+
+Rangliste der teuersten Rollen: Gemessen werden die Lizenzkosten, die nur wegen einer Rolle entstehen. Lösen andere Rollen desselben Benutzers dieselbe Lizenz aus, spart die Bereinigung einer Rolle allein nichts (Innendienst-Analyse, Kapitel 4). Die Rangliste betrachtet deshalb den vollständigen Rollensatz je Benutzer.
+
+Lizenzprofil je Benutzer: Für jeden Benutzer aus der Telemetrie bestimmen, welche Lizenzen seine Arbeit braucht, und dem gegenüberstellen, was PPAC für ihn erwartet, was schon zugewiesen und was noch nicht zugewiesen ist (D21). So zeigt sich je Benutzer, ob er eine Lizenz verlieren könnte und welche noch fehlenden Lizenzen nicht gekauft werden müssen. Die Rangliste sieht die Rollen, das Lizenzprofil die Benutzer.
+
+Lizenztreiber bestimmen: Für die obersten Rollen mit report_role_license() und den Nutzungsdaten (Telemetrie) ermitteln, welche Aufgaben die teure Lizenz auslösen und ob sie genutzt werden.
+
+Rolle abspecken: Ungenutzte Lizenztreiber entfernen oder in eine Zusatzrolle für die wenigen auslagern, die sie brauchen (Prinzip 3).
+
+Prozesse testen: mit den vorhandenen Testfällen der Updates und Paketeinspielungen (Kapitel 5). Getestet werden die Prozesse, nicht die Rollen.
+
+Nachbessern: Merken die Kollegen im Test, dass eine Funktion fehlt, kommt das ins Ticket und wird nachgebessert. Ändert die Funktion die Lizenz nicht, kommt sie in die Rolle. Ändert oder erhöht sie die Lizenz, wird dafür eine Zusatzrolle erstellt (Prinzip 3, Kapitel 5).
+
+In Prod bringen: Nach bestandenem Test geht die Rolle in Wellen nach Prod, in der Reihenfolge der Rangliste (D04) und nicht erst in Phase 6. Als Rückfallweg bleiben die bisherigen Rollen erhalten: Fehlt etwas, werden sie wieder eingespielt.
+
+Wirkung prüfen: Sinkt die Lizenz der betroffenen Benutzer tatsächlich? Dafür das Lizenzprofil (D21) mit neuen Berichten aus PPAC wiederholen.
+
+Nebenher (Quick-Wins): Deaktivierung inaktiver Benutzerkonten, Entzug nicht genutzter administrativer Rollen.
+
+Ergebnis: Bestands- und Lizenzanalyse (D03), Liste der teuersten Rollen mit Bereinigungsplan (D04), Konsolidierung der doppelten Rollen (D20), Lizenzprofil je Benutzer (D21).
+
+Phase 2: Rollendesign von unten (Fokus Strang B und Zielmodell)
+
+Zweck: Rollen aus den Prozessschritten aufbauen, nicht aus Sammelrollen oder Kopien bestehender Rechte.
+
+Das Modell (Begriffe siehe Kapitel 2):
+
+Recht: kleinste Einheit, z. B. Zugriff auf einen Menüpunkt mit Lesen oder Pflegen.
+
+Aufgabe (Tätigkeit): Rechte für eine fachliche Aufgabe, z. B. „Kreditorenrechnungen erfassen“.
+
+Rolle: fachlich zusammengehörige Aufgaben; konzernweit gültig, im Rollenkatalog (D05).
+
+Stelle: aus der Personalverwaltung; welche Rollen zu ihr gehören, steht in D06.
+
+Benutzer: erhält die Rollen seiner Stelle, jeweils für die Gesellschaften, in denen er arbeitet.
+
+Verknüpfung mit der Prozessdokumentation
+
+Jede Berechtigung soll sich auf einen Prozessschritt zurückführen lassen (Prinzip 9). Dafür gilt:
+
+Rollenkatalog je Gesellschaft: Der Fachbereich benennt die Rollen; sie stehen im Rollenkatalog (D05).
+
+Zwei Spalten in der Prozessdokumentation: „Verantwortlich (Rolle)“ nennt, wer für den Schritt geradesteht; „Ausführende Rolle(n)“ nennt, wer ihn im System ausführt. Beide nur mit Namen aus dem Rollenkatalog, mehrere ausführende Rollen sind erlaubt. Abteilungskürzel wie „IDM“ und Personennamen sind nicht zulässig.
+
+Ergänzung durch die IT: je Schritt der D365-Menüpunkt und die Aufgabe. Damit steht die Kette Prozessschritt → Rolle → Aufgaben → Rechte → Lizenz.
+
+Prüfregel: Jede Rolle führt mindestens einen Prozessschritt aus, sonst wird sie nicht gebraucht. Jeder Prozessschritt hat mindestens eine ausführende Rolle, sonst ist er eine Lücke.
+
+Arbeitsmittel: die Prozess-Rollen-Matrix (D19). Sie wird in Workshop 1 gefüllt; die Ergebnisse überträgt die IT in den Rollenkatalog (D05) und die Zuordnung der Stellen (D06).
+
+Beispiel: In der Prozessdokumentation „Angebotserstellung“ steht heute bei jedem Schritt „IDM“. Künftig steht dort je Schritt die ausführende Rolle. Übergaben wie „Debitor nicht angelegt → Kundenstammdatenmanagement“ werden so als Wechsel zu einer anderen Rolle sichtbar.
+
+Phase 3: Fachbereichs-Workshops
+
+Je Fachbereich vier Workshops; Ablauf, Vorlagen und Zeitplan stehen im Workshop-Paket (D08):
+
+Workshop 1 (Tätigkeitsabgrenzung): Wer verantwortet welchen Prozessschritt, wer führt ihn im System aus? Rollenkatalog und Stellen abstimmen (D19, D05, D06); Sonderfälle wie Monatsabschluss oder Urlaubsvertretung erfassen.
+
+Workshop 2 (Rollen-Entwurf): Aufgaben je Rolle aus den Aufgabenaufzeichnungen (D09); Ziel-Lizenz je Rolle.
+
+Workshop 3 (Funktionstrennung und Organisation): Unzulässige Kombinationen (z. B. Bestellanlage und Zahlungsausführung), Freigeber und Owner je Gesellschaft, Bestätigung der Sperrliste (D07, D18).
+
+Workshop 4 (Abnahme): Formale Abnahme des Rollenprofils durch den Prozessverantwortlichen (Process Owner).
+
+Phase 4: Technischer Build & Versionierung
+
+Erstellung der Sicherheitsartefakte in Visual Studio (AOT-Objekte im Versionskontrollsystem / Azure DevOps).
+
+Verwendung sprechender Namenskonventionen, ohne Gesellschaft im Namen:
+
+Rollen: WIBU_<Bereich>_<Funktion>_<Lizenz> (z. B. WIBU_Einkauf_Sachbearbeiter_Act)
+
+Aufgaben (Duties): WIBU_<Bereich>_<Geschäftsvorfall>_<Maintain/Inquire>
+
+Automatische Lizenzbewertung im Build-Prozess zur Sicherstellung des Single-License-Prinzips.
+
+Phase 5: Testkonzept & Zusammenarbeit mit dem Testmanager
+
+(Details siehe Kapitel 5)
+
+Phase 6: Rollout & Migration (Strang B)
+
+Strang B: Direkter Go-Live mit dem neuen Rollenmodell, geplant Mitte Juni 2027; erst hier gehen die neuen Rollen produktiv. Einen Monat danach werden die Migrationssandbox und voraussichtlich die PRJ-Umgebung gelöscht (Kapitel 10).
+
+Strang A ist nicht Teil dieser Phase: Seine Rollen gehen seit Phase 1 in Wellen nach Prod.
+
+Fallback-Rolle: Für Prozessblockaden nach dem Go-Live und im Betrieb steht eine „Fallback-Rolle“ mit 48-Stunden-Ablaufzeit bereit.
+
+Phase 7: Betrieb, Governance & Rezertifizierung
+
+Etablierung eines standardisierten Joiner-Mover-Leaver-Prozesses (JML): Neue und wechselnde Mitarbeiter erhalten die Rollen ihrer Stelle (D06), nicht „dieselben Rechte wie Kollege X“. Kontrollierte Funktionen nur mit Freigabe (D18).
+
+Halbjährliche / Jährliche Rezertifizierung: Die Owner der Rollen je Gesellschaft (D05) bestätigen die Rollenzuweisungen; Ausnahmen der Sperrliste (D18) werden auf ihre Laufzeit geprüft.
+
+Kontinuierliches Lizenz-Monitoring gegen den Microsoft Tenant: Die Lizenzen werden fortlaufend überwacht und das Lizenzprofil je Benutzer (D21) regelmäßig erneuert. Es zeigt, wer mehr Lizenz hat oder bekommen soll, als seine Arbeit braucht.
+
+Schnelle Anpassungen in Prod: Muss eine Rolle kurzfristig erweitert werden, geschieht das in der Oberfläche, denn bis eine AOT-Fassung in Prod nutzbar ist (Deployment in INT, Test in INT, Deployment in Prod), können Wochen vergehen. Die Anpassung wird im AOT nachgezogen und danach aus der Oberfläche entfernt (D02, Spielregel 10). Die Inventur der UI-Objekte (D24) läuft deshalb auch im Betrieb regelmäßig.
+
+4. Piloten und Aufgabenaufzeichnungen
+
+Die Aufgabenaufzeichnungen (Task Recordings) der Fachbereiche, zuerst des Einkaufs, sind ein wertvolles Asset. Sie werden nie direkt zu Rollen, sondern zu Aufgaben; sonst entsteht Rollenwildwuchs (Role Explosion). Jede Aufzeichnung zeigt genau einen Prozessschritt aus der Prozess-Rollen-Matrix (D19); ihr Name <Prozess-ID>_<Schritt>_<Kurzname> stellt den Bezug her. Die Einzelheiten stehen im Leitfaden Aufgabenaufzeichnungen (D09).
+
+Von der Aufzeichnung zur Aufgabe
+
+Von der Aufzeichnung zur Aufgabe (Kurzfassung von D09)
+
+Schritt
+
+Vorgehensweise
+
+Prüfen und bereinigen
+
+Zeigt die Aufzeichnung genau einen Prozessschritt, ohne Fehlklicks, Abzweigungen oder Funktionen der Systemverwaltung? Sonst neu aufzeichnen.
+
+Sicherheitsdiagnose
+
+Mit der D365-Funktion „Sicherheitsdiagnose für Aufgabenaufzeichnungen“ die benötigten Menüpunkte und Zugriffsstufen ermitteln; die IT trägt sie in D19 ein.
+
+Zu Aufgaben bündeln
+
+Menüpunkte zu Aufgaben zusammenfassen, nicht zu Rollen. Vorhandene Aufgaben werden wiederverwendet; Lesen und Pflegen kommen in getrennte Aufgaben (D05).
+
+Lizenz bestimmen
+
+Für jede Aufgabe ermittelt das Werkzeug, welche Lizenz sie auslöst. Teure Aufgaben werden getrennt, damit nur die Personen sie bekommen, die sie brauchen; kontrollierte Funktionen werden mit der Sperrliste (D18) abgeglichen.
+
+Lücken schließen
+
+Ergänzen, was die Aufzeichnung nicht zeigt: Workflows, Datenentitäten (Excel-Add-in), Berichte (SSRS, Power BI) und Batchaufträge. Diese Punkte werden in Workshop 2 abgefragt.
+
+Zweite Pilotwelle: Innendienst und Lager/Logistik
+
+Neben dem Einkauf werden zwei weitere Bereiche als Piloten geführt. Ihre Ergebnisse gelten für beide Stränge: Die bereinigten Rollensätze werden in den Bestandsgesellschaften eingesetzt und bilden die Zielrollen der neuen Gesellschaft (Kapitel 9).
+
+Innendienst (zuerst): Für die Rolle _WIBU_VERKAUF_INNENDIENST_MITARBEITER liegt eine gegen D365 geprüfte Lizenzanalyse vor (Abnahme in ADN, Oktober 2026). Commerce wird dort durch die Retail-Rabatte und -Preise ausgelöst. Zugleich lösen bei allen ausgewerteten Benutzern andere Rollen dieselben Basislizenzen aus; eine Änderung dieser einen Rolle spart also noch keine Lizenz. Der Pilot betrachtet deshalb den vollständigen Rollensatz eines Innendienst-Mitarbeiters. Das Ergebnis ist auch der Ausgangspunkt für den Vertrieb.
+
+Lager und Logistik (danach): Ziel ist, die Gruppe der 30 Benutzer aus Kapitel 9 nach ihren tatsächlichen Tätigkeiten aufzuteilen und je Untergruppe die Lizenzstufe festzulegen. Für die neue Gesellschaft startet die Logistik mit ihrem ersten Rollenentwurf (Kapitel 9).
+
+Die Servicetechniker sind kein Pilot, solange noch nicht feststeht, welche Berechtigungen sie im System brauchen.
+
+5. Schnittstelle zum Testmanager: Integriertes Testkonzept
+
+Berechtigungen sind kein IT-Zusatz, sondern determinieren das Gelingen der fachlichen Abnahmetests (UAT). Ohne Berechtigungskonzept testen Key-User mit Admin-Rechten, was beim Go-Live zu massiven Prozessabbrüchen führt.
+
+Testorganisation im Zusammenspiel
+
+Rollenbasierte Testbenutzer:
+
+Für jede neue Rolle wird ein generischer Testbenutzer angelegt (z. B. TST_EINKAUF_MA). Welche Prozessschritte er durchläuft, ergibt sich aus der Prozess-Rollen-Matrix (D19).
+
+Keine Tests mit Systemadministrator-Rechten während des UAT.
+
+Testarten im Berechtigungskontext:
+
+Positivtests: Kann der Testbenutzer alle Prozessschritte fehlerfrei ausführen, die seiner Rolle in D19 zugeordnet sind?
+
+Negativtests: Werden kritische Menüpunkte ausgeblendet? Werden unzulässige Buchungen verweigert?
+
+SoD-Tests: Kann derselbe Benutzer gleichzeitig Lieferanten anlegen und Bestellungen freigeben?
+
+Lizenz-Verifikation: Löst der Benutzer im Lizenzreport exakt die geplante Lizenzstufe aus?
+
+Defect Management (Fehlereinstufung):
+
+Im Defect-Tracking-System (Azure DevOps / Jira) existiert eine eigene Kategorie „Security / Berechtigung“ mit klaren Subtypen:
+
+Blocker: Menüpunkt fehlt vollständig (Prozess steht).
+
+Warning / License Issue: Prozess funktioniert, löst aber eine falsche (höhere) Lizenz aus.
+
+Compliance: Unerlaubter Zugriff möglich (Negativtest fehlgeschlagen).
+
+Strang A: Getestet werden Prozesse, nicht Rollen
+
+Für die Bereinigung in den Bestandsgesellschaften kommen keine eigenen Rollentests dazu. Die Testfälle, die es heute für jedes Versionsupdate und jede Paketeinspielung gibt, laufen mit Testbenutzern, die nur die abgespeckten Rollen haben.
+
+Abnahme: Die Prozesse laufen unverändert, und der Testbenutzer löst die geplante Lizenz aus.
+
+Fehlschlag: Bricht ein Prozessschritt ab oder fehlt eine Funktion, ist das ein Fehler der Kategorie „Blocker“. Er kommt ins Ticket, und die Rolle wird erst umgestellt, wenn er behoben ist.
+
+Nachbesserung: Ändert die fehlende Funktion die Lizenz nicht, kommt sie in die Rolle. Ändert oder erhöht sie die Lizenz, wird dafür eine Zusatzrolle erstellt (Prinzip 3): Die Rolle bleibt bei ihrer Lizenz, und nur wer die Funktion braucht, erhält die Zusatzrolle.
+
+Lücke: Deckt kein vorhandener Testfall einen Prozess der Rolle ab, wird der Testfall ergänzt, bevor die Rolle umgestellt wird.
+
+Umstellung: Nach bestandenem Test geht die Rolle nach Prod, nicht erst in Phase 6.
+
+Rückfallweg: Die bisherigen Rollen bleiben erhalten. Fehlt nach der Umstellung etwas, werden sie wieder eingespielt, und die Lücke geht als Ticket zurück in die Nachbesserung.
+
+Ticket: Jeder Test einer bereinigten Rolle läuft über ein Ticket nach der Vorlage im Testkonzept (D11).
+
+Testumgebungen und Datenstand
+
+Um Datenbankkapazität zu sparen, sind die Sandboxen unterschiedlich befüllt (Kapitel 10). Daraus folgt, welche Tests wo laufen:
+
+Testumgebungen und ihr Datenstand
+
+Umgebung
+
+Datenstand
+
+Geeignet für
+
+Nicht geeignet für
+
+INT
+
+Kopie von Prod; Historien nach kurzer Frist bereinigt
+
+Service-Update-Tests, Prozess- und Regressionstests mit Bestandsdaten
+
+–
+
+TST
+
+Transaktionslose Kopie: nur Stamm- und Konfigurationsdaten
+
+Smoke-Tests nach Updates, Einstellungen, Rollen- und Negativtests, Lizenzprüfung je Rolle
+
+Tests, die offene Belege oder Bestände voraussetzen: offene Aufträge, Lagerbestand, offene Posten, Ausgleich
+
+PRJ
+
+Kopie von Prod mit dem Projektstand der neuen Gesellschaft
+
+Aufbau und Test der neuen Gesellschaft, Fachbereichs-Workshops, UAT mit Rollen-Testbenutzern
+
+–
+
+Migrationssandbox
+
+Kopie von Prod
+
+Migrationsläufe und Generalprobe
+
+Fachliche Abnahme
+
+Testdaten: Die Kollegen entscheiden selbst, wie sie testen. Sie können Daten anlegen, zum Beispiel einen Lagerzugang vor dem Kommissioniertest, oder vorhandene Daten nehmen. In TST gibt es keine Buchungsdaten: Wer sie braucht, legt sie dort an oder testet in INT.
+
+Die Bedenken gegen Tests in TST betreffen Tests mit Bestandsdaten; diese laufen in INT. Welche Testfälle TST nicht abdeckt, halten Testmanager und Solution Architect als Liste fest.
+
+Lizenzprüfungen brauchen keine Bewegungsdaten. Vor dem ersten Einsatz in TST wird geprüft, ob die Lizenztabellen in der transaktionslosen Kopie vollständig sind.
+
+6. Deliverables & Dokumentenlandschaft
+
+Das Projekt wird über klar definierte, prüfbare Ergebnisdokumente (Deliverables) gesteuert:
+
+Übersicht der Projekt-Deliverables
+
+ID
+
+Deliverable
+
+Form
+
+Zielgruppe
+
+D01
+
+Berechtigungs- & Lizenzstrategie (dieses Dokument)
+
+Word (dieses Dokument)
+
+Lenkungskreis, IT-Leitung, Audit
+
+D02
+
+RACI- & Governance-Steckbrief
+
+Word
+
+Projektleitung, Fachbereichsleiter
+
+D03
+
+Bestands- & Lizenzanalyse (Strang A)
+
+Word und Excel (aus Rmd)
+
+CFO, IT-Leitung, Lizenzmanager
+
+D04
+
+Liste der teuersten Rollen und Bereinigungsplan (Strang A)
+
+Excel (aus Rmd, mit D03)
+
+IT-Leitung, Lizenzmanager, Fachbereichsleiter
+
+D05
+
+Rollenkatalog: Rollen, Aufgaben je Rolle, Owner je Gesellschaft
+
+Excel
+
+Kernteam, Fachbereiche, IT
+
+D06
+
+Stellen → Rollen: Stellen der Personalverwaltung mit ihren Rollen
+
+Excel
+
+Personalabteilung, Abteilungsleiter, Fachbereich
+
+D07
+
+Funktionstrennungs-Matrix (SoD Rulebook)
+
+Excel (aus Rmd)
+
+Revision, Compliance, Wirtschaftsprüfer
+
+D08
+
+Fachbereichs-Workshop-Paket (Workshops 1–4)
+
+Word
+
+Key-User, Prozessverantwortliche
+
+D09
+
+Leitfaden Aufgabenaufzeichnungen
+
+Word
+
+Key-User, Kernteam, IT
+
+D10
+
+Technisches Design Dokument (TDD Security / AOT)
+
+offen
+
+D365 Entwickler, Solution Architect
+
+D11
+
+Testkonzept Berechtigungen (mit Testmanager)
+
+Word
+
+Testmanager, PMO
+
+D12
+
+Testfälle: für Strang A die vorhandenen Testfälle der Updates und Paketeinspielungen, für Strang B Prozesstests mit Rollen-Testbenutzern
+
+Testmanagement
+
+Testmanager, Key-User, Tester
+
+D13
+
+Cutover- & Migrationsplan
+
+offen
+
+Projektleitung, Rollout-Team
+
+D14
+
+Notfall- & Fallback-Konzept (Emergency Access)
+
+offen
+
+IT-Betrieb, Support
+
+D15
+
+Betriebshandbuch & Rezertifizierungs-Leitfaden
+
+offen
+
+Fachbereichsleiter, IT-Betrieb
+
+D16
+
+Lizenzprognose der neuen Gesellschaft (Kapitel 9)
+
+Kapitel 9
+
+Geschäftsführung, CFO, IT-Leitung
+
+D17
+
+Kapazitätsprognose Datenbank mit Historie der Stände
+
+Excel und Word (aus Rmd)
+
+IT-Leitung, IT-Betrieb
+
+D18
+
+Sperrliste kontrollierter Funktionen
+
+Excel
+
+Fachbereichsleiter, IT
+
+D19
+
+Prozess-Rollen-Matrix: verantwortliche und ausführende Rollen je Prozessschritt
+
+Excel
+
+Key-User, Prozessverantwortliche, IT
+
+D20
+
+Konsolidierung doppelter Rollen: je Paar aus AOT-Rolle und Kopie aus der Oberfläche Ergebnis, Merge-Rolle und Umsetzung
+
+Excel (aus Rmd)
+
+IT D365, Owner der Rollen, Kernteam
+
+D21
+
+Lizenzprofil je Benutzer: was die Telemetrie braucht gegen das, was PPAC erwartet, zuweist und noch nicht zugewiesen hat
+
+Excel (aus Rmd)
+
+Lizenzmanager, IT-Leitung, Fachbereichsleiter
+
+D22
+
+UI-Aufgaben und ihre AOT-Pendants: Vergleich und Maßnahme je UI-Aufgabe
+
+Excel (aus Rmd)
+
+IT D365, D365 Entwickler
+
+D23
+
+UI-Rechte und ihre AOT-Pendants: Vergleich und Maßnahme je UI-Recht
+
+Excel (aus Rmd)
+
+IT D365, D365 Entwickler
+
+D24
+
+Inventur der UI-Objekte: wo UI-Rollen, UI-Aufgaben und UI-Rechte stecken
+
+Excel (aus Rmd)
+
+IT D365, D365 Entwickler, Testmanager
+
+Dateinamen und Aufbau: Jede Datei trägt die Nummer des Deliverables als Präfix, z. B. D05_Rollenkatalog.xlsx. Die Excel-Deliverables (D05, D06, D07, D18 bis D24) haben denselben Aufbau: ein Blatt „Anleitung“, Datenblätter mit fester Kopfzeile und ein Blatt „Listen“ mit den Auswahlwerten; blau markierte Spalten füllt die IT. Das Werkzeug der IT liest sie ein; deshalb werden Blätter und Kopfzeilen nicht umbenannt.
+
+Kapazitätsprognose (D17): Sie ist anders aufgebaut. Das erste Blatt zeigt den aktuellen Stand, jedes weitere Blatt trägt als Namen nur das Datum eines Stands. Neue Stände kommen als Excel-Datei nach Data/Input/Kapazitaet; sie enthalten nur Mengen und Termine, keine Personendaten.
+
+Ablage: Alle Deliverables liegen unter ihrem festen Namen im Ordner Data/Deliverables des Projekts und sind im Repository versioniert; die Rmd-Dateien, aus denen sie entstehen, liegen in Data/Documentation. Ein neuer Lauf liest das bestehende Deliverable, übernimmt die Einträge des Teams und ersetzt es; frühere Stände bleiben im Repository. Die erzeugten Sicherheitsobjekte liegen in Data/SecurityObjects, Berichte in Data/Reports; Berichte mit echten Benutzerkennungen (Data/Reports/Klartext) kommen nicht ins Repository.
+
+Maßgebliche Listen: Rollen stehen im Rollenkatalog (D05), die Zuordnung der Stellen in D06. Die Prozess-Rollen-Matrix (D19) enthält Arbeitskopien beider Listen für die Workshops; ihre Ergebnisse überträgt die IT nach D05 und D06.
+
+7. Rollenschnitt & Stellenbeschreibungen: Praxisbeispiel
+
+Die Herausforderung mit Stellenbeschreibungen
+
+Stellenbeschreibungen aus der Personalabteilung sind ein essenzieller Ausgangspunkt, jedoch: - oft veraltet oder generisch formuliert („Mitarbeit im Einkauf“), - beschreiben die Soll-Aufgabe, nicht die tatsächlichen Klicks im System, - berücksichtigen keine Vertretungsregelungen.
+
+Best-Practice Lösungsansatz: Der „Modulare Stellenkoffer“
+
+Eine Stelle aus der Personalverwaltung wird in D365 nicht durch eine einzige Sammelrolle abgebildet, sondern durch mehrere Rollen: Grundrollen, die jede Person der Stelle erhält, und Zusatzrollen, die einzelne Personen bewusst erhalten, z. B. für kontrollierte Funktionen oder Vertretungen. Die Zuordnung steht in D06:
+
++------------------------------------------------------------------------------+
+| STELLENPROFIL (HR): Sachbearbeiter Einkauf / Operativer Einkauf              |
++------------------------------------------------------------------------------+
+  |
+  +---> Grundrolle: "WIBU_Basis_Mitarbeiter_TM" (Team Member Lizenz)
+  |      - Zeiterfassung, Urlaub, eigene Bestellanforderungen
+  |
+  +---> Grundrolle: "WIBU_Einkauf_Sachbearbeiter_Act" (Activity Lizenz)
+  |      - Pflege von Bestellanforderungen, Wareneingangsauskunft
+  |
+  +---> Grundrolle: "WIBU_Einkauf_Bestellabwicklung_SCM" (Supply Chain Management Lizenz)
+  |      - Bestellungen erfassen, buchen, Lieferantenkorrespondenz
+  |
+  +---> Zusatzrolle / Vertretung: "WIBU_Kreditoren_Rechnungspruefung_Fin" (Finance Lizenz)
+          -Wird bewusst, befristet oder nur einzelnen Personen der Stelle zugewiesen
+
+Vorteil: Ändert sich die Lizenzlogik von Microsoft oder die Aufgabenverteilung im Unternehmen, muss keine Rolle neu gebaut werden – es wird lediglich die Zuweisung der Rollenbausteine angepasst.
+
+8. Risiken & Mitigation
+
+Risikomatrix und Gegenmaßnahmen
+
+Risiko
+
+Auswirkung
+
+Mitigationsmassnahme
+
+Microsoft verweigert Kollegen ohne passende Lizenz den Zugriff
+
+Die Kollegen können nicht arbeiten; in den Gesellschaften, die bereits live sind, steht ein Teil des Tagesgeschäfts.
+
+Strang A hat Vorrang: Bereinigte Rollen gehen in Wellen nach Prod, sobald ihr Test bestanden ist, nicht erst in Phase 6 (Kapitel 3).
+
+Fachbereichs-Widerstand (‘Früher durfte ich alles’)
+
+Verzögerung der Workshops, Eskalationen
+
+Einbindung des Managements; transparente Kommunikation der Lizenzkosten und Revisionsrisiken je Rolle.
+
+Prozessblockade nach Go-Live
+
+Stillstand im Tagesgeschäft, mangelnde Akzeptanz
+
+Einsatz eines ‘Emergency Access Roles’ (zeitlich limitierte Beistellrolle mit Logging) und 24/7 Hypercare-Support.
+
+Rollenwildwuchs (Role Explosion)
+
+Unwartbare Sicherheitsstruktur, Kontrollverlust
+
+Strikte Governance: Keine neuen Rollen ohne Freigabe des Security Architects. Max. Wiederverwendung von Duties.
+
+Abweichende Lizenzberechnung durch Microsoft Updates
+
+Unerwartete Nachforderungen bei Lizenzaudits
+
+Regelmäßiger Durchlauf automatisierter Lizenzreports gegen die D365 Licensing Graph Datenbank vor jedem Release.
+
+Datenbankkapazität vor dem Go-Live überschritten
+
+Zukaufkosten von 30 € je GB und Monat; ohne Option möglicherweise Sperre von Kopier- und Wiederherstellungsvorgängen (bei Microsoft zu bestätigen).
+
+Prognose mit jedem neuen Stand gegen Ist prüfen (D17); 45-Tage-Fenster planen; Bereinigungsjobs wie in INT für alle Sandboxen (Kapitel 10).
+
+Transaktionslose Sandbox deckt Tests nicht ab
+
+Fehler werden erst in INT oder Prod gefunden.
+
+Testarten den Umgebungen zuordnen; wer in TST Buchungsdaten braucht, legt sie an oder testet in INT (Kapitel 5).
+
+Lizenzbedarf der neuen Gesellschaft höher als geschätzt
+
+Budgetüberschreitung, z. B. Activity statt Team Member für die Servicetechniker oder Commerce für Innendienst und Vertrieb.
+
+Lizenzziel je Rolle bis März 2027 festlegen und mit dem Lizenzbericht prüfen (Kapitel 9).
+
+Go-Live verschiebt sich
+
+Die drei 45-Tage-Fenster 2027 sind verbraucht, die neuen Lizenzen noch nicht aktiv: Die Fehlmenge bleibt auf dem Stand vor dem Go-Live und wächst weiter (Kapitel 10).
+
+Lizenzbeginn unabhängig vom Go-Live-Termin festlegen oder ein Fenster in Reserve halten (Kapitel 10).
+
+Eine bereinigte Rolle bricht einen Prozess, den die vorhandenen Testfälle nicht abdecken
+
+Stillstand eines Prozesses in Prod nach der Umstellung (Strang A).
+
+Vor dem Entfernen die Nutzungsdaten prüfen; fehlende Testfälle ergänzen, bevor die Rolle umgestellt wird; fällt etwas erst in Prod auf, die bisherigen Rollen wieder einspielen (Phase 1).
+
+Rückfall auf die bisherigen Rollen (Strang A)
+
+Die bisherigen Rollen verlangen wieder die höheren Lizenzen; Kollegen ohne diese Lizenzen können erneut gesperrt werden.
+
+Rückfall nur so lange wie nötig; die fehlende Funktion sofort nachbessern (Kapitel 5); vor dem Rückfall die betroffenen Benutzer gegen ihre zugewiesenen Lizenzen prüfen (D21).
+
+Nur eine Version einer doppelten Rolle wird geändert
+
+Die Benutzer der anderen Version behalten ihre Rechte und Lizenzen; die Bereinigung wirkt nur teilweise, und beide Versionen laufen weiter auseinander.
+
+Erst konsolidieren, dann ändern (Prinzip 11): D20 vor jeder Änderung ausführen; geändert wird nur die zusammengeführte Rolle.
+
+9. Strang B: Lizenzplanung der neuen Gesellschaft
+
+Die Planung beruht auf einer ersten Schätzung vom Oktober 2026 und dient als Grundlage für die Budgetplanung. Mengen und Lizenzstufen werden bis März 2027 je Rolle bestätigt (Kapitel 11).
+
+Mengengerüst und Budget
+
+Lizenzbudget der neuen Gesellschaft (erste Schätzung)
+
+Gruppe
+
+Benutzer
+
+Lizenz
+
+€ je Benutzer
+
+€ je Monat
+
+Kapazität (GB)
+
+Servicetechniker
+
+115
+
+Activity
+
+46,80
+
+5.382,00
+
+115
+
+Innendienst
+
+25
+
+SCM + Finance + Commerce
+
+227,00
+
+5.675,00
+
+125
+
+Logistik, Disposition, Prüfdokumentation, Support, Artikelstammdaten, Shop, QM/QS
+
+30
+
+SCM + Finance
+
+195,80
+
+5.874,00
+
+150
+
+Vertrieb
+
+15
+
+SCM + Finance + Commerce
+
+227,00
+
+3.405,00
+
+75
+
+Summe
+
+185
+
+
+
+
+
+20.336,00
+
+465
+
+Das Budget beträgt 20.336,00 € im Monat, also 244.032,00 € im Jahr. Mit Team Member (7,50 €) statt Activity für die Servicetechniker sinkt es um 4.519,50 € auf 15.816,50 € im Monat. Das Kontingent wächst dann um 115 GB weniger, sofern Team Member keine Kapazität mitbringt (offen).
+
+Prüfpunkte zum Mengengerüst
+
+Prüfpunkte zum Mengengerüst
+
+Gruppe
+
+Prüffrage
+
+Wirkung
+
+Alle Gruppen
+
+Wer hat bereits einen lizenzierten Benutzer in einer bestehenden Gesellschaft?
+
+Lizenzen gelten je Benutzer, nicht je Gesellschaft: Wer nur die neue Gesellschaft zusätzlich erhält, braucht keine neue Lizenz, bringt aber auch keine zusätzliche Kapazität.
+
+Servicetechniker
+
+Welche Tätigkeiten übernehmen die Techniker im System: nur Auskunft, Materialentnahme, Stundenerfassung, Serviceaufträge?
+
+Team Member statt Activity: 4.519,50 € im Monat.
+
+Innendienst und Vertrieb
+
+Werden Retail-Rabatte und -Preise (Commerce) in der neuen Gesellschaft genutzt? Pflegen alle Vertriebsmitarbeiter Preise?
+
+Ohne Commerce 31,20 € je Benutzer und Monat, bei 40 Benutzern 1.248,00 €. Preispflege als eigene Rolle nur für die Pflegenden (Prinzip 3).
+
+Gruppe der 30 (Logistik u. a.)
+
+Sieben Bereiche mit einer Lizenzstufe: Reicht für Support oder Prüfdokumentation Activity oder Team Member? Braucht der Shop Commerce?
+
+Aufteilung in Untergruppen mit eigener Lizenzstufe.
+
+Preise
+
+Entsprechen 195,80 € und 227,00 € dem aktuellen Angebot für Basis- plus Attach-Lizenzen?
+
+Sicherheit des Budgets.
+
+Vorgehen je Rolle
+
+Referenzrollen bestimmen: Für jede Gruppe die Rollen, mit denen vergleichbare Mitarbeiter in den Bestandsgesellschaften heute arbeiten.
+
+Lizenzbericht je Referenzrolle mit report_role_license(): Welche Aufgaben und Objekte lösen welche Lizenz aus? Werkzeugdaten und D365-Exporte stammen dabei immer aus derselben Umgebung.
+
+Zielrolle ableiten: Lizenztreiber entfernen oder in eine eigene Rolle auslagern (Prinzip 3). Die Rollensätze heutiger Mitarbeiter werden nicht kopiert: In der Innendienst-Analyse lösten bei allen ausgewerteten Benutzern andere Rollen dieselben Basislizenzen aus.
+
+Zielrolle in D365 prüfen gegen die Ansicht „Zusammenfassung der Lizenznutzung“.
+
+Lizenzziel je Rolle bis März 2027 festlegen; spätere Änderungen nur mit neuem Lizenzbericht.
+
+Im UAT ist „Rolle löst die geplante Lizenz aus“ ein eigener Testfall (Kapitel 5).
+
+Erster Rollenentwurf der Logistik
+
+Die Logistik der neuen Gesellschaft (S+) hat einen ersten Entwurf ihrer Rollen vorgelegt: rund 11 Personen in Logistik, QM, Artikelstamm, Projektverwaltung und PKW-Prozessen. Er ist Ausgangspunkt für Workshop 1 und steht im Rollenkatalog (D05) und in der Prozess-Rollen-Matrix (D19). Drei Punkte sind dabei zu klären:
+
+„Leitung“ und „Minijob“ sind eher Stellen als Rollen: Sie umfassen mehrere Rollen und gehören in die Zuordnung der Stellen (D06).
+
+„Sonstige Prozesse“ (Inventur, Lagerplatzverwaltung, Ad-hoc-Themen) hat keine Rolle: Diese Aufgaben werden einer Rolle zugeordnet.
+
+Kontrollierte Funktionen: Stammdatenpflege (Artikelstamm, QM/QS/Stammdaten) und Inventur (Bestandskorrektur) kommen auf die Sperrliste (D18).
+
+Lizenz und Kapazität (Prinzip 8)
+
+Die neuen Lizenzen bringen zusammen 465 GB Kapazität mit, und zwar ab dem Kauf, also voraussichtlich ab dem Go-Live. Solange Kapazität zugekauft werden muss, ist jedes dieser GB 30 € im Monat wert:
+
+Eine Activity-Lizenz kostet dann effektiv 16,80 € statt 46,80 €.
+
+Eine Herabstufung von SCM + Finance auf Activity spart 149,00 €, kostet aber 4 GB, also 120,00 €.
+
+Das Entfernen einer Attach-Lizenz behält die 5 GB; die Ersparnis zählt voll.
+
+Lizenzen früher zu kaufen, nur um Kapazität zu gewinnen, lohnt nicht: Je GB kostet eine Activity-Lizenz 46,80 €, eine Volllizenz 39,16 bis 45,40 €, der Zukauf 30,00 €.
+
+Nach der Löschung von PRJ und Migrationssandbox besteht voraussichtlich ein Puffer von mehreren hundert GB (D17). Dann zählen Lizenzersparnisse voll; Team Member statt Activity für die Techniker verkürzt nur die Reichweite dieses Puffers. Für Strang A folgt daraus: Vor dem Go-Live, in der Engpassphase, werden zuerst Attach-Lizenzen entfernt, weil jede Herabstufung einer Volllizenz das Kontingent um 4 bis 5 GB verringert.
+
+10. Datenbankkapazität
+
+Ausgangslage
+
+Das Kontingent des Tenants beträgt rund 700 GB. Die zuvor angezeigten 1,2 TB beruhten auf einem Anzeigefehler, den Microsoft korrigiert hat. Um die Belegung zu senken, wurden die Sandboxen bereits unterschiedlich stark verkleinert: TST ist eine transaktionslose Kopie, INT läuft mit Bereinigungsjobs und kurzer Aufbewahrung (Kapitel 5). Für die neue Gesellschaft kommt die Migrationssandbox als Kopie von Prod hinzu; sie wird einen Monat nach dem Go-Live gelöscht. Bis dahin liegt die Belegung über dem Kontingent.
+
+Für die Übergangszeit gibt es im Power Platform Admin Center eine Option, die das Kontingent kostenlos und befristet erhöht: für jeweils 45 Tage, höchstens dreimal je Kalenderjahr.
+
+Belegung, Prognose und alle Zahlen stehen in der Kapazitätsprognose (D17). Sie wird mit jedem neuen Export aus dem Power Platform Admin Center fortgeschrieben; jeder Stand bleibt als eigenes Blatt erhalten. Dieses Kapitel beschreibt, wie der Bedarf entsteht und was daraus folgt.
+
+Wie Verbrauch und Kontingent entstehen
+
+Sandboxen wachsen in Sprüngen: Bei jedem Refresh übernehmen sie den Stand von Prod; danach senken Bereinigungsjobs oder die transaktionslose Kopie ihre Größe wieder. Auf Dauer wächst jede Sandbox deshalb anteilig mit Prod.
+
+Jedes GB, das in Prod gespart wird, wirkt in jeder späteren Kopie noch einmal. Bereinigungen in Prod haben deshalb die größte Hebelwirkung, auch wenn Prod längere Aufbewahrungsfristen braucht als die Sandboxen.
+
+Kontingent: das Grundkontingent, dazu die Kapazität aus Lizenzen (5 GB je Volllizenz, 1 GB je Activity-Lizenz; Team Member: offen). Neue Lizenzen zählen ab dem Kauf.
+
+Zukauf: 30 € je GB und Monat.
+
+Was die Prognose zeigt
+
+Die Prognose (D17) rechnet drei Szenarien, die sich darin unterscheiden, wie PRJ und die Migrationssandbox befüllt sind: wie geplant als volle Kopien, bereinigt wie INT, und zusätzlich mit einer transaktionslosen Migrationssandbox.
+
+Vor dem Go-Live reicht das Kontingent ohne die Option nicht, vor allem wegen der Migrationssandbox.
+
+Ab dem Go-Live bringen die neuen Lizenzen genug zusätzliche Kapazität.
+
+Nach der Löschung von PRJ und Migrationssandbox verlaufen alle Szenarien gleich; es bleibt eine Reserve, die mit dem Wachstum von Prod abnimmt.
+
+Überbrückung bis zum Go-Live
+
+Die Fenster der Option werden lückenlos rückwärts ab dem Go-Live gelegt: Die Spitze vor dem Go-Live ist gedeckt; offen bleibt die Zeit davor, in der die Fehlmenge am kleinsten ist. Für diese Zeit gibt es zwei Wege: die Maßnahmen unten umsetzen oder Kapazität zukaufen. Termine und Höhe der Lücke stehen in D17.
+
+Verschiebt sich der Go-Live, ist im selben Jahr kein Fenster mehr frei, und die neuen Lizenzen sind noch nicht aktiv. Der Lizenzbeginn wird deshalb unabhängig vom Go-Live-Termin festgelegt, oder ein Fenster bleibt in Reserve.
+
+Maßnahmen
+
+Maßnahmen zur Senkung der Belegung; ihre Wirkung in GB steht in D17
+
+Maßnahme
+
+Hinweis
+
+PRJ und Migrationssandbox mit denselben Bereinigungsjobs wie INT betreiben
+
+In INT erprobt; nach jedem Refresh einplanen.
+
+Migrationssandbox transaktionslos kopieren
+
+Nur wenn die Migrationsläufe keine Bestandsbelege brauchen; die neue Gesellschaft hat in Prod noch keine. Die Generalprobe kann eine volle Kopie innerhalb eines Fensters nutzen.
+
+Aufbewahrungsfristen der Bereinigungsjobs in Prod je Job prüfen
+
+Wirkt in Prod und in jeder späteren Kopie. Wirkung messen: Tabellengrößen von INT und PRJ vergleichen. Buchungsdaten unterliegen Aufbewahrungsfristen und werden nicht gelöscht.
+
+Archivierung mit Dataverse long term retention
+
+Für Buchungshistorie; Verfügbarkeit je Version und Wirkung auf die Kapazität prüfen.
+
+Refresh-Regeln: TST weiter transaktionslos, PRJ nur bei Bedarf
+
+Bedenken gegen Tests in TST: Testarten den Umgebungen zuordnen (Kapitel 5).
+
+PRJ und Migrationssandbox einen Monat nach dem Go-Live löschen
+
+Termin fest einplanen.
+
+Zukauf nur für die Restlücke
+
+Laufzeit und monatliche Anpassbarkeit vorab klären.
+
+Offene Punkte
+
+ Bringt Team Member Kapazität mit? Zählen Attach-Lizenzen zusätzlich?
+
+Dürfen die 45-Tage-Fenster direkt aufeinander folgen?
+
+Woraus besteht der Teil der Belegung, der keiner Umgebung zugeordnet ist (D17)?
+
+Wird die Migrationssandbox vor der Generalprobe erneut aus Prod kopiert?
+
+Wird PRJ zusammen mit der Migrationssandbox gelöscht?
+
+Was sperrt Microsoft, wenn das Kontingent ohne Option überschritten ist, etwa das Kopieren und Wiederherstellen von Umgebungen?
+
+Lässt sich Kapazität monatlich zukaufen und wieder reduzieren?
+
+11. Nächste Schritte bis zum Go-Live
+
+Stand 31.10.2026. Strang A läuft parallel zu allen übrigen Schritten und hat Vorrang. Die Termine der Fenster und der Löschung stehen in der Kapazitätsprognose (D17).
+
+Nächste Schritte bis zum Go-Live
+
+Zeitraum
+
+Lizenz und Rollen
+
+Kapazität
+
+Bis Mitte November 2026
+
+Strang A: Tests der drei auf SCM reduzierten Rollen abschließen, fehlende Funktionen nachbessern (Kapitel 5) und die Rollen nach bestandenem Test Mitte November live bringen, mit den bisherigen Rollen als Rückfallweg. Doppelte Rollen analysieren (D20), Rangliste der teuersten Rollen (D04) und Lizenzprofil je Benutzer (D21) erstellen. Strang B: Strategiepapier (D01) abstimmen. Mengengerüst prüfen: bestehende Benutzer unter den 185, Aufteilung der Gruppe der 30. Pilot Innendienst: vollständiger Rollensatz eines Mitarbeiters.
+
+PRJ und Migrationssandbox mit den Bereinigungsjobs von INT betreiben; prüfen, ob die Migrationssandbox transaktionslos sein kann. Offene Punkte aus Kapitel 10 mit Microsoft klären. Neuen Stand in D17 erfassen.
+
+Dezember 2026
+
+Strang A: Lizenzwirkung der ersten Rollen prüfen (D21); die nächsten Rollen der Rangliste bereinigen, testen und umstellen. Merge-Rollen aus D20 prüfen und als Arbeitsgrundlage importieren; UI-Aufgaben und UI-Rechte vergleichen und inventarisieren (D22 bis D24). Strang B: Workshop 1 Logistik mit D19 (Ablauf nach D08). Tätigkeiten der Servicetechniker klären. Preise gegen das Angebot prüfen.
+
+Tabellengrößen von INT und PRJ vergleichen; Aufbewahrungsfristen in Prod je Job prüfen. Entscheiden, wie die Lücke vor dem ersten Fenster 2027 gedeckt wird.
+
+Januar 2027
+
+Strang A: weitere Wellen nach der Rangliste. Strang B: Aufgabenaufzeichnungen nach D09; Referenzrollen je Gruppe mit report_role_license() auswerten; Zielrollen in PRJ bauen.
+
+Lücke decken (Maßnahmen oder Zukauf). Fenster 1 nach D17.
+
+Februar 2027
+
+Workshops 2 bis 4 je Bereich (D08); Funktionstrennung (D07) und Sperrliste (D18) bestätigen.
+
+Neuen Stand in D17 erfassen und mit der Prognose vergleichen.
+
+März 2027
+
+Lizenzziel je Rolle festlegen und gegen die Zusammenfassung der Lizenznutzung in D365 prüfen.
+
+Fenster 2 nach D17.
+
+April bis Mai 2027
+
+UAT mit Rollen-Testbenutzern; Lizenzverifikation als Testfall. Lizenzen so bestellen, dass sie zum Go-Live aktiv sind.
+
+Fenster 3 nach D17.
+
+Juni 2027
+
+Go-Live Mitte Juni 2027 (Strang B, Phase 6); Rollenzuweisungen gegen den Lizenzbericht prüfen.
+
+Die neuen Lizenzen bringen 465 GB.
+
+Juli 2027
+
+Hypercare; Abweichungen zwischen geplanter und ausgelöster Lizenz bereinigen.
+
+PRJ und Migrationssandbox löschen (Termin in D17).
+
+Ab August 2027
+
+Joiner-Mover-Leaver-Prozess und Rezertifizierung (Phase 7).
+
+Neuen Stand in D17 erfassen und mit der Prognose vergleichen.
+
+ 
