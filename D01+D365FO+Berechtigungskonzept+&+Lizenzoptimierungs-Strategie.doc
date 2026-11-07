@@ -1,0 +1,3574 @@
+Date: Sat, 7 Nov 2026 10:15:05 +0000 (UTC)
+Message-ID: <1266435008.23.1794046505075@1a17d3b1fd69>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_22_1966266926.1794046505075"
+
+------=_Part_22_1966266926.1794046505075
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>D01 D365FO Berechtigungskonzept &amp; Lizenzoptimierungs-Strateg=
+ie</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font: var(--ds-font-body-small, Arial, Helvetica, FreeSans, sans-se=
+rif);
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: var(--ds-surface, #fff) !important;
+        color: var(--ds-text, #000) !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: var(--ds-text, #000);
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        page-break-after: avoid;
+    }
+
+    pre {
+        font: var(--ds-font-code, Monaco, "Courier New", monospace);
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>D01 D365FO Berechtigungskonzept &amp; Lizenzoptimierungs-Strategie<=
+/h1>
+    <div class=3D"Section1">
+        <p local-id=3D"1322e96e8329">Strategisches Vorgehen, Rollendesign, =
+Deliverables und Governance f=C3=BCr Rollout &amp; Bestand</p>
+<p local-id=3D"662f705ec932">Lead D365 Security &amp; Licensing Architect&n=
+bsp;,</p>
+<p local-id=3D"1a3359339554">
+<style type=3D"text/css">/*<![CDATA[*/
+div.rbtoc1794046505041 {padding: 0px;}
+div.rbtoc1794046505041 ul {list-style: none;margin-left: 0px;}
+div.rbtoc1794046505041 li {margin-left: 0px;padding-left: 0px;}
+
+/*]]>*/</style>
+</p>
+<div class=3D"toc-macro rbtoc1794046505041">
+<ul class=3D"toc-indentation">
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-1.ZusammenfassungundAusgangslage">1. Zusammenfassung und Ausgangslage</=
+a>
+<ul class=3D"toc-indentation">
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-Worumesgeht">Worum es geht</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-DieStrategieineinemSatz">Die Strategie in einem Satz</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-Ausgangslage:diezweiStr=C3=A4nge">Ausgangslage: die zwei Str=C3=A4nge</=
+a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-BekannteProbleme">Bekannte Probleme</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-DasWichtigsteinK=C3=BCrze">Das Wichtigste in K=C3=BCrze</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-Wasjetztzuentscheidenist">Was jetzt zu entscheiden ist</a></li>
+</ul></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-2.LeitprinzipienderBerechtigungsarchitektur">2. Leitprinzipien der Bere=
+chtigungsarchitektur</a>
+<ul class=3D"toc-indentation">
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-Begriffe">Begriffe</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-Leitprinzipien">Leitprinzipien</a></li>
+</ul></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-3.Phasenplan&amp;StrategischesVorgehen(Step-by-Step)">3. Phasenplan &am=
+p; Strategisches Vorgehen (Step-by-Step)</a>
+<ul class=3D"toc-indentation">
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-Phase0:Mobilisierung&amp;Governance">Phase 0: Mobilisierung &amp; Gover=
+nance</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-Phase1:LizenzensichernundKostensenkenindenBestandsgesellschaften(Strang=
+A)">Phase 1: Lizenzen sichern und Kosten senken in den Bestandsgesellschaft=
+en (Strang A)</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-Phase2:Rollendesignvonunten(FokusStrangBundZielmodell)">Phase 2: Rollen=
+design von unten (Fokus Strang B und Zielmodell)</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-Verkn=C3=BCpfungmitderProzessdokumentation">Verkn=C3=BCpfung mit der Pr=
+ozessdokumentation</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-Phase3:Fachbereichs-Workshops">Phase 3: Fachbereichs-Workshops</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-Phase4:TechnischerBuild&amp;Versionierung">Phase 4: Technischer Build &=
+amp; Versionierung</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-Phase5:Testkonzept&amp;ZusammenarbeitmitdemTestmanager">Phase 5: Testko=
+nzept &amp; Zusammenarbeit mit dem Testmanager</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-Phase6:Rollout&amp;Migration(StrangB)">Phase 6: Rollout &amp; Migration=
+ (Strang B)</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-Phase7:Betrieb,Governance&amp;Rezertifizierung">Phase 7: Betrieb, Gover=
+nance &amp; Rezertifizierung</a></li>
+</ul></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-4.PilotenundAufgabenaufzeichnungen">4. Piloten und Aufgabenaufzeichnung=
+en</a>
+<ul class=3D"toc-indentation">
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-VonderAufzeichnungzurAufgabe">Von der Aufzeichnung zur Aufgabe</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-ZweitePilotwelle:InnendienstundLager/Logistik">Zweite Pilotwelle: Innen=
+dienst und Lager/Logistik</a></li>
+</ul></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-5.SchnittstellezumTestmanager:IntegriertesTestkonzept">5. Schnittstelle=
+ zum Testmanager: Integriertes Testkonzept</a>
+<ul class=3D"toc-indentation">
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-TestorganisationimZusammenspiel">Testorganisation im Zusammenspiel</a><=
+/li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-StrangA:GetestetwerdenProzesse,nichtRollen">Strang A: Getestet werden P=
+rozesse, nicht Rollen</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-TestumgebungenundDatenstand">Testumgebungen und Datenstand</a></li>
+</ul></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-6.Deliverables&amp;Dokumentenlandschaft">6. Deliverables &amp; Dokument=
+enlandschaft</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-7.Rollenschnitt&amp;Stellenbeschreibungen:Praxisbeispiel">7. Rollenschn=
+itt &amp; Stellenbeschreibungen: Praxisbeispiel</a>
+<ul class=3D"toc-indentation">
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-DieHerausforderungmitStellenbeschreibungen">Die Herausforderung mit Ste=
+llenbeschreibungen</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-Best-PracticeL=C3=B6sungsansatz:Der=E2=80=9EModulareStellenkoffer=E2=80=
+=9C">Best-Practice L=C3=B6sungsansatz: Der =E2=80=9EModulare Stellenkoffer=
+=E2=80=9C</a></li>
+</ul></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-8.Risiken&amp;Mitigation">8. Risiken &amp; Mitigation</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-9.StrangB:LizenzplanungderneuenGesellschaft">9. Strang B: Lizenzplanung=
+ der neuen Gesellschaft</a>
+<ul class=3D"toc-indentation">
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-Mengenger=C3=BCstundBudget">Mengenger=C3=BCst und Budget</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-Pr=C3=BCfpunktezumMengenger=C3=BCst">Pr=C3=BCfpunkte zum Mengenger=C3=
+=BCst</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-VorgehenjeRolle">Vorgehen je Rolle</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-ErsterRollenentwurfderLogistik">Erster Rollenentwurf der Logistik</a></=
+li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-LizenzundKapazit=C3=A4t(Prinzip8)">Lizenz und Kapazit=C3=A4t (Prinzip 8=
+)</a></li>
+</ul></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-10.Datenbankkapazit=C3=A4t">10. Datenbankkapazit=C3=A4t</a>
+<ul class=3D"toc-indentation">
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-Ausgangslage">Ausgangslage</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-WieVerbrauchundKontingententstehen">Wie Verbrauch und Kontingent entste=
+hen</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-WasdiePrognosezeigt">Was die Prognose zeigt</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-=C3=9Cberbr=C3=BCckungbiszumGo-Live">=C3=9Cberbr=C3=BCckung bis zum Go-=
+Live</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-Ma=C3=9Fnahmen">Ma=C3=9Fnahmen</a></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-OffenePunkte">Offene Punkte</a></li>
+</ul></li>
+<li><a href=3D"#D01D365FOBerechtigungskonzept&amp;Lizenzoptimierungs-Strate=
+gie-11.N=C3=A4chsteSchrittebiszumGo-Live">11. N=C3=A4chste Schritte bis zum=
+ Go-Live</a></li>
+</ul>
+</div>
+<h1 local-id=3D"b20a80030123" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-1.ZusammenfassungundAusgangslage">1. Zusammenfassun=
+g und Ausgangslage</h1>
+<h3 local-id=3D"5dfebf45c0bb" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-Worumesgeht">Worum es geht</h3>
+<p local-id=3D"97baca8c4119">Dieses Dokument beschreibt die Berechtigungs- =
+und Lizenzstrategie der WIBU-Gruppe f=C3=BCr Dynamics 365 Finance &amp; Sup=
+ply Chain Management (D365FO). Es legt fest, wie Rollen und Berechtigungen =
+aufgebaut, vergeben und gepflegt werden. Dabei gelten drei Ziele gleichzeit=
+ig:</p>
+<ul local-id=3D"e084b10c27a0">
+<li local-id=3D"efefe0457ec5">
+<p local-id=3D"749ed9e7f24d"><strong>Arbeitsf=C3=A4higkeit:</strong> Die Mi=
+tarbeiter k=C3=B6nnen alle Aufgaben ihrer Stelle im System erledigen.</p>
+</li>
+<li local-id=3D"925b17331e04">
+<p local-id=3D"aa289ed97caa"><strong>Sicherheit und Revision:</strong> Zugr=
+iffe sind nachvollziehbar, und unzul=C3=A4ssige Funktionskombinationen werd=
+en vermieden (Funktionstrennung, englisch Segregation of Duties, kurz SoD).=
+</p>
+</li>
+<li local-id=3D"9d6281800138">
+<p local-id=3D"274ceb97c783"><strong>Lizenzkosten:</strong> Jeder Benutzer =
+erh=C3=A4lt nur die Lizenz, die seine Aufgaben tats=C3=A4chlich erfordern.<=
+/p>
+</li>
+</ul>
+<p local-id=3D"c4a1badaef27">Das Dokument gilt f=C3=BCr die Gesellschaften,=
+ die bereits mit D365FO arbeiten (T+, P+), und f=C3=BCr die neue Gesellscha=
+ft (S+), deren Go-Live f=C3=BCr Mitte Juni 2027 geplant ist. Weil Lizenzen =
+und Datenbank-Speicher bei Microsoft zusammenh=C3=A4ngen, behandelt es auch=
+ die Datenbankkapazit=C3=A4t.</p>
+<p local-id=3D"6080a2b368d9"><strong>F=C3=BCr wen und wie lesen:</strong> D=
+as Dokument richtet sich an IT-Leitung, Projektleitung, Fachbereichsleitung=
+en und Testmanagement. F=C3=BCr einen =C3=9Cberblick gen=C3=BCgen dieses Ka=
+pitel und Kapitel 11 (n=C3=A4chste Schritte). Die Lizenzplanung der neuen G=
+esellschaft steht in Kapitel 9, die Datenbankkapazit=C3=A4t in Kapitel 10. =
+Die =C3=BCbrigen Kapitel beschreiben Vorgehen, Rollendesign, Tests und Betr=
+ieb.</p>
+<h3 local-id=3D"57f912de9efb" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-DieStrategieineinemSatz">Die Strategie in einem Sat=
+z</h3>
+<p local-id=3D"d653b0d4f3e2"><strong>Ein gemeinsamer Rollenkatalog f=C3=BCr=
+ die ganze WIBU-Gruppe, eingef=C3=BChrt in zwei Str=C3=A4ngen: In Strang A =
+werden in den Gesellschaften, die bereits live sind, sofort die teuersten R=
+ollen so bereinigt, dass die Kollegen weiterarbeiten k=C3=B6nnen und wenige=
+r Lizenzkosten entstehen; Microsoft setzt die Lizenzpflicht bereits durch. =
+In Strang B startet die neue Gesellschaft von Anfang an mit dem neuen Rolle=
+nmodell, gebaut von unten aus den Prozessschritten.</strong></p>
+<h3 local-id=3D"9936171c4fb9" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-Ausgangslage:diezweiStr=C3=A4nge">Ausgangslage: die=
+ zwei Str=C3=A4nge</h3>
+<ol start=3D"1" local-id=3D"8e1ee34077fe">
+<li local-id=3D"4e014337d846">
+<p local-id=3D"1a13cac4d954"><strong>Strang A =E2=80=93 Gesellschaften, die=
+ bereits live sind (T+, P+):</strong> Sie arbeiten produktiv mit D365. Ihre=
+ Rollen sind =C3=BCber die Jahre gewachsen; die Probleme daraus stehen im n=
+=C3=A4chsten Abschnitt. Strang A hat begonnen und hat hohe Priorit=C3=A4t, =
+denn Microsoft setzt die Lizenzpflicht durch: Im Oktober 2026 wurde Kollege=
+n ohne Lizenz der Zugriff auf das System verweigert. Deshalb wartet Strang =
+A nicht auf Phase 6. Bereinigte Rollen gehen in Wellen nach Prod, sobald ih=
+r Test bestanden ist; gepr=C3=BCft wird mit den vorhandenen Testf=C3=A4llen=
+ der Prozesse (Kapitel 3 und 5).</p>
+</li>
+</ol>
+<ol start=3D"2" local-id=3D"b6a675b7e71c">
+<li local-id=3D"dc722fbf9ae4">
+<p local-id=3D"d6a863e1ec48"><strong>Strang B =E2=80=93 neue Gesellschaft (=
+S+):</strong> Das Einf=C3=BChrungsprojekt hat begonnen; der Go-Live ist f=
+=C3=BCr Mitte Juni 2027 geplant. Hier kann das Rollenmodell von Anfang an e=
+inheitlich, prozessorientiert und lizenzg=C3=BCnstig eingesetzt werden; die=
+ neuen Rollen gehen in Phase 6 zum Go-Live produktiv. Fachbereiche wie der =
+Einkauf haben bereits Prozesse mit dem D365-<strong>Aufgabenaufzeichner (Ta=
+sk Recorder)</strong> erfasst.</p>
+</li>
+</ol>
+<h3 local-id=3D"47697a9fc425" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-BekannteProbleme">Bekannte Probleme</h3>
+<ul local-id=3D"f48f9b6a33ba">
+<li local-id=3D"19067cb1399f">
+<p local-id=3D"58f9812b4f9d"><strong>Microsoft setzt die Lizenzpflicht durc=
+h:</strong> Im Oktober 2026 hat Microsoft Kollegen ohne Lizenz den Zugriff =
+auf das System verweigert. Wer nicht die Lizenz hat, die seine Rollen verla=
+ngen, kann nicht mehr arbeiten. Strang A senkt deshalb zuerst, was die Roll=
+en an Lizenzen verlangen.</p>
+</li>
+<li local-id=3D"9eb8f35a3619">
+<p local-id=3D"e7bcd5df7855"><strong>Kein durchg=C3=A4ngiges Berechtigungsk=
+onzept:</strong> In den Bestandsgesellschaften wurden oft Microsoft-Standar=
+drollen oder breit geschnittene Sammelrollen vergeben, damit die Mitarbeite=
+r schnell arbeiten konnten. Wer welche Rechte warum hat, ist schwer nachzuv=
+ollziehen.</p>
+</li>
+<li local-id=3D"ead80653d684">
+<p local-id=3D"627d78acc623"><strong>Teurere Lizenzen als n=C3=B6tig:</stro=
+ng> Manche Benutzer l=C3=B6sen Lizenzen aus (Finance, SCM oder Commerce), d=
+ie ihre Aufgaben nicht erfordern. Die Analyse der Innendienst-Rolle zeigt z=
+udem: Die =C3=BCbrigen Rollen derselben Benutzer l=C3=B6sen dieselben Lizen=
+zen aus. Eine einzelne Rolle zu =C3=A4ndern spart deshalb noch nichts; betr=
+achtet wird immer der vollst=C3=A4ndige Rollensatz eines Mitarbeiters (Kapi=
+tel 4). Wer mehr Lizenz hat oder bekommen soll, als seine Arbeit braucht, z=
+eigt das Lizenzprofil je Benutzer aus der Telemetrie (<a href=3D"https://wi=
+bu-gruppe.atlassian.net/wiki/spaces/~712020886a0d98296347058e77448981531cb8=
+/pages/2456682504/D21+Lizenzprofil+Benutzer" data-linked-resource-id=3D"245=
+6682504" data-linked-resource-version=3D"1" data-linked-resource-type=3D"pa=
+ge">D21</a>).</p>
+</li>
+<li local-id=3D"6c5fc51422f4">
+<p local-id=3D"f7cf9557fc48"><strong>Funktionstrennung nicht gepr=C3=BCft:<=
+/strong> Unzul=C3=A4ssige Kombinationen, zum Beispiel Lieferanten anlegen u=
+nd Zahlungen freigeben, werden nicht systematisch gesucht.</p>
+</li>
+<li local-id=3D"98b740e17a84">
+<p local-id=3D"c4e308628997"><strong>Prozesse und Rollen nicht verkn=C3=BCp=
+ft:</strong> Die Prozessdokumentation nennt je Schritt eine Abteilung (z. B=
+. =E2=80=9EIDM=E2=80=9C), nicht die ausf=C3=BChrende Rolle. Damit ist nicht=
+ nachvollziehbar, welche Berechtigung welchem Prozessschritt dient (Kapitel=
+ 3).</p>
+</li>
+<li local-id=3D"112d223c6b16">
+<p local-id=3D"cd56ecf6a18e"><strong>Doppelte Rollen:</strong> Viele Rollen=
+ gibt es zweimal: als AOT-Rolle aus der Entwicklung und als Kopie, die in d=
+er Oberfl=C3=A4che angelegt wurde (Bezeichner GUID). Beide tun nicht immer =
+dasselbe, und Benutzer haben mal die eine, mal die andere, mal beide. Zudem=
+ wurden AOT-Rollen =C3=BCber die Oberfl=C3=A4che ge=C3=A4ndert. Wer nur ein=
+e Version =C3=A4ndert, erreicht die Benutzer der anderen nicht: Rechte und =
+Lizenzen bleiben dort, wie sie waren. Deshalb werden beide Versionen zusamm=
+engef=C3=BChrt, bevor irgendetwas an der Rolle ge=C3=A4ndert wird (Prinzip =
+11, D20).</p>
+</li>
+<li local-id=3D"0e00a3aa333f">
+<p local-id=3D"4b3caf731c8b"><strong>Aufgaben und Rechte aus der Oberfl=C3=
+=A4che:</strong> Nicht nur Rollen, auch Aufgaben und Rechte wurden in der O=
+berfl=C3=A4che angelegt (Bezeichner GUID), oft als Kopie eines AOT-Objekts =
+gleichen Namens. Sie stecken als Unterrollen, Aufgaben und Rechte in andere=
+n Rollen und Aufgaben. Ziel ist, jedes dieser UI-Objekte =C3=BCberall durch=
+ sein AOT-Pendant zu ersetzen; daf=C3=BCr werden sie verglichen (D22, D23) =
+und ihre Fundstellen inventarisiert (D24).</p>
+</li>
+<li local-id=3D"de3ecd277c0c">
+<p local-id=3D"41ed595551a9"><strong>Datenbankkapazit=C3=A4t knapp:</strong=
+> Das Kontingent liegt bei knapp 700 GB; die fr=C3=BCher angezeigten 1,2 TB=
+ waren ein Anzeigefehler, den Microsoft korrigiert hat. Mit der Migrationss=
+andbox f=C3=BCr die neue Gesellschaft liegt die Belegung bis zum Go-Live da=
+r=C3=BCber (Kapitel 10, aktuelle Zahlen in D17).</p>
+</li>
+<li local-id=3D"9c565eeadf0a">
+<p local-id=3D"3678ff1d436f"><strong>Eingeschr=C3=A4nkt nutzbare Testumgebu=
+ng:</strong> Um Speicher zu sparen, ist TST eine Kopie ohne Buchungsdaten. =
+Tests, die offene Belege oder Best=C3=A4nde brauchen, laufen dort nicht (Ka=
+pitel 5).</p>
+</li>
+</ul>
+<h3 local-id=3D"6e900e5e6dfb" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-DasWichtigsteinK=C3=BCrze">Das Wichtigste in K=C3=
+=BCrze</h3>
+<ul local-id=3D"089db57a1210">
+<li local-id=3D"850626e0a94d">
+<p local-id=3D"ffb066ecb26e"><strong>Strang A l=C3=A4uft:</strong> Drei Rol=
+len sind auf SCM reduziert und im Test:</p>
+</li>
+<li local-id=3D"fabf83f1c50a">
+<ul local-id=3D"8e7294f05cc8">
+<li local-id=3D"4afd92505285">
+<p local-id=3D"caa2d2d7db6a">_WIBU Verkauf Innendienst Mitarbeiter,</p>
+</li>
+<li local-id=3D"80e5cad34899">
+<p local-id=3D"2478149e6e73">_WIBU Einkauf Mitarbeiter und</p>
+</li>
+<li local-id=3D"a53806f7c3ab">
+<p local-id=3D"3f15014b42fe">_WIBU Stammdaten Kunden Manager.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p local-id=3D"9d4eed542f8b" style=3D"margin-left: 30.0px;">Lassen die Test=
+s es zu, gehen sie Mitte November 2026 live. Fehlt danach etwas, werden die=
+ bisherigen Rollen wieder eingespielt (Kapitel 3, Phase 1).</p>
+<ul local-id=3D"46476c343d10">
+<li local-id=3D"fb090ae7b8bf">
+<p local-id=3D"ee45980eee7e"><strong>Lizenzbudget der neuen Gesellschaft:</=
+strong> F=C3=BCr die 185 geplanten Benutzer rund 20.300 =E2=82=AC im Monat,=
+ also rund 244.000 =E2=82=AC im Jahr, ab dem Go-Live. M=C3=BCssen die Servi=
+cetechniker nur Daten ansehen, sinkt der Betrag auf rund 15.800 =E2=82=AC i=
+m Monat. Es ist eine erste Sch=C3=A4tzung (Kapitel 9).</p>
+</li>
+<li local-id=3D"87db05be40f7">
+<p local-id=3D"806465253627"><strong>Datenbankkapazit=C3=A4t:</strong> Das =
+Kontingent von rund 700 GB reicht bis zum Go-Live nicht, vor allem wegen de=
+r zus=C3=A4tzlichen Migrationssandbox. Die L=C3=BCcke schlie=C3=9Fen kosten=
+lose Erweiterungen von Microsoft, die Bereinigung der Projektumgebungen und=
+, falls n=C3=B6tig, ein Zukauf von Speicher. Nach dem Go-Live bringen die n=
+euen Lizenzen genug zus=C3=A4tzlichen Platz (Kapitel 10, aktuelle Zahlen in=
+ D17).</p>
+</li>
+</ul>
+<h3 local-id=3D"df252301e648" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-Wasjetztzuentscheidenist">Was jetzt zu entscheiden =
+ist</h3>
+<ol start=3D"1" local-id=3D"60a1f1b89fd8">
+<li local-id=3D"e5d928f6e4f5">
+<p local-id=3D"34945c209212"><strong>Go-Live der ersten drei Rollen (Strang=
+ A):</strong> Gehen die drei auf SCM reduzierten Rollen nach den Tests Mitt=
+e November 2026 live?</p>
+</li>
+</ol>
+<ol start=3D"2" local-id=3D"027a792a7ac6">
+<li local-id=3D"0caaa770f30d">
+<p local-id=3D"922d8a3719ed"><strong>Bereinigung der Projektumgebungen:</st=
+rong> PRJ und Migrationssandbox werden bereinigt, bevor die laufende kosten=
+lose Kapazit=C3=A4tserweiterung Mitte November endet.</p>
+</li>
+</ol>
+<ol start=3D"3" local-id=3D"14cc2159947f">
+<li local-id=3D"0df47c91b707">
+<p local-id=3D"9199e33ef094"><strong>Servicetechniker:</strong> Welche T=C3=
+=A4tigkeiten =C3=BCbernehmen sie im System? Davon h=C3=A4ngt ab, ob die g=
+=C3=BCnstigere Team-Member-Lizenz reicht.</p>
+</li>
+</ol>
+<ol start=3D"4" local-id=3D"bac8057d7bc9">
+<li local-id=3D"282147026ec2">
+<p local-id=3D"cff424eab21f"><strong>Commerce:</strong> Nutzt die neue Gese=
+llschaft Retail-Rabatte und -Preise? Nur dann brauchen Innendienst und Vert=
+rieb die Commerce-Lizenz.</p>
+</li>
+</ol>
+<ol start=3D"5" local-id=3D"60b584abdfa5">
+<li local-id=3D"0ecba2d2483e">
+<p local-id=3D"c481887af57c"><strong>Speicher bis zum Go-Live:</strong> Ob =
+und in welchem Umfang Speicher f=C3=BCr die Zeit ohne kostenlose Erweiterun=
+g zugekauft wird.</p>
+</li>
+</ol>
+<h1 local-id=3D"d3ddf76252da" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-2.LeitprinzipienderBerechtigungsarchitektur">2. Lei=
+tprinzipien der Berechtigungsarchitektur</h1>
+<h3 local-id=3D"f947b2447a58" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-Begriffe">Begriffe</h3>
+<p local-id=3D"28e4eb692c58">Die Begriffe folgen dem Berechtigungskonzept d=
+er WiBU-IT: Eine T=C3=A4tigkeit ist eine Aufgabe, keine Rolle. Rollen werde=
+n von unten aus Aufgaben gebaut.</p>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"default" data-local-id=3D"b7=
+594c9f-56e8-41f0-a1bc-380cdcf38612" class=3D"confluenceTable">
+<colgroup>
+<col style=3D"width: 237.0px;">
+<col style=3D"width: 522.0px;">
+</colgroup>
+<tbody>
+<tr data-local-id=3D"8cbb3fdf-2918-4280-ba9f-4f2f95c62bc1">
+<td data-local-id=3D"79e5894c-4e2e-4d5f-9981-59174f66c5c7" class=3D"conflue=
+nceTd">
+<p local-id=3D"a5b1f68a7ae3"><strong>Begriff</strong></p>
+</td>
+<td data-local-id=3D"93584590-bec0-4a2c-bf2f-65ff78d20c39" class=3D"conflue=
+nceTd">
+<p local-id=3D"ddfe183e2b77"><strong>Bedeutung</strong></p>
+</td>
+</tr>
+<tr data-local-id=3D"e52f13d9-2824-4055-86e2-0a9b89acbae5">
+<td data-local-id=3D"2c8b28d9-e866-40be-afc2-bade587ac56d" class=3D"conflue=
+nceTd">
+<p local-id=3D"7f4875963abc">Stelle</p>
+</td>
+<td data-local-id=3D"f6eeed50-1cba-4a52-8951-71e1b8f30dc8" class=3D"conflue=
+nceTd">
+<p local-id=3D"c48341fc7b4b">kommt aus der Personalverwaltung, z. B. =E2=80=
+=9ELeitung Logistik=E2=80=9C. Eine Stelle ist eine Sammlung von Rollen (D06=
+).</p>
+</td>
+</tr>
+<tr data-local-id=3D"06ec466a-b813-4827-829f-592398c47d82">
+<td data-local-id=3D"ff3435d4-915f-4080-a519-cc022e6efd07" class=3D"conflue=
+nceTd">
+<p local-id=3D"ccaa07ae8299">Rolle</p>
+</td>
+<td data-local-id=3D"b19f4020-75e5-48b8-aee8-bbe19d9139f4" class=3D"conflue=
+nceTd">
+<p local-id=3D"4c79ee7ee723">z. B. =E2=80=9EWareneingang / Wareneinlagerung=
+=E2=80=9C. Eine Rolle ist eine Sammlung von Aufgaben (D05).</p>
+</td>
+</tr>
+<tr data-local-id=3D"c841fb41-5946-43b2-a5ca-7447e63ded3a">
+<td data-local-id=3D"cff138c3-b7a2-4a5a-b934-5b8cd69705d5" class=3D"conflue=
+nceTd">
+<p local-id=3D"fbedd01b4623">Aufgabe (T=C3=A4tigkeit)</p>
+</td>
+<td data-local-id=3D"c6ca44a4-88e5-4c5d-8b30-285669e2bfd0" class=3D"conflue=
+nceTd">
+<p local-id=3D"377b26c9cd78">eine Sammlung von Rechten in D365 (Duty), z. B=
+. =E2=80=9EBestellungen pflegen=E2=80=9C.</p>
+</td>
+</tr>
+<tr data-local-id=3D"a0b150cf-86b7-4594-9b07-b057de82e9cd">
+<td data-local-id=3D"81ec1f02-5185-4bc0-873d-0947480760d2" class=3D"conflue=
+nceTd">
+<p local-id=3D"9a354a6d439d">Recht</p>
+</td>
+<td data-local-id=3D"86be4519-717e-41bf-bada-3d487c385b63" class=3D"conflue=
+nceTd">
+<p local-id=3D"bee9fcfa1ab6">kleinste Einheit in D365 (Privilege), z. B. Zu=
+griff auf einen Men=C3=BCpunkt.</p>
+</td>
+</tr>
+<tr data-local-id=3D"982d8faa-a0a4-4395-b2b9-70ed2422afcc">
+<td data-local-id=3D"f67370be-3963-42f5-a147-505e4c7c40aa" class=3D"conflue=
+nceTd">
+<p local-id=3D"0885e5b24c65">Prozessschritt</p>
+</td>
+<td data-local-id=3D"de3d81b2-008e-41bb-a94b-f8791e2fceb3" class=3D"conflue=
+nceTd">
+<p local-id=3D"b8560a60daef">ein Schritt aus der Prozessdokumentation; je S=
+chritt stehen die ausf=C3=BChrenden Rollen fest (D19).</p>
+</td>
+</tr>
+<tr data-local-id=3D"b7f554e5-74c5-49f0-be7f-db9b0ecee75e">
+<td data-local-id=3D"e145f79d-33c6-430a-b847-af08b4dc581a" class=3D"conflue=
+nceTd">
+<p local-id=3D"ee8a1c01a903">Kontrollierte Funktion</p>
+</td>
+<td data-local-id=3D"3d247c72-ae06-4bab-a561-b6d6b021143a" class=3D"conflue=
+nceTd">
+<p local-id=3D"f3bf5ee716cb">Funktion, die nur ausgew=C3=A4hlte Personen nu=
+tzen, z. B. Stammdatenpflege (D18).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 local-id=3D"55c623e2d690" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-Leitprinzipien">Leitprinzipien</h3>
+<p local-id=3D"448ea14f9cd3">Um ein audit- und zukunftssicheres Berechtigun=
+gskonzept zu etablieren, gelten unverr=C3=BCckbare architektonische Leitpri=
+nzipien:</p>
+<p local-id=3D"558ec4468300">Architektonische Leitprinzipien</p>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"default" data-local-id=3D"5a=
+feaa35-796a-4f9f-aba0-0456a63f6ae3" class=3D"confluenceTable">
+<colgroup>
+<col style=3D"width: 206.0px;">
+<col style=3D"width: 552.0px;">
+</colgroup>
+<tbody>
+<tr data-local-id=3D"f5da2fd9-71af-47db-8a52-f87eb71e1e6e">
+<td data-local-id=3D"da1af0ad-fc91-4985-b4be-0b0830838d2f" class=3D"conflue=
+nceTd">
+<p local-id=3D"a22d7dc11925"><strong>Prinzip</strong></p>
+</td>
+<td data-local-id=3D"1d66abf0-edf3-4575-ab59-251cd399daa8" class=3D"conflue=
+nceTd">
+<p local-id=3D"e1178924a820"><strong>Bedeutung</strong></p>
+</td>
+</tr>
+<tr data-local-id=3D"f21a4046-6223-4f0c-a9b1-868b0d2c8634">
+<td data-local-id=3D"9b65f8d2-26ad-49a3-8b26-78ece047e059" class=3D"conflue=
+nceTd">
+<ol start=3D"1" local-id=3D"315b4e26f533">
+<li local-id=3D"892e50d9a698">
+<p local-id=3D"9f355a2bd682">Single License Role Principle</p>
+</li>
+</ol>
+</td>
+<td data-local-id=3D"bb795830-0b3a-4a5b-983a-1156d3aeaec5" class=3D"conflue=
+nceTd">
+<p local-id=3D"099a8335d695">Jede benutzerdefinierte Rolle l=C3=B6st maxima=
+l genau EINE definierte Lizenzstufe aus (z. B. nur Team Member, nur Activit=
+y oder nur SCM).</p>
+</td>
+</tr>
+<tr data-local-id=3D"f3b833c8-0a36-4c42-9e10-5e33c0068941">
+<td data-local-id=3D"b27c492e-8216-4300-930d-d9ac52cee8ce" class=3D"conflue=
+nceTd">
+<ol start=3D"2" local-id=3D"7bbd14aa7547">
+<li local-id=3D"814f0f63efd9">
+<p local-id=3D"68021a7d34b5">Strikte Trennung von View und Maintain</p>
+</li>
+</ol>
+</td>
+<td data-local-id=3D"312e1d53-cceb-4fa8-abe9-7b3c6c5f7526" class=3D"conflue=
+nceTd">
+<p local-id=3D"3caff4c1976c">Lesende Rechte (Inquire/View) und ver=C3=A4nde=
+rnde/buchende Rechte (Maintain/Operate) werden niemals in derselben Duty od=
+er Rolle vermischt.</p>
+</td>
+</tr>
+<tr data-local-id=3D"06dba15c-3d6c-40ac-baf9-ad5cae5a7c6d">
+<td data-local-id=3D"c54c92b5-f149-469c-b5ff-cb0bfa41e74e" class=3D"conflue=
+nceTd">
+<ol start=3D"3" local-id=3D"401b280ba96d">
+<li local-id=3D"9d905e2cde58">
+<p local-id=3D"e2afe2daa24f">Atomare Rollenteilung bei Mehrfachbedarfen</p>
+</li>
+</ol>
+</td>
+<td data-local-id=3D"d46ddd91-24f1-45c2-9721-de1060d7978d" class=3D"conflue=
+nceTd">
+<p local-id=3D"09baf1fec0e3">Ben=C3=B6tigt eine Stelle T=C3=A4tigkeiten aus=
+ zwei Lizenzklassen (z. B. Auskunft =C3=BCber Kunden + Pflegen von Bestellu=
+ngen), erh=C3=A4lt sie zwei spezialisierte Rollen statt einer teuren Mischr=
+olle.</p>
+</td>
+</tr>
+<tr data-local-id=3D"2b9c92d4-7ddd-4e67-b78a-7e4ee0397fe3">
+<td data-local-id=3D"38804695-c7bb-43a9-bfe7-44d1341f8209" class=3D"conflue=
+nceTd">
+<ol start=3D"4" local-id=3D"a69df1d57986">
+<li local-id=3D"4198749dcf8d">
+<p local-id=3D"9a553115c760">Keine Modifikation von MS-Standardobjekten</p>
+</li>
+</ol>
+</td>
+<td data-local-id=3D"ee1abe02-6060-4674-b21b-6bbdd511cf2b" class=3D"conflue=
+nceTd">
+<p local-id=3D"fb7cd2a735ee">Microsoft-Standardrollen, -Duties und -Privile=
+gien bleiben unber=C3=BChrt. Eigene Objekte erhalten das Kundenpr=C3=A4fix =
+(z. B. WIBU_).</p>
+</td>
+</tr>
+<tr data-local-id=3D"5e7b56d9-1e56-4ebf-8a2f-2a467c8d0e57">
+<td data-local-id=3D"e5db41ad-fc14-4769-b785-058a54edc9dd" class=3D"conflue=
+nceTd">
+<ol start=3D"5" local-id=3D"241815ccf210">
+<li local-id=3D"9f45dc13d406">
+<p local-id=3D"0a8ce1603757">Zentraler Katalog mit Legal Entity Zuweisung</=
+p>
+</li>
+</ol>
+</td>
+<td data-local-id=3D"22a13cf1-e99b-428e-aa27-8813f3d5d12b" class=3D"conflue=
+nceTd">
+<p local-id=3D"799da39809fd">Rollen werden konzerneinheitlich definiert; de=
+r Rollenname enth=C3=A4lt keine Gesellschaft. Unterschiede zwischen Gesells=
+chaften werden =C3=BCber =E2=80=98Organisationen zuweisen=E2=80=99 (Legal E=
+ntities) gesteuert, nicht =C3=BCber Rollenkopien. Wer in einer Gesellschaft=
+ Owner einer Rolle ist, steht im Rollenkatalog (D05).</p>
+</td>
+</tr>
+<tr data-local-id=3D"e9b647a9-1019-4db1-b5f6-22fd0dc020f2">
+<td data-local-id=3D"24a449f1-814c-4a55-9346-2b21d78a60d7" class=3D"conflue=
+nceTd">
+<ol start=3D"6" local-id=3D"a3b0522fb243">
+<li local-id=3D"a2f0e0563d0b">
+<p local-id=3D"86cc5b757656">Least Privilege &amp; Need-to-Know</p>
+</li>
+</ol>
+</td>
+<td data-local-id=3D"802cab29-0be0-4602-a2a2-49374bb0903d" class=3D"conflue=
+nceTd">
+<p local-id=3D"7b1ec9d11833">Benutzer erhalten ausschlie=C3=9Flich die Rech=
+te, die f=C3=BCr ihre operative Stellenbeschreibung zwingend erforderlich s=
+ind.</p>
+</td>
+</tr>
+<tr data-local-id=3D"7d0a1399-9105-4767-897c-8d0e7dc4e952">
+<td data-local-id=3D"40ff75d6-f5e7-48d1-aa65-d8a057bf9cb3" class=3D"conflue=
+nceTd">
+<ol start=3D"7" local-id=3D"58e69fee1c7e">
+<li local-id=3D"1e1a4a3c2fd8">
+<p local-id=3D"bea940ceb48e">SoD &amp; Testbarkeit als Designbedingung</p>
+</li>
+</ol>
+</td>
+<td data-local-id=3D"e4834186-d86b-409a-9b74-ce0e5aee6009" class=3D"conflue=
+nceTd">
+<p local-id=3D"39e91fbd2e3a">Keine Rolle wird freigegeben, bevor SoD-Konfli=
+kte gepr=C3=BCft und Testf=C3=A4lle mit dezidierten Rollen-Testbenutzern er=
+folgreich absolviert wurden.</p>
+</td>
+</tr>
+<tr data-local-id=3D"63c2aacd-4c26-473b-bc01-0036186bc96e">
+<td data-local-id=3D"9d24e2f1-c009-4cda-8d52-e0cef4da7727" class=3D"conflue=
+nceTd">
+<ol start=3D"8" local-id=3D"da94dd30d924">
+<li local-id=3D"5ec9c42812c8">
+<p local-id=3D"b31ee0deadd5">Lizenzentscheidungen mit ihrer Kapazit=C3=A4ts=
+wirkung bewerten</p>
+</li>
+</ol>
+</td>
+<td data-local-id=3D"3dfa6e80-a21f-457c-ada1-ff5f727b1c85" class=3D"conflue=
+nceTd">
+<p local-id=3D"b99b2bbf5c1d">Jede Lizenz bringt Datenbankkapazit=C3=A4t mit=
+ (laut Planung 5 GB je Volllizenz, 1 GB je Activity-Lizenz). Solange Kapazi=
+t=C3=A4t zugekauft werden muss, wird eine Herabstufung gegen die verlorene =
+Kapazit=C3=A4t gerechnet. Das Entfernen einer Attach-Lizenz ist kapazit=C3=
+=A4tsneutral.</p>
+</td>
+</tr>
+<tr data-local-id=3D"5802c764-7d50-47e8-ba96-a53aa25d5278">
+<td data-local-id=3D"9cad16cf-18a4-401f-8f36-3bab75d7744a" class=3D"conflue=
+nceTd">
+<ol start=3D"9" local-id=3D"db71fec6760a">
+<li local-id=3D"b76e63c5bece">
+<p local-id=3D"2b471d4a8c84">Jeder Prozessschritt nennt seine ausf=C3=BChre=
+nden Rollen</p>
+</li>
+</ol>
+</td>
+<td data-local-id=3D"f47591e9-e4b0-4cb8-a604-ffd46717899e" class=3D"conflue=
+nceTd">
+<p local-id=3D"12ddfe38d57c">In der Prozessdokumentation steht je Schritt, =
+wer ihn verantwortet und welche Rolle(n) ihn im System ausf=C3=BChren, mit =
+Namen aus dem Rollenkatalog (D05). So l=C3=A4sst sich jede Berechtigung auf=
+ einen Prozessschritt zur=C3=BCckf=C3=BChren: Eine Rolle ohne Prozessschrit=
+t wird nicht gebraucht, ein Schritt ohne Rolle ist eine L=C3=BCcke (D19).</=
+p>
+</td>
+</tr>
+<tr data-local-id=3D"712d6843-ffe2-4d90-91d0-d4bfa8fab5c9">
+<td data-local-id=3D"ed102c82-4b8d-40f5-a04b-8b6e8658fab8" class=3D"conflue=
+nceTd">
+<p local-id=3D"fc1c599b00aa">10. Kontrollierte Funktionen nur bewusst verge=
+ben (Sperrliste)</p>
+</td>
+<td data-local-id=3D"32ca9b6d-a4da-4bb5-b601-9c1041503a55" class=3D"conflue=
+nceTd">
+<p local-id=3D"1c25dac84f2c">Rechte, Aufgaben und Rollen mit Funktionen, di=
+e nur ausgew=C3=A4hlte Personen nutzen (z. B. Stammdatenpflege, Bestandskor=
+rektur), stehen auf der Sperrliste (D18). Jede Microsoft-Standardrolle, die=
+ eine solche Aufgabe oder ein solches Recht enth=C3=A4lt, ist ebenfalls ges=
+perrt. Vergeben wird nur mit Antrag, Freigabe und Eintrag als Ausnahme; f=
+=C3=BCr jedes gesperrte Objekt steht ein Ersatz fest.</p>
+</td>
+</tr>
+<tr data-local-id=3D"59f7b0de-a25a-4376-8056-2519ac91448d">
+<td data-local-id=3D"78fd3f32-de53-4785-b998-64f9bec004a7" class=3D"conflue=
+nceTd">
+<p local-id=3D"466c4e3a399f">11. Erst konsolidieren, dann =C3=A4ndern</p>
+</td>
+<td data-local-id=3D"b33ac0bc-3572-4d2c-a899-9271ff0f549e" class=3D"conflue=
+nceTd">
+<p local-id=3D"0aa3ebf92005">Gibt es eine Rolle als AOT-Rolle und als Kopie=
+ aus der Oberfl=C3=A4che, werden beide zusammengef=C3=BChrt, bevor die Roll=
+e ge=C3=A4ndert, bereinigt oder neu lizenziert wird: Die neue Rolle &lt;AOT=
+-Name&gt;_MERGED enth=C3=A4lt alles, was eine der Versionen gew=C3=A4hrt. S=
+ie ist die eine Arbeitsgrundlage: Analyse, Bereinigung und Pr=C3=BCfung der=
+ Funktionstrennung laufen nur noch auf ihr. Zugewiesen wird sie niemandem; =
+die Benutzer beider Versionen erhalten erst die bereinigte Rolle. Die alten=
+ Versionen bleiben als R=C3=BCckfallweg erhalten, bis die bereinigte Rolle =
+stabil l=C3=A4uft, und werden dann entfernt. Paare ohne Unterschiede werden=
+ nicht angefasst. Jedes Paar steht mit Ergebnis und =C3=84nderung in D20. E=
+benso werden UI-Aufgaben und UI-Rechte =C3=BCberall durch ihr AOT-Pendant e=
+rsetzt; ohne Pendant wird zuerst ein AOT-Objekt angelegt (D22 bis D24).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 local-id=3D"3155e3be290b" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-3.Phasenplan&amp;StrategischesVorgehen(Step-by-Step=
+)">3. Phasenplan &amp; Strategisches Vorgehen (Step-by-Step)</h1>
+<p local-id=3D"2d1531700166">Die Einf=C3=BChrung gliedert sich in 8 struktu=
+rierte Phasen. <strong>Die Bereitstellung der Rollen h=C3=A4ngt vom Strang =
+ab:</strong></p>
+<ul local-id=3D"ba0b505069a0">
+<li local-id=3D"65944c387c72">
+<p local-id=3D"bcdc47847587"><strong>Strang A</strong> bringt bereinigte Ro=
+llen in Wellen nach Prod, sobald ihr Test bestanden ist, die ersten ab Mitt=
+e November 2026 (Phase 1). Er wartet nicht auf die Phasen 3 bis 6.</p>
+</li>
+<li local-id=3D"f57bb87a61af">
+<p local-id=3D"dc119b6de864"><strong>Strang B</strong> durchl=C3=A4uft die =
+Phasen 2 bis 5 und geht in Phase 6 zum Go-Live produktiv.</p>
+</li>
+</ul>
+<p local-id=3D"3c27c6c145e6">Beide Str=C3=A4nge treffen sich in Phase 7, de=
+m Regelbetrieb.</p>
+<p local-id=3D"6159ac0f1035">+---------------------------------------------=
+--------------------------------------+
+<br>
+| Phase 0: Mobilisierung &amp; Governance (RACI, Testmanager, Revisions-Ein=
+bindung)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+<br>
++--------------------------------------------------------------------------=
+---------+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+ |
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-----------------+-------------=
+----+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp; |
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp; v
+<br>
++-----------------------------+&nbsp;&nbsp; +-----------------------------+
+<br>
+| STRANG A: Live-Mandanten&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; | STRANG B: Neue=
+r Rollout&nbsp;&nbsp;&nbsp;&nbsp; |
+<br>
+| Phase 1: teuerste Rollen&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; | Phase 2: Rolle=
+n von unten&nbsp;&nbsp; |
+<br>
+| bereinigen, testen und&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; | aus =
+Prozessschritten und&nbsp;&nbsp;&nbsp; |
+<br>
+| in Wellen nach Prod bringen |&nbsp;&nbsp; | Aufgabenaufzeichnungen&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp; |
+<br>
+| (ab Mitte November 2026,&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; +---------------=
+--------------+
+<br>
+| mit R=C3=BCckfallweg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+<br>
++-----------------------------+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-----------------------------+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Phase 3: Workshops&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | W1 Erhebung, W2 Design,&nbsp;&nbsp=
+;&nbsp;&nbsp; |
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | W3 SoD, W4 Sign-off&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-----------------------------+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-----------------------------+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Phase 4: Technischer Build&nbsp; |
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &amp; AOT-Umsetzung&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-----------------------------+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-----------------------------+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Phase 5: Integriertes&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp; |
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Testing (Lead: Testmanager) |
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-----------------------------+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-----------------------------+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Phase 6: Rollout &amp; Migration|
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | (Strang B Go-Live)&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-----------------------------+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-----------------+-------------=
+---------+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+ |
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+ v
+<br>
++--------------------------------------------------------------------------=
+---------+
+<br>
+| Phase 7: Regelbetrieb, Rezertifizierung &amp; Lizenz-Governance&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+<br>
++--------------------------------------------------------------------------=
+---------+</p>
+<h3 local-id=3D"6fdea7f1f3de" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-Phase0:Mobilisierung&amp;Governance">Phase 0: Mobil=
+isierung &amp; Governance</h3>
+<ul local-id=3D"f7490ed1576f">
+<li local-id=3D"b099ec80eb9c">
+<p local-id=3D"bac26f9bd39f"><strong>Zweck:</strong> Festlegung der Spielre=
+geln, Gremien und Stakeholder.</p>
+</li>
+<li local-id=3D"b70aea69779f">
+<p local-id=3D"4ceaf09e7bf3"><strong>Aktivit=C3=A4ten:</strong></p>
+<ul local-id=3D"aaef7b33c17c">
+<li local-id=3D"6a9c1a878338">
+<p local-id=3D"5e08b97e4210">Abstimmung mit dem <strong>Testmanager</strong=
+>: Berechtigungstests werden integraler Bestandteil der Testmanagement-Suit=
+e.</p>
+</li>
+<li local-id=3D"eb9247c7f773">
+<p local-id=3D"d719672a34e9">Abstimmung mit dem <strong>Betriebsrat</strong=
+> und dem <strong>Datenschutzbeauftragten</strong> (bzgl. Auswertung von Nu=
+tzungsdaten/Telemetrie).</p>
+</li>
+<li local-id=3D"4239c0886f97">
+<p local-id=3D"5ece7ec34600">Einbindung der <strong>Revision / Wirtschaftsp=
+r=C3=BCfer</strong> zur Abstimmung des SoD-Katalogs.</p>
+</li>
+<li local-id=3D"246a138b4241">
+<p local-id=3D"640f5a323fbc">Definition des RACI-Modells (Wer entscheidet =
+=C3=BCber Ausnahmen?).</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 local-id=3D"0f228d075760" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-Phase1:LizenzensichernundKostensenkenindenBestandsg=
+esellschaften(StrangA)">Phase 1: Lizenzen sichern und Kosten senken in den =
+Bestandsgesellschaften (Strang A)</h3>
+<ul local-id=3D"472807311951">
+<li local-id=3D"244af1d3c1c6">
+<p local-id=3D"6f91ebc73408"><strong>Zweck:</strong> Die Kollegen behalten =
+ihren Zugriff, und die Lizenzkosten sinken, ohne dass sie in ihrer Arbeit e=
+ingeschr=C3=A4nkt werden. Microsoft setzt die Lizenzpflicht bereits durch; =
+diese Phase hat deshalb hohe Priorit=C3=A4t und wartet nicht auf die =C3=BC=
+brigen Phasen. Begonnen wird mit den teuersten Rollen.</p>
+</li>
+<li local-id=3D"0edec846244e">
+<p local-id=3D"9a1d48eff5c5"><strong>Stand 31.10.2026:</strong> Drei Rollen=
+ sind auf SCM reduziert und im Test: _WIBU Verkauf Innendienst Mitarbeiter,=
+ _WIBU Einkauf Mitarbeiter und _WIBU Stammdaten Kunden Manager (diese Rolle=
+ hatte auch Finance-Men=C3=BCpunkte). Gepr=C3=BCft wird, ob sie Mitte Novem=
+ber 2026 live gehen k=C3=B6nnen.</p>
+</li>
+<li local-id=3D"e4b33bf6c989">
+<p local-id=3D"1957f44531c0"><strong>Vorgehen:</strong></p>
+</li>
+</ul>
+<ol start=3D"1" local-id=3D"af608008dd82">
+<li local-id=3D"eed3d2d8be80">
+<p local-id=3D"fb8c71c5f04f"><strong>Doppelte Rollen konsolidieren:</strong=
+> Das Werkzeug vergleicht jede AOT-Rolle mit ihren Kopien aus der Oberfl=C3=
+=A4che (eigene Aufgaben, Rechte, Unterrollen und direkte Zugriffsrechte) un=
+d schreibt das Ergebnis je Paar nach D20. Paare ohne Unterschiede bleiben u=
+nangetastet. F=C3=BCr Paare mit Unterschieden erzeugt es die Rolle &lt;AOT-=
+Name&gt;_MERGED. Sie wird gepr=C3=BCft und in INT importiert und ist von da=
+ an die Arbeitsgrundlage: Die folgenden Schritte und die Pr=C3=BCfung der F=
+unktionstrennung (D07) arbeiten nur noch mit ihr (Prinzip 11). Zugewiesen w=
+ird sie niemandem; die Benutzer behalten ihre Rollen, bis die bereinigte Ro=
+lle getestet ist und beide alten Versionen ersetzt. Ebenso f=C3=BCr UI-Aufg=
+aben und UI-Rechte: Das Werkzeug sucht je UI-Objekt das AOT-Pendant gleiche=
+n Namens und vergleicht beide (D22 Aufgaben, D23 Rechte); die Inventur zeig=
+t, wo jedes UI-Objekt steckt (D24). Ersetzt wird von oben nach unten: Rolle=
+n, dann Aufgaben, dann Rechte.</p>
+</li>
+</ol>
+<ol start=3D"2" local-id=3D"04060111ecde">
+<li local-id=3D"d5a26e840342">
+<p local-id=3D"a806beee991a"><strong>Rangliste der teuersten Rollen:</stron=
+g> Gemessen werden die Lizenzkosten, die nur wegen einer Rolle entstehen. L=
+=C3=B6sen andere Rollen desselben Benutzers dieselbe Lizenz aus, spart die =
+Bereinigung einer Rolle allein nichts (Innendienst-Analyse, Kapitel 4). Die=
+ Rangliste betrachtet deshalb den vollst=C3=A4ndigen Rollensatz je Benutzer=
+.</p>
+</li>
+</ol>
+<ol start=3D"3" local-id=3D"91fe2d3c9f58">
+<li local-id=3D"e876b82dd380">
+<p local-id=3D"0e14c3ec8969"><strong>Lizenzprofil je Benutzer:</strong> F=
+=C3=BCr jeden Benutzer aus der Telemetrie bestimmen, welche Lizenzen seine =
+Arbeit braucht, und dem gegen=C3=BCberstellen, was PPAC f=C3=BCr ihn erwart=
+et, was schon zugewiesen und was noch nicht zugewiesen ist (<a href=3D"http=
+s://wibu-gruppe.atlassian.net/wiki/spaces/~712020886a0d98296347058e77448981=
+531cb8/pages/2456682504/D21+Lizenzprofil+Benutzer" data-linked-resource-id=
+=3D"2456682504" data-linked-resource-version=3D"1" data-linked-resource-typ=
+e=3D"page">D21</a>). So zeigt sich je Benutzer, ob er eine Lizenz verlieren=
+ k=C3=B6nnte und welche noch fehlenden Lizenzen nicht gekauft werden m=C3=
+=BCssen. Die Rangliste sieht die Rollen, das Lizenzprofil die Benutzer.</p>
+</li>
+</ol>
+<ol start=3D"4" local-id=3D"3b30cbd96de7">
+<li local-id=3D"ed4e0b0ad9ae">
+<p local-id=3D"a37df5162fb4"><strong>Lizenztreiber bestimmen:</strong> F=C3=
+=BCr die obersten Rollen mit report_role_license() und den Nutzungsdaten (T=
+elemetrie) ermitteln, welche Aufgaben die teure Lizenz ausl=C3=B6sen und ob=
+ sie genutzt werden.</p>
+</li>
+</ol>
+<ol start=3D"5" local-id=3D"a52e3271e387">
+<li local-id=3D"8d71e2518788">
+<p local-id=3D"2b8209158fe5"><strong>Rolle abspecken:</strong> Ungenutzte L=
+izenztreiber entfernen oder in eine Zusatzrolle f=C3=BCr die wenigen auslag=
+ern, die sie brauchen (Prinzip 3).</p>
+</li>
+</ol>
+<ol start=3D"6" local-id=3D"5b146f0f2893">
+<li local-id=3D"415eb876731b">
+<p local-id=3D"8748fffc6d4f"><strong>Prozesse testen:</strong> mit den vorh=
+andenen Testf=C3=A4llen der Updates und Paketeinspielungen (Kapitel 5). Get=
+estet werden die Prozesse, nicht die Rollen.</p>
+</li>
+</ol>
+<ol start=3D"7" local-id=3D"959111af5f09">
+<li local-id=3D"4594b8224fdf">
+<p local-id=3D"8c6e1e004aa3"><strong>Nachbessern:</strong> Merken die Kolle=
+gen im Test, dass eine Funktion fehlt, kommt das ins Ticket und wird nachge=
+bessert. =C3=84ndert die Funktion die Lizenz nicht, kommt sie in die Rolle.=
+ =C3=84ndert oder erh=C3=B6ht sie die Lizenz, wird daf=C3=BCr eine Zusatzro=
+lle erstellt (Prinzip 3, Kapitel 5).</p>
+</li>
+</ol>
+<ol start=3D"8" local-id=3D"97fecfd1b739">
+<li local-id=3D"1deb761ecd14">
+<p local-id=3D"272f63b25bb9"><strong>In Prod bringen:</strong> Nach bestand=
+enem Test geht die Rolle in Wellen nach Prod, in der Reihenfolge der Rangli=
+ste (<a href=3D"https://wibu-gruppe.atlassian.net/wiki/spaces/~712020886a0d=
+98296347058e77448981531cb8/pages/2456322060/D04+Teuersten+Rollen+und+Berein=
+igungsplan" data-linked-resource-id=3D"2456322060" data-linked-resource-ver=
+sion=3D"4" data-linked-resource-type=3D"page">D04</a>) und nicht erst in Ph=
+ase 6. Als R=C3=BCckfallweg bleiben die bisherigen Rollen erhalten: Fehlt e=
+twas, werden sie wieder eingespielt.</p>
+</li>
+</ol>
+<ol start=3D"9" local-id=3D"1214d8b4bb7e">
+<li local-id=3D"bb2cd80cb72f">
+<p local-id=3D"3ae36dcb5100"><strong>Wirkung pr=C3=BCfen:</strong> Sinkt di=
+e Lizenz der betroffenen Benutzer tats=C3=A4chlich? Daf=C3=BCr das Lizenzpr=
+ofil (<a href=3D"https://wibu-gruppe.atlassian.net/wiki/spaces/~712020886a0=
+d98296347058e77448981531cb8/pages/2456682504/D21+Lizenzprofil+Benutzer" dat=
+a-linked-resource-id=3D"2456682504" data-linked-resource-version=3D"1" data=
+-linked-resource-type=3D"page">D21</a>) mit neuen Berichten aus PPAC wieder=
+holen.</p>
+</li>
+</ol>
+<ul local-id=3D"ad50fa68ff1e">
+<li local-id=3D"6e8ae051cad1">
+<p local-id=3D"7da05bf63cae"><strong>Nebenher (Quick-Wins):</strong> Deakti=
+vierung inaktiver Benutzerkonten, Entzug nicht genutzter administrativer Ro=
+llen.</p>
+</li>
+<li local-id=3D"ed196f5e48c0">
+<p local-id=3D"8ee637efdad1"><strong>Ergebnis:</strong> Bestands- und Lizen=
+zanalyse (<a href=3D"https://wibu-gruppe.atlassian.net/wiki/spaces/~7120208=
+86a0d98296347058e77448981531cb8/pages/2456420363/D03+Bestands+und+Lizenzana=
+lyse" data-linked-resource-id=3D"2456420363" data-linked-resource-version=
+=3D"1" data-linked-resource-type=3D"page">D03</a>), Liste der teuersten Rol=
+len mit Bereinigungsplan (<a href=3D"https://wibu-gruppe.atlassian.net/wiki=
+/spaces/~712020886a0d98296347058e77448981531cb8/pages/2456322060/D04+Teuers=
+ten+Rollen+und+Bereinigungsplan" data-linked-resource-id=3D"2456322060" dat=
+a-linked-resource-version=3D"4" data-linked-resource-type=3D"page">D04</a>)=
+, Konsolidierung der doppelten Rollen (D20), Lizenzprofil je Benutzer (<a h=
+ref=3D"https://wibu-gruppe.atlassian.net/wiki/spaces/~712020886a0d982963470=
+58e77448981531cb8/pages/2456682504/D21+Lizenzprofil+Benutzer" data-linked-r=
+esource-id=3D"2456682504" data-linked-resource-version=3D"1" data-linked-re=
+source-type=3D"page">D21</a>).</p>
+</li>
+</ul>
+<h3 local-id=3D"8c5e6a66dcdc" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-Phase2:Rollendesignvonunten(FokusStrangBundZielmode=
+ll)">Phase 2: Rollendesign von unten (Fokus Strang B und Zielmodell)</h3>
+<ul local-id=3D"4bf4f825e7b6">
+<li local-id=3D"618feb838ce2">
+<p local-id=3D"4bf811209879"><strong>Zweck:</strong> Rollen aus den Prozess=
+schritten aufbauen, nicht aus Sammelrollen oder Kopien bestehender Rechte.<=
+/p>
+</li>
+<li local-id=3D"a97d377cc17a">
+<p local-id=3D"1156c0638e48"><strong>Das Modell (Begriffe siehe Kapitel 2):=
+</strong></p>
+</li>
+</ul>
+<ol start=3D"1" local-id=3D"48a8bf87acd6">
+<li local-id=3D"0762679073a4">
+<p local-id=3D"1c0fcc4814fc"><strong>Recht:</strong> kleinste Einheit, z. B=
+. Zugriff auf einen Men=C3=BCpunkt mit Lesen oder Pflegen.</p>
+</li>
+</ol>
+<ol start=3D"2" local-id=3D"d8daedec17ee">
+<li local-id=3D"9a06979925d5">
+<p local-id=3D"ce6d4ec20e64"><strong>Aufgabe (T=C3=A4tigkeit):</strong> Rec=
+hte f=C3=BCr eine fachliche Aufgabe, z. B. =E2=80=9EKreditorenrechnungen er=
+fassen=E2=80=9C.</p>
+</li>
+</ol>
+<ol start=3D"3" local-id=3D"79818fac5259">
+<li local-id=3D"63ed15603753">
+<p local-id=3D"e22540634161"><strong>Rolle:</strong> fachlich zusammengeh=
+=C3=B6rige Aufgaben; konzernweit g=C3=BCltig, im Rollenkatalog (D05).</p>
+</li>
+</ol>
+<ol start=3D"4" local-id=3D"ddf291d94d60">
+<li local-id=3D"b75304ada78d">
+<p local-id=3D"bcca76ff8649"><strong>Stelle:</strong> aus der Personalverwa=
+ltung; welche Rollen zu ihr geh=C3=B6ren, steht in D06.</p>
+</li>
+</ol>
+<ol start=3D"5" local-id=3D"89e4a980a153">
+<li local-id=3D"39e2e2140838">
+<p local-id=3D"427fd670d1b9"><strong>Benutzer:</strong> erh=C3=A4lt die Rol=
+len seiner Stelle, jeweils f=C3=BCr die Gesellschaften, in denen er arbeite=
+t.</p>
+</li>
+</ol>
+<h3 local-id=3D"884f01890696" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-Verkn=C3=BCpfungmitderProzessdokumentation">Verkn=
+=C3=BCpfung mit der Prozessdokumentation</h3>
+<p local-id=3D"d4bd022db4b5">Jede Berechtigung soll sich auf einen Prozesss=
+chritt zur=C3=BCckf=C3=BChren lassen (Prinzip 9). Daf=C3=BCr gilt:</p>
+<ul local-id=3D"d89ef0ecad01">
+<li local-id=3D"7d89c618232f">
+<p local-id=3D"20f645919bd7"><strong>Rollenkatalog je Gesellschaft:</strong=
+> Der Fachbereich benennt die Rollen; sie stehen im Rollenkatalog (D05).</p=
+>
+</li>
+<li local-id=3D"564afd6b701d">
+<p local-id=3D"cc5e15e7d88b"><strong>Zwei Spalten in der Prozessdokumentati=
+on:</strong> =E2=80=9EVerantwortlich (Rolle)=E2=80=9C nennt, wer f=C3=BCr d=
+en Schritt geradesteht; =E2=80=9EAusf=C3=BChrende Rolle(n)=E2=80=9C nennt, =
+wer ihn im System ausf=C3=BChrt. Beide nur mit Namen aus dem Rollenkatalog,=
+ mehrere ausf=C3=BChrende Rollen sind erlaubt. Abteilungsk=C3=BCrzel wie =
+=E2=80=9EIDM=E2=80=9C und Personennamen sind nicht zul=C3=A4ssig.</p>
+</li>
+<li local-id=3D"a5449d610c07">
+<p local-id=3D"715a0a09c1e2"><strong>Erg=C3=A4nzung durch die IT:</strong> =
+je Schritt der D365-Men=C3=BCpunkt und die Aufgabe. Damit steht die Kette P=
+rozessschritt =E2=86=92 Rolle =E2=86=92 Aufgaben =E2=86=92 Rechte =E2=86=92=
+ Lizenz.</p>
+</li>
+<li local-id=3D"fe5e592f33d9">
+<p local-id=3D"b97081cb5b8a"><strong>Pr=C3=BCfregel:</strong> Jede Rolle f=
+=C3=BChrt mindestens einen Prozessschritt aus, sonst wird sie nicht gebrauc=
+ht. Jeder Prozessschritt hat mindestens eine ausf=C3=BChrende Rolle, sonst =
+ist er eine L=C3=BCcke.</p>
+</li>
+<li local-id=3D"6071c94a4577">
+<p local-id=3D"6578c615e2bb"><strong>Arbeitsmittel:</strong> die Prozess-Ro=
+llen-Matrix (D19). Sie wird in Workshop 1 gef=C3=BCllt; die Ergebnisse =C3=
+=BCbertr=C3=A4gt die IT in den Rollenkatalog (D05) und die Zuordnung der St=
+ellen (D06).</p>
+</li>
+<li local-id=3D"14dd8077d059">
+<p local-id=3D"12c740c4069c">Beispiel: In der Prozessdokumentation =E2=80=
+=9EAngebotserstellung=E2=80=9C steht heute bei jedem Schritt =E2=80=9EIDM=
+=E2=80=9C. K=C3=BCnftig steht dort je Schritt die ausf=C3=BChrende Rolle. =
+=C3=9Cbergaben wie =E2=80=9EDebitor nicht angelegt =E2=86=92 Kundenstammdat=
+enmanagement=E2=80=9C werden so als Wechsel zu einer anderen Rolle sichtbar=
+.</p>
+</li>
+</ul>
+<h3 local-id=3D"69c47a4673a5" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-Phase3:Fachbereichs-Workshops">Phase 3: Fachbereich=
+s-Workshops</h3>
+<p local-id=3D"f8e806a7c9a1">Je Fachbereich vier Workshops; Ablauf, Vorlage=
+n und Zeitplan stehen im Workshop-Paket (D08):</p>
+<ul local-id=3D"f4f811710246">
+<li local-id=3D"a25b5fab3b5e">
+<p local-id=3D"df84722b8edd"><strong>Workshop 1 (T=C3=A4tigkeitsabgrenzung)=
+:</strong> Wer verantwortet welchen Prozessschritt, wer f=C3=BChrt ihn im S=
+ystem aus? Rollenkatalog und Stellen abstimmen (D19, D05, D06); Sonderf=C3=
+=A4lle wie Monatsabschluss oder Urlaubsvertretung erfassen.</p>
+</li>
+<li local-id=3D"f98b28c6220a">
+<p local-id=3D"6590431e3270"><strong>Workshop 2 (Rollen-Entwurf):</strong> =
+Aufgaben je Rolle aus den Aufgabenaufzeichnungen (D09); Ziel-Lizenz je Roll=
+e.</p>
+</li>
+<li local-id=3D"f4481f30db71">
+<p local-id=3D"c114a7c60a48"><strong>Workshop 3 (Funktionstrennung und Orga=
+nisation):</strong> Unzul=C3=A4ssige Kombinationen (z. B. Bestellanlage und=
+ Zahlungsausf=C3=BChrung), Freigeber und Owner je Gesellschaft, Best=C3=A4t=
+igung der Sperrliste (D07, D18).</p>
+</li>
+<li local-id=3D"cb6e6d92cc81">
+<p local-id=3D"c790102e4558"><strong>Workshop 4 (Abnahme):</strong> Formale=
+ Abnahme des Rollenprofils durch den Prozessverantwortlichen (Process Owner=
+).</p>
+</li>
+</ul>
+<h3 local-id=3D"d4ce93502d44" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-Phase4:TechnischerBuild&amp;Versionierung">Phase 4:=
+ Technischer Build &amp; Versionierung</h3>
+<ul local-id=3D"b642300aae1b">
+<li local-id=3D"29639769adea">
+<p local-id=3D"a390865ea828">Erstellung der Sicherheitsartefakte in Visual =
+Studio (AOT-Objekte im Versionskontrollsystem / Azure DevOps).</p>
+</li>
+<li local-id=3D"bba8cb3e6288">
+<p local-id=3D"83cb9c22580c">Verwendung sprechender Namenskonventionen, ohn=
+e Gesellschaft im Namen:</p>
+<ul local-id=3D"13e1f5f95205">
+<li local-id=3D"c971a2d8034d">
+<p local-id=3D"64d1059f5a94">Rollen: WIBU_&lt;Bereich&gt;_&lt;Funktion&gt;_=
+&lt;Lizenz&gt; (z. B. WIBU_Einkauf_Sachbearbeiter_Act)</p>
+</li>
+<li local-id=3D"9cc241540d2d">
+<p local-id=3D"81e7cdb386d0">Aufgaben (Duties): WIBU_&lt;Bereich&gt;_&lt;Ge=
+sch=C3=A4ftsvorfall&gt;_&lt;Maintain/Inquire&gt;</p>
+</li>
+</ul>
+</li>
+<li local-id=3D"a0ce424c0dfb">
+<p local-id=3D"995e091118c7">Automatische Lizenzbewertung im Build-Prozess =
+zur Sicherstellung des Single-License-Prinzips.</p>
+</li>
+</ul>
+<h3 local-id=3D"879a15e2904f" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-Phase5:Testkonzept&amp;ZusammenarbeitmitdemTestmana=
+ger">Phase 5: Testkonzept &amp; Zusammenarbeit mit dem Testmanager</h3>
+<p local-id=3D"959c6cffa5d8"><em>(Details siehe Kapitel 5)</em></p>
+<h3 local-id=3D"53242533ac4d" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-Phase6:Rollout&amp;Migration(StrangB)">Phase 6: Rol=
+lout &amp; Migration (Strang B)</h3>
+<ul local-id=3D"a85bf82a7513">
+<li local-id=3D"278cfca2d649">
+<p local-id=3D"49034bfaee2c"><strong>Strang B:</strong> Direkter Go-Live mi=
+t dem neuen Rollenmodell, geplant Mitte Juni 2027; erst hier gehen die neue=
+n Rollen produktiv. Einen Monat danach werden die Migrationssandbox und vor=
+aussichtlich die PRJ-Umgebung gel=C3=B6scht (Kapitel 10).</p>
+</li>
+<li local-id=3D"d17ccea73b8a">
+<p local-id=3D"9950ff1f90cb"><strong>Strang A</strong> ist nicht Teil diese=
+r Phase: Seine Rollen gehen seit Phase 1 in Wellen nach Prod.</p>
+</li>
+<li local-id=3D"0dccf8f8062e">
+<p local-id=3D"3a9584cd02a2"><strong>Fallback-Rolle:</strong> F=C3=BCr Proz=
+essblockaden nach dem Go-Live und im Betrieb steht eine =E2=80=9EFallback-R=
+olle=E2=80=9C mit 48-Stunden-Ablaufzeit bereit.</p>
+</li>
+</ul>
+<h3 local-id=3D"62aee592cb93" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-Phase7:Betrieb,Governance&amp;Rezertifizierung">Pha=
+se 7: Betrieb, Governance &amp; Rezertifizierung</h3>
+<ul local-id=3D"34cd97362293">
+<li local-id=3D"abd9c6784bc2">
+<p local-id=3D"3b85169bd589">Etablierung eines standardisierten <strong>Joi=
+ner-Mover-Leaver-Prozesses</strong> (JML): Neue und wechselnde Mitarbeiter =
+erhalten die Rollen ihrer Stelle (D06), nicht =E2=80=9Edieselben Rechte wie=
+ Kollege X=E2=80=9C. Kontrollierte Funktionen nur mit Freigabe (D18).</p>
+</li>
+<li local-id=3D"fa2c14918bd9">
+<p local-id=3D"5997a0f0ec02">Halbj=C3=A4hrliche / J=C3=A4hrliche <strong>Re=
+zertifizierung</strong>: Die Owner der Rollen je Gesellschaft (D05) best=C3=
+=A4tigen die Rollenzuweisungen; Ausnahmen der Sperrliste (D18) werden auf i=
+hre Laufzeit gepr=C3=BCft.</p>
+</li>
+<li local-id=3D"4c7803600542">
+<p local-id=3D"01188d437657"><strong>Kontinuierliches Lizenz-Monitoring</st=
+rong> gegen den Microsoft Tenant: Die Lizenzen werden fortlaufend =C3=BCber=
+wacht und das Lizenzprofil je Benutzer (D21) regelm=C3=A4=C3=9Fig erneuert.=
+ Es zeigt, wer mehr Lizenz hat oder bekommen soll, als seine Arbeit braucht=
+.</p>
+</li>
+<li local-id=3D"b7a5d5f07f64">
+<p local-id=3D"06ba19f0f5b6"><strong>Schnelle Anpassungen in Prod:</strong>=
+ Muss eine Rolle kurzfristig erweitert werden, geschieht das in der Oberfl=
+=C3=A4che, denn bis eine AOT-Fassung in Prod nutzbar ist (Deployment in INT=
+, Test in INT, Deployment in Prod), k=C3=B6nnen Wochen vergehen. Die Anpass=
+ung wird im AOT nachgezogen und danach aus der Oberfl=C3=A4che entfernt (D0=
+2, Spielregel 10). Die Inventur der UI-Objekte (D24) l=C3=A4uft deshalb auc=
+h im Betrieb regelm=C3=A4=C3=9Fig.</p>
+</li>
+</ul>
+<h1 local-id=3D"6775996d9b73" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-4.PilotenundAufgabenaufzeichnungen">4. Piloten und =
+Aufgabenaufzeichnungen</h1>
+<p local-id=3D"0fd515b4dd6b">Die Aufgabenaufzeichnungen (Task Recordings) d=
+er Fachbereiche, zuerst des Einkaufs, sind ein wertvolles Asset. Sie werden=
+ <strong>nie direkt zu Rollen</strong>, sondern zu Aufgaben; sonst entsteht=
+ Rollenwildwuchs (Role Explosion). Jede Aufzeichnung zeigt genau einen Proz=
+essschritt aus der Prozess-Rollen-Matrix (D19); ihr Name &lt;Prozess-ID&gt;=
+_&lt;Schritt&gt;_&lt;Kurzname&gt; stellt den Bezug her. Die Einzelheiten st=
+ehen im Leitfaden Aufgabenaufzeichnungen (D09).</p>
+<h3 local-id=3D"768ef439887a" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-VonderAufzeichnungzurAufgabe">Von der Aufzeichnung =
+zur Aufgabe</h3>
+<p local-id=3D"3211faf3c1d8">Von der Aufzeichnung zur Aufgabe (Kurzfassung =
+von D09)</p>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"default" data-local-id=3D"8e=
+248151-1145-476b-923c-6981acc329e6" class=3D"confluenceTable">
+<colgroup>
+<col style=3D"width: 213.0px;">
+<col style=3D"width: 545.0px;">
+</colgroup>
+<tbody>
+<tr data-local-id=3D"5411873c-fb08-422d-89c1-d35944548e7a">
+<td data-local-id=3D"47dad227-0636-423d-a6c3-94a4773a7e85" class=3D"conflue=
+nceTd">
+<p local-id=3D"e0c448298d6e"><strong>Schritt</strong></p>
+</td>
+<td data-local-id=3D"4b42efeb-cb11-453d-929b-6af74c3b5e30" class=3D"conflue=
+nceTd">
+<p local-id=3D"f0d68d1163bb"><strong>Vorgehensweise</strong></p>
+</td>
+</tr>
+<tr data-local-id=3D"85348077-0393-4dd9-9c77-65179adef505">
+<td data-local-id=3D"70d79890-3bc0-4096-8d0e-6fcc8864b8f8" class=3D"conflue=
+nceTd">
+<ol start=3D"1" local-id=3D"8c226519e61a">
+<li local-id=3D"27bcca50a7a4">
+<p local-id=3D"0248c7235162">Pr=C3=BCfen und bereinigen</p>
+</li>
+</ol>
+</td>
+<td data-local-id=3D"7ec60d71-f13e-4efe-a8b8-e1425534bb8a" class=3D"conflue=
+nceTd">
+<p local-id=3D"28b5643f6302">Zeigt die Aufzeichnung genau einen Prozessschr=
+itt, ohne Fehlklicks, Abzweigungen oder Funktionen der Systemverwaltung? So=
+nst neu aufzeichnen.</p>
+</td>
+</tr>
+<tr data-local-id=3D"339330bb-1f4a-452a-987d-d9da9d7e8249">
+<td data-local-id=3D"a3bfddc9-e010-4f88-82df-025b42fc2ca5" class=3D"conflue=
+nceTd">
+<ol start=3D"2" local-id=3D"631c599dea4a">
+<li local-id=3D"baff1c3451df">
+<p local-id=3D"95df7f482f1e">Sicherheitsdiagnose</p>
+</li>
+</ol>
+</td>
+<td data-local-id=3D"c212f749-ca42-4112-8bee-a7a371664c51" class=3D"conflue=
+nceTd">
+<p local-id=3D"35066cf7d7db">Mit der D365-Funktion =E2=80=9ESicherheitsdiag=
+nose f=C3=BCr Aufgabenaufzeichnungen=E2=80=9C die ben=C3=B6tigten Men=C3=BC=
+punkte und Zugriffsstufen ermitteln; die IT tr=C3=A4gt sie in D19 ein.</p>
+</td>
+</tr>
+<tr data-local-id=3D"4379c9c6-790e-4bf2-8dc1-a0f702632ef4">
+<td data-local-id=3D"b46ea2b7-1797-4a6e-84b0-4ac3f956aa2b" class=3D"conflue=
+nceTd">
+<ol start=3D"3" local-id=3D"865e7333167f">
+<li local-id=3D"172506d89163">
+<p local-id=3D"60e156fb4073">Zu Aufgaben b=C3=BCndeln</p>
+</li>
+</ol>
+</td>
+<td data-local-id=3D"cc12ec18-05b1-49ef-a8d4-8359fbeb6a9a" class=3D"conflue=
+nceTd">
+<p local-id=3D"04563895fd30">Men=C3=BCpunkte zu Aufgaben zusammenfassen, ni=
+cht zu Rollen. Vorhandene Aufgaben werden wiederverwendet; Lesen und Pflege=
+n kommen in getrennte Aufgaben (D05).</p>
+</td>
+</tr>
+<tr data-local-id=3D"ca11e70c-ebd3-4090-9520-0676227a5404">
+<td data-local-id=3D"08c21d85-f1d3-4540-a9d6-2d59051cc89f" class=3D"conflue=
+nceTd">
+<ol start=3D"4" local-id=3D"ebb1ea99b41f">
+<li local-id=3D"8104a44600be">
+<p local-id=3D"27268553b6e3">Lizenz bestimmen</p>
+</li>
+</ol>
+</td>
+<td data-local-id=3D"a1dfb0ac-701c-458f-a4ab-5229a0e8f138" class=3D"conflue=
+nceTd">
+<p local-id=3D"a210eb3b7014">F=C3=BCr jede Aufgabe ermittelt das Werkzeug, =
+welche Lizenz sie ausl=C3=B6st. Teure Aufgaben werden getrennt, damit nur d=
+ie Personen sie bekommen, die sie brauchen; kontrollierte Funktionen werden=
+ mit der Sperrliste (D18) abgeglichen.</p>
+</td>
+</tr>
+<tr data-local-id=3D"14ef1a64-e9c9-462b-add7-b3be060e60e3">
+<td data-local-id=3D"55bb6515-3bd8-4bbe-b3e5-a3aca7556555" class=3D"conflue=
+nceTd">
+<ol start=3D"5" local-id=3D"c8bd9fc68b2f">
+<li local-id=3D"cfc1f0f703f2">
+<p local-id=3D"fff178199c24">L=C3=BCcken schlie=C3=9Fen</p>
+</li>
+</ol>
+</td>
+<td data-local-id=3D"4ff8d406-e8e1-4961-a25d-1cb0634b0754" class=3D"conflue=
+nceTd">
+<p local-id=3D"74a710780c52">Erg=C3=A4nzen, was die Aufzeichnung nicht zeig=
+t: Workflows, Datenentit=C3=A4ten (Excel-Add-in), Berichte (SSRS, Power BI)=
+ und Batchauftr=C3=A4ge. Diese Punkte werden in Workshop 2 abgefragt.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 local-id=3D"5b717ebb94cd" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-ZweitePilotwelle:InnendienstundLager/Logistik">Zwei=
+te Pilotwelle: Innendienst und Lager/Logistik</h3>
+<p local-id=3D"2b688b754c5e">Neben dem Einkauf werden zwei weitere Bereiche=
+ als Piloten gef=C3=BChrt. Ihre Ergebnisse gelten f=C3=BCr beide Str=C3=A4n=
+ge: Die bereinigten Rollens=C3=A4tze werden in den Bestandsgesellschaften e=
+ingesetzt und bilden die Zielrollen der neuen Gesellschaft (Kapitel 9).</p>
+<ul local-id=3D"98be255ce8c0">
+<li local-id=3D"2e765c569995">
+<p local-id=3D"1b1d1b4e9509"><strong>Innendienst (zuerst):</strong> F=C3=BC=
+r die Rolle _WIBU_VERKAUF_INNENDIENST_MITARBEITER liegt eine gegen D365 gep=
+r=C3=BCfte Lizenzanalyse vor (Abnahme in ADN, Oktober 2026). Commerce wird =
+dort durch die Retail-Rabatte und -Preise ausgel=C3=B6st. Zugleich l=C3=B6s=
+en bei allen ausgewerteten Benutzern andere Rollen dieselben Basislizenzen =
+aus; eine =C3=84nderung dieser einen Rolle spart also noch keine Lizenz. De=
+r Pilot betrachtet deshalb den vollst=C3=A4ndigen Rollensatz eines Innendie=
+nst-Mitarbeiters. Das Ergebnis ist auch der Ausgangspunkt f=C3=BCr den Vert=
+rieb.</p>
+</li>
+<li local-id=3D"4630782e7f3c">
+<p local-id=3D"327beb7a0748"><strong>Lager und Logistik (danach):</strong> =
+Ziel ist, die Gruppe der 30 Benutzer aus Kapitel 9 nach ihren tats=C3=A4chl=
+ichen T=C3=A4tigkeiten aufzuteilen und je Untergruppe die Lizenzstufe festz=
+ulegen. F=C3=BCr die neue Gesellschaft startet die Logistik mit ihrem erste=
+n Rollenentwurf (Kapitel 9).</p>
+</li>
+</ul>
+<p local-id=3D"3a2a305e4c41">Die Servicetechniker sind kein Pilot, solange =
+noch nicht feststeht, welche Berechtigungen sie im System brauchen.</p>
+<h1 local-id=3D"1aa883e9245a" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-5.SchnittstellezumTestmanager:IntegriertesTestkonze=
+pt">5. Schnittstelle zum Testmanager: Integriertes Testkonzept</h1>
+<p local-id=3D"8bc7de04a2ea">Berechtigungen sind kein IT-Zusatz, sondern de=
+terminieren das Gelingen der fachlichen Abnahmetests (UAT). Ohne Berechtigu=
+ngskonzept testen Key-User mit Admin-Rechten, was beim Go-Live zu massiven =
+Prozessabbr=C3=BCchen f=C3=BChrt.</p>
+<h3 local-id=3D"a89c9b1193b4" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-TestorganisationimZusammenspiel">Testorganisation i=
+m Zusammenspiel</h3>
+<ol start=3D"1" local-id=3D"09e7f8f0125d">
+<li local-id=3D"b53f91ca0147">
+<p local-id=3D"eb213577fca9"><strong>Rollenbasierte Testbenutzer:</strong><=
+/p>
+</li>
+</ol>
+<ul local-id=3D"522232381771">
+<li local-id=3D"14d630f5faf8">
+<ul local-id=3D"83764a284cc4">
+<li local-id=3D"2132ff59285a">
+<p local-id=3D"97f83f6fac53">F=C3=BCr jede neue Rolle wird ein generischer =
+Testbenutzer angelegt (z. B. TST_EINKAUF_MA). Welche Prozessschritte er dur=
+chl=C3=A4uft, ergibt sich aus der Prozess-Rollen-Matrix (D19).</p>
+</li>
+<li local-id=3D"ab20945249b6">
+<p local-id=3D"d06b7cdbaa30">Keine Tests mit Systemadministrator-Rechten w=
+=C3=A4hrend des UAT.</p>
+</li>
+</ul>
+</li>
+</ul>
+<ol start=3D"2" local-id=3D"5acbc21f3fa0">
+<li local-id=3D"b13f52b6b52f">
+<p local-id=3D"912e25519a5d"><strong>Testarten im Berechtigungskontext:</st=
+rong></p>
+</li>
+</ol>
+<ul local-id=3D"5786484ab433">
+<li local-id=3D"9f6f940141e3">
+<ul local-id=3D"46780c9f03ca">
+<li local-id=3D"0464cb7680c1">
+<p local-id=3D"28fe543c33e0"><strong>Positivtests:</strong> Kann der Testbe=
+nutzer alle Prozessschritte fehlerfrei ausf=C3=BChren, die seiner Rolle in =
+D19 zugeordnet sind?</p>
+</li>
+<li local-id=3D"38e8fa075a8c">
+<p local-id=3D"baa86ee841d8"><strong>Negativtests:</strong> Werden kritisch=
+e Men=C3=BCpunkte ausgeblendet? Werden unzul=C3=A4ssige Buchungen verweiger=
+t?</p>
+</li>
+<li local-id=3D"96006687da80">
+<p local-id=3D"64321b5f0f9c"><strong>SoD-Tests:</strong> Kann derselbe Benu=
+tzer gleichzeitig Lieferanten anlegen und Bestellungen freigeben?</p>
+</li>
+<li local-id=3D"2b9a356ce1fc">
+<p local-id=3D"69c974d2cc99"><strong>Lizenz-Verifikation:</strong> L=C3=B6s=
+t der Benutzer im Lizenzreport exakt die geplante Lizenzstufe aus?</p>
+</li>
+</ul>
+</li>
+</ul>
+<ol start=3D"3" local-id=3D"4e98ee3f111f">
+<li local-id=3D"0c8c9e344dac">
+<p local-id=3D"7e365e37de11"><strong>Defect Management (Fehlereinstufung):<=
+/strong></p>
+</li>
+</ol>
+<ul local-id=3D"dc4353d6e162">
+<li local-id=3D"bc0de7cbee3a">
+<ul local-id=3D"679fa8278c15">
+<li local-id=3D"f818710ff124">
+<p local-id=3D"7dc986ed5031">Im Defect-Tracking-System (Azure DevOps / Jira=
+) existiert eine eigene Kategorie <strong>=E2=80=9ESecurity / Berechtigung=
+=E2=80=9C</strong> mit klaren Subtypen:</p>
+</li>
+<li local-id=3D"325ee10ab0f1">
+<p local-id=3D"1164d64b1e8a"><em>Blocker:</em> Men=C3=BCpunkt fehlt vollst=
+=C3=A4ndig (Prozess steht).</p>
+</li>
+<li local-id=3D"0d24cd7027c6">
+<p local-id=3D"08269197c66f"><em>Warning / License Issue:</em> Prozess funk=
+tioniert, l=C3=B6st aber eine falsche (h=C3=B6here) Lizenz aus.</p>
+</li>
+<li local-id=3D"2e90755600a6">
+<p local-id=3D"5f358d7e5ef9"><em>Compliance:</em> Unerlaubter Zugriff m=C3=
+=B6glich (Negativtest fehlgeschlagen).</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 local-id=3D"23c68e3e810e" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-StrangA:GetestetwerdenProzesse,nichtRollen">Strang =
+A: Getestet werden Prozesse, nicht Rollen</h3>
+<p local-id=3D"43d7f760f7b3">F=C3=BCr die Bereinigung in den Bestandsgesell=
+schaften kommen keine eigenen Rollentests dazu. Die Testf=C3=A4lle, die es =
+heute f=C3=BCr jedes Versionsupdate und jede Paketeinspielung gibt, laufen =
+mit Testbenutzern, die nur die abgespeckten Rollen haben.</p>
+<ul local-id=3D"5752e432d685">
+<li local-id=3D"aa97eb0c15f2">
+<p local-id=3D"6a6460af7e65"><strong>Abnahme:</strong> Die Prozesse laufen =
+unver=C3=A4ndert, und der Testbenutzer l=C3=B6st die geplante Lizenz aus.</=
+p>
+</li>
+<li local-id=3D"964889c85cd4">
+<p local-id=3D"87a8ee3ba983"><strong>Fehlschlag:</strong> Bricht ein Prozes=
+sschritt ab oder fehlt eine Funktion, ist das ein Fehler der Kategorie =E2=
+=80=9EBlocker=E2=80=9C. Er kommt ins Ticket, und die Rolle wird erst umgest=
+ellt, wenn er behoben ist.</p>
+</li>
+<li local-id=3D"344adefc1cd3">
+<p local-id=3D"9dc098ebb6e2"><strong>Nachbesserung:</strong> =C3=84ndert di=
+e fehlende Funktion die Lizenz nicht, kommt sie in die Rolle. =C3=84ndert o=
+der erh=C3=B6ht sie die Lizenz, wird daf=C3=BCr eine Zusatzrolle erstellt (=
+Prinzip 3): Die Rolle bleibt bei ihrer Lizenz, und nur wer die Funktion bra=
+ucht, erh=C3=A4lt die Zusatzrolle.</p>
+</li>
+<li local-id=3D"c15ba0efd172">
+<p local-id=3D"2fddb7be7850"><strong>L=C3=BCcke:</strong> Deckt kein vorhan=
+dener Testfall einen Prozess der Rolle ab, wird der Testfall erg=C3=A4nzt, =
+bevor die Rolle umgestellt wird.</p>
+</li>
+<li local-id=3D"e4dd48692e9b">
+<p local-id=3D"040c65c0f6e3"><strong>Umstellung:</strong> Nach bestandenem =
+Test geht die Rolle nach Prod, nicht erst in Phase 6.</p>
+</li>
+<li local-id=3D"d040d510e29f">
+<p local-id=3D"b0aec3f04824"><strong>R=C3=BCckfallweg:</strong> Die bisheri=
+gen Rollen bleiben erhalten. Fehlt nach der Umstellung etwas, werden sie wi=
+eder eingespielt, und die L=C3=BCcke geht als Ticket zur=C3=BCck in die Nac=
+hbesserung.</p>
+</li>
+<li local-id=3D"12f467fabae7">
+<p local-id=3D"e8948782d6a6"><strong>Ticket:</strong> Jeder Test einer bere=
+inigten Rolle l=C3=A4uft =C3=BCber ein Ticket nach der Vorlage im Testkonze=
+pt (D11).</p>
+</li>
+</ul>
+<h3 local-id=3D"b6e2f869ece5" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-TestumgebungenundDatenstand">Testumgebungen und Dat=
+enstand</h3>
+<p local-id=3D"06296dd2c125">Um Datenbankkapazit=C3=A4t zu sparen, sind die=
+ Sandboxen unterschiedlich bef=C3=BCllt (Kapitel 10). Daraus folgt, welche =
+Tests wo laufen:</p>
+<p local-id=3D"71391ae525b4">Testumgebungen und ihr Datenstand</p>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"default" data-local-id=3D"4b=
+b2ba1e-0065-4f02-8aec-83048c2194c6" class=3D"confluenceTable">
+<colgroup>
+<col style=3D"width: 114.0px;">
+<col style=3D"width: 265.0px;">
+<col style=3D"width: 190.0px;">
+<col style=3D"width: 190.0px;">
+</colgroup>
+<tbody>
+<tr data-local-id=3D"87b73eed-478d-4794-afbc-be14f84531d0">
+<td data-local-id=3D"289b1d3f-f0f6-427e-84f8-f48c1a707c02" class=3D"conflue=
+nceTd">
+<p local-id=3D"1cb6564ad16c"><strong>Umgebung</strong></p>
+</td>
+<td data-local-id=3D"13244dad-7048-450d-8419-e781a2baa696" class=3D"conflue=
+nceTd">
+<p local-id=3D"04e136e142ac"><strong>Datenstand</strong></p>
+</td>
+<td data-local-id=3D"3988f630-6c5b-4da3-90a4-a64884fd6cdf" class=3D"conflue=
+nceTd">
+<p local-id=3D"4db1644c0224"><strong>Geeignet f=C3=BCr</strong></p>
+</td>
+<td data-local-id=3D"9767394c-d328-475c-ae4c-4179a19a6da1" class=3D"conflue=
+nceTd">
+<p local-id=3D"deb6d3e0b0bd"><strong>Nicht geeignet f=C3=BCr</strong></p>
+</td>
+</tr>
+<tr data-local-id=3D"e12b89de-7303-437b-91ff-8771ab3567e9">
+<td data-local-id=3D"c2eb6236-3491-457a-863c-0a03d73e0216" class=3D"conflue=
+nceTd">
+<p local-id=3D"58ba6d455cdc">INT</p>
+</td>
+<td data-local-id=3D"eccf4c34-d714-400c-aa27-3c182e5f3699" class=3D"conflue=
+nceTd">
+<p local-id=3D"7d78461bd85a">Kopie von Prod; Historien nach kurzer Frist be=
+reinigt</p>
+</td>
+<td data-local-id=3D"323d5c11-3e61-40c0-8980-1ab235b5f131" class=3D"conflue=
+nceTd">
+<p local-id=3D"f040d3f24089">Service-Update-Tests, Prozess- und Regressions=
+tests mit Bestandsdaten</p>
+</td>
+<td data-local-id=3D"bd6f6a39-ba78-4aaf-bc3a-016cd1144d3b" class=3D"conflue=
+nceTd">
+<p local-id=3D"0c875ebc911e">=E2=80=93</p>
+</td>
+</tr>
+<tr data-local-id=3D"17ccbce6-cd3c-4b6a-8892-26294b474147">
+<td data-local-id=3D"ae3e5bac-c8b6-4586-8a7c-b6426f4745f2" class=3D"conflue=
+nceTd">
+<p local-id=3D"669847cdacfb">TST</p>
+</td>
+<td data-local-id=3D"a2bad65b-271b-4af1-9cdd-e92e62f8881a" class=3D"conflue=
+nceTd">
+<p local-id=3D"0f7b879af125">Transaktionslose Kopie: nur Stamm- und Konfigu=
+rationsdaten</p>
+</td>
+<td data-local-id=3D"ed8e8111-eff5-425d-88bb-1c84c3afe6cf" class=3D"conflue=
+nceTd">
+<p local-id=3D"dfd9eed9183a">Smoke-Tests nach Updates, Einstellungen, Rolle=
+n- und Negativtests, Lizenzpr=C3=BCfung je Rolle</p>
+</td>
+<td data-local-id=3D"5feb1547-8e09-4848-94e7-df88a42ff257" class=3D"conflue=
+nceTd">
+<p local-id=3D"b73943c39183">Tests, die offene Belege oder Best=C3=A4nde vo=
+raussetzen: offene Auftr=C3=A4ge, Lagerbestand, offene Posten, Ausgleich</p=
+>
+</td>
+</tr>
+<tr data-local-id=3D"5db22c17-c51e-4d77-8359-b129dea0a8b6">
+<td data-local-id=3D"2e66cc1a-4eb8-41a1-ad61-9fa7156c1cb5" class=3D"conflue=
+nceTd">
+<p local-id=3D"dcb45ac334dd">PRJ</p>
+</td>
+<td data-local-id=3D"98426891-3b00-4b9e-866b-825e04f5a2a0" class=3D"conflue=
+nceTd">
+<p local-id=3D"07a382f6c290">Kopie von Prod mit dem Projektstand der neuen =
+Gesellschaft</p>
+</td>
+<td data-local-id=3D"c991cdda-b053-4610-afb6-30eac03f2d7c" class=3D"conflue=
+nceTd">
+<p local-id=3D"ef60f3d34613">Aufbau und Test der neuen Gesellschaft, Fachbe=
+reichs-Workshops, UAT mit Rollen-Testbenutzern</p>
+</td>
+<td data-local-id=3D"17a70d12-d9f0-4da2-852a-fab4ef203673" class=3D"conflue=
+nceTd">
+<p local-id=3D"259b9f2c4825">=E2=80=93</p>
+</td>
+</tr>
+<tr data-local-id=3D"b3b50904-14c7-4590-a155-26e75feb9475">
+<td data-local-id=3D"ed3ac5a1-29af-4177-aa16-30d0d564578a" class=3D"conflue=
+nceTd">
+<p local-id=3D"a4d69377a863">Migrationssandbox</p>
+</td>
+<td data-local-id=3D"3398f45a-c997-4956-9b1e-7890d6f703c4" class=3D"conflue=
+nceTd">
+<p local-id=3D"a41c130b4b17">Kopie von Prod</p>
+</td>
+<td data-local-id=3D"f4985dcd-d74d-4611-96f0-75db41082988" class=3D"conflue=
+nceTd">
+<p local-id=3D"c0a0979e2eef">Migrationsl=C3=A4ufe und Generalprobe</p>
+</td>
+<td data-local-id=3D"dce6dc6d-17d0-40ce-a194-535b1820d50b" class=3D"conflue=
+nceTd">
+<p local-id=3D"903d31ec497b">Fachliche Abnahme</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul local-id=3D"a2eda231be50">
+<li local-id=3D"872f6b065e47">
+<p local-id=3D"d2275e89bb2e"><strong>Testdaten:</strong> Die Kollegen entsc=
+heiden selbst, wie sie testen. Sie k=C3=B6nnen Daten anlegen, zum Beispiel =
+einen Lagerzugang vor dem Kommissioniertest, oder vorhandene Daten nehmen. =
+In TST gibt es keine Buchungsdaten: Wer sie braucht, legt sie dort an oder =
+testet in INT.</p>
+</li>
+<li local-id=3D"0ac22bc44b00">
+<p local-id=3D"fb1b3ea9637f"><strong>Die Bedenken gegen Tests in TST betref=
+fen Tests mit Bestandsdaten;</strong> diese laufen in INT. Welche Testf=C3=
+=A4lle TST nicht abdeckt, halten Testmanager und Solution Architect als Lis=
+te fest.</p>
+</li>
+<li local-id=3D"00bf6160094e">
+<p local-id=3D"610ea156202d"><strong>Lizenzpr=C3=BCfungen brauchen keine Be=
+wegungsdaten.</strong> Vor dem ersten Einsatz in TST wird gepr=C3=BCft, ob =
+die Lizenztabellen in der transaktionslosen Kopie vollst=C3=A4ndig sind.</p=
+>
+</li>
+</ul>
+<h1 local-id=3D"9ac469898c9c" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-6.Deliverables&amp;Dokumentenlandschaft">6. Deliver=
+ables &amp; Dokumentenlandschaft</h1>
+<p local-id=3D"e5ea5d299d06">Das Projekt wird =C3=BCber klar definierte, pr=
+=C3=BCfbare Ergebnisdokumente (Deliverables) gesteuert:</p>
+<p local-id=3D"385472f7b8d2">=C3=9Cbersicht der Projekt-Deliverables</p>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"default" data-local-id=3D"85=
+c96bce-cbfa-4f1e-83c9-0d37a1e65716" class=3D"confluenceTable">
+<colgroup>
+<col style=3D"width: 59.0px;">
+<col style=3D"width: 319.0px;">
+<col style=3D"width: 190.0px;">
+<col style=3D"width: 190.0px;">
+</colgroup>
+<tbody>
+<tr data-local-id=3D"1de20ad7-9d1a-45df-86c0-2aa854d1c8d5">
+<td data-local-id=3D"b435c0e4-111e-41ac-99f9-24ec0393cc75" class=3D"conflue=
+nceTd">
+<p local-id=3D"3cf18cac30a8"><strong>ID</strong></p>
+</td>
+<td data-local-id=3D"5376d47a-b240-4589-bfbc-dea63541e0b5" class=3D"conflue=
+nceTd">
+<p local-id=3D"cc693539bb4c"><strong>Deliverable</strong></p>
+</td>
+<td data-local-id=3D"f68c931a-63ae-468f-9e01-03f0a1fe4a61" class=3D"conflue=
+nceTd">
+<p local-id=3D"ad9c7b493ce5"><strong>Form</strong></p>
+</td>
+<td data-local-id=3D"b9e5ba22-1308-46d8-a3be-308b46e36bea" class=3D"conflue=
+nceTd">
+<p local-id=3D"37b628e741fb"><strong>Zielgruppe</strong></p>
+</td>
+</tr>
+<tr data-local-id=3D"1bb550f6-ac71-410b-bf85-0de08085e5fc">
+<td data-local-id=3D"d14bc90a-82b6-46b9-8a4d-1b5826ae30b4" class=3D"conflue=
+nceTd">
+<p local-id=3D"d34ce8e256ad">D01</p>
+</td>
+<td data-local-id=3D"59657468-c053-4ac2-b5af-20c56f0ee414" class=3D"conflue=
+nceTd">
+<p local-id=3D"4a2e7fe94463">Berechtigungs- &amp; Lizenzstrategie (dieses D=
+okument)</p>
+</td>
+<td data-local-id=3D"ed9ba81e-4cff-4e90-ab7a-6297a037f509" class=3D"conflue=
+nceTd">
+<p local-id=3D"35bb7f7d436f">Word (dieses Dokument)</p>
+</td>
+<td data-local-id=3D"d7228da1-4b92-434d-9f5d-bc145d892c40" class=3D"conflue=
+nceTd">
+<p local-id=3D"9bd44c43f508">Lenkungskreis, IT-Leitung, Audit</p>
+</td>
+</tr>
+<tr data-local-id=3D"c9846b58-b555-441e-b1d5-ecdea87ecaf5">
+<td data-local-id=3D"2228c382-1aaf-4e56-8e3d-3e32fd8d30d9" class=3D"conflue=
+nceTd">
+<p local-id=3D"c10217716bd5">D02</p>
+</td>
+<td data-local-id=3D"54e6af8c-433e-46ff-902c-8262c5b2a9a8" class=3D"conflue=
+nceTd">
+<p local-id=3D"344ef969ecc4">RACI- &amp; Governance-Steckbrief</p>
+</td>
+<td data-local-id=3D"1c8d16ff-85a8-49f4-83d4-1ecd799bbab5" class=3D"conflue=
+nceTd">
+<p local-id=3D"7bb0ad0ef016">Word</p>
+</td>
+<td data-local-id=3D"301826bf-6c07-4d75-869d-ba2d418a4eff" class=3D"conflue=
+nceTd">
+<p local-id=3D"0607bedc0c14">Projektleitung, Fachbereichsleiter</p>
+</td>
+</tr>
+<tr data-local-id=3D"1df333e5-3562-49c4-a6de-50d5df6815b0">
+<td data-local-id=3D"c9bd55be-634c-4273-92ec-49442a35ec7a" class=3D"conflue=
+nceTd">
+<p local-id=3D"5f69782afb9d">D03</p>
+</td>
+<td data-local-id=3D"056b1e51-c77a-406c-b8f4-f7905979b034" class=3D"conflue=
+nceTd">
+<p local-id=3D"1ff4a0886c5a">Bestands- &amp; Lizenzanalyse (Strang A)</p>
+</td>
+<td data-local-id=3D"c89b6210-c1d3-454f-90e9-7e4d5a21ce8d" class=3D"conflue=
+nceTd">
+<p local-id=3D"9ee427b0a689">Word und Excel (aus Rmd)</p>
+</td>
+<td data-local-id=3D"19a2ac4e-87fc-49f4-8df9-787246006b85" class=3D"conflue=
+nceTd">
+<p local-id=3D"070d875aee77">CFO, IT-Leitung, Lizenzmanager</p>
+</td>
+</tr>
+<tr data-local-id=3D"cc45737d-d103-44d6-b08c-fcbc90b11843">
+<td data-local-id=3D"c858ecf0-3717-49b6-8872-4bf1c1c53fa7" class=3D"conflue=
+nceTd">
+<p local-id=3D"967139341ba8">D04</p>
+</td>
+<td data-local-id=3D"92ffc172-6b59-4d7e-b938-25ff2281000d" class=3D"conflue=
+nceTd">
+<p local-id=3D"e93675586b21">Liste der teuersten Rollen und Bereinigungspla=
+n (Strang A)</p>
+</td>
+<td data-local-id=3D"7fe74a28-3b7d-4dba-a146-40b9362dcacd" class=3D"conflue=
+nceTd">
+<p local-id=3D"e106b6f431a4">Excel (aus Rmd, mit D03)</p>
+</td>
+<td data-local-id=3D"fb335076-7f30-4f7d-9571-ce6f10f37839" class=3D"conflue=
+nceTd">
+<p local-id=3D"f4fb99b421f1">IT-Leitung, Lizenzmanager, Fachbereichsleiter<=
+/p>
+</td>
+</tr>
+<tr data-local-id=3D"53e4f5a8-2208-4c89-9ee3-6ff04cab8960">
+<td data-local-id=3D"70cb8786-6833-4c84-a355-b93d1036c1ce" class=3D"conflue=
+nceTd">
+<p local-id=3D"5ba3fe8554a3">D05</p>
+</td>
+<td data-local-id=3D"dd7ec28b-71ab-4c5e-9346-716c5538d1d1" class=3D"conflue=
+nceTd">
+<p local-id=3D"5b2c35f77482">Rollenkatalog: Rollen, Aufgaben je Rolle, Owne=
+r je Gesellschaft</p>
+</td>
+<td data-local-id=3D"e537bb01-85c5-493f-bd59-f3592024b3ae" class=3D"conflue=
+nceTd">
+<p local-id=3D"8cb88ae4562c">Excel</p>
+</td>
+<td data-local-id=3D"ea86599d-8ef6-4fd7-94a7-16b82c7cc245" class=3D"conflue=
+nceTd">
+<p local-id=3D"e079ee5dc5ca">Kernteam, Fachbereiche, IT</p>
+</td>
+</tr>
+<tr data-local-id=3D"aa0c02c4-8d8d-49d7-89b1-0ecb6ba7f039">
+<td data-local-id=3D"c4849272-34b4-4095-b5cc-6b592c53781c" class=3D"conflue=
+nceTd">
+<p local-id=3D"7cbf6471ab83">D06</p>
+</td>
+<td data-local-id=3D"d60c9787-2da4-4d24-8443-ceed30c43fc8" class=3D"conflue=
+nceTd">
+<p local-id=3D"38fdc179f525">Stellen =E2=86=92 Rollen: Stellen der Personal=
+verwaltung mit ihren Rollen</p>
+</td>
+<td data-local-id=3D"c1d8063c-488e-4f0a-b7b8-9497482a21e4" class=3D"conflue=
+nceTd">
+<p local-id=3D"816b9b5690a9">Excel</p>
+</td>
+<td data-local-id=3D"3f9922af-73a4-419a-95a9-4905abad3815" class=3D"conflue=
+nceTd">
+<p local-id=3D"623de7f0c80d">Personalabteilung, Abteilungsleiter, Fachberei=
+ch</p>
+</td>
+</tr>
+<tr data-local-id=3D"b4171053-d5ad-4c13-89c1-380cb98b6e9c">
+<td data-local-id=3D"f27f478e-28e0-4633-9fbb-d481d03b7343" class=3D"conflue=
+nceTd">
+<p local-id=3D"6333637675b2">D07</p>
+</td>
+<td data-local-id=3D"03ddc94f-8b20-43cd-acd7-ea9fb1efe47a" class=3D"conflue=
+nceTd">
+<p local-id=3D"e5af9ca729a9">Funktionstrennungs-Matrix (SoD Rulebook)</p>
+</td>
+<td data-local-id=3D"6ceee4db-eca3-44b6-8d3b-574f2b96b71e" class=3D"conflue=
+nceTd">
+<p local-id=3D"c3d2c2f28074">Excel (aus Rmd)</p>
+</td>
+<td data-local-id=3D"97ce9b7b-9189-4561-920f-e3c9b4e40c83" class=3D"conflue=
+nceTd">
+<p local-id=3D"7426eafc7e15">Revision, Compliance, Wirtschaftspr=C3=BCfer</=
+p>
+</td>
+</tr>
+<tr data-local-id=3D"cd988856-566a-4615-86b7-def89454d15a">
+<td data-local-id=3D"73fd7d1b-86f6-439a-ae45-264ca187138e" class=3D"conflue=
+nceTd">
+<p local-id=3D"d3c842ebdbc5">D08</p>
+</td>
+<td data-local-id=3D"24fe7f5e-c359-40bf-9905-1d292a634518" class=3D"conflue=
+nceTd">
+<p local-id=3D"f97a83c61ae3">Fachbereichs-Workshop-Paket (Workshops 1=E2=80=
+=934)</p>
+</td>
+<td data-local-id=3D"e111552b-3c1a-4aae-a3d3-f9a8d24e2760" class=3D"conflue=
+nceTd">
+<p local-id=3D"cafbfe00936e">Word</p>
+</td>
+<td data-local-id=3D"39256fd7-e0c7-4062-b77b-663c699d48fa" class=3D"conflue=
+nceTd">
+<p local-id=3D"300199a32042">Key-User, Prozessverantwortliche</p>
+</td>
+</tr>
+<tr data-local-id=3D"26319770-a665-4849-ab3e-c77528d7dfda">
+<td data-local-id=3D"ecc7d2ca-0e92-40cf-9a11-98289835b473" class=3D"conflue=
+nceTd">
+<p local-id=3D"a77f43c04f72">D09</p>
+</td>
+<td data-local-id=3D"4c33ce12-fd2a-4e4e-9d7c-d0b0ec6ea726" class=3D"conflue=
+nceTd">
+<p local-id=3D"42ab257b8a8f">Leitfaden Aufgabenaufzeichnungen</p>
+</td>
+<td data-local-id=3D"68d0c065-1ff1-40e5-9f77-6a2c53e508f4" class=3D"conflue=
+nceTd">
+<p local-id=3D"707dba9fe5a5">Word</p>
+</td>
+<td data-local-id=3D"9c4c5c13-09ed-4667-834e-7a2f4f9085fb" class=3D"conflue=
+nceTd">
+<p local-id=3D"6be481cb3fdb">Key-User, Kernteam, IT</p>
+</td>
+</tr>
+<tr data-local-id=3D"61a20c03-a42a-4494-a9e7-53a49c925276">
+<td data-local-id=3D"0603dd7b-778e-4aa3-923d-b52966e5fcfe" class=3D"conflue=
+nceTd">
+<p local-id=3D"b9003cede8fd">D10</p>
+</td>
+<td data-local-id=3D"c5774438-6615-4f15-9524-1edc02a0ae69" class=3D"conflue=
+nceTd">
+<p local-id=3D"ef589d37abff">Technisches Design Dokument (TDD Security / AO=
+T)</p>
+</td>
+<td data-local-id=3D"04ce49b4-2d5e-4e2b-b305-588ff925e3b6" class=3D"conflue=
+nceTd">
+<p local-id=3D"e17361c2c3f4">offen</p>
+</td>
+<td data-local-id=3D"8f91eb96-347d-46ca-8a07-48015eda880d" class=3D"conflue=
+nceTd">
+<p local-id=3D"28b98e201882">D365 Entwickler, Solution Architect</p>
+</td>
+</tr>
+<tr data-local-id=3D"9668d0f0-91a1-4465-a1cd-c09a1f08bf1e">
+<td data-local-id=3D"cd36ea30-5895-424a-ac8b-f49666c49a00" class=3D"conflue=
+nceTd">
+<p local-id=3D"5001d4404a9c">D11</p>
+</td>
+<td data-local-id=3D"b322e6ad-329b-4298-a66e-db304587c3a4" class=3D"conflue=
+nceTd">
+<p local-id=3D"8adbb04b122f">Testkonzept Berechtigungen (mit Testmanager)</=
+p>
+</td>
+<td data-local-id=3D"48ac76c9-dedc-43cd-881b-05557c9421e6" class=3D"conflue=
+nceTd">
+<p local-id=3D"3f0aa52bc2d8">Word</p>
+</td>
+<td data-local-id=3D"c716bedb-05aa-4692-b3de-eb0f0141c0b4" class=3D"conflue=
+nceTd">
+<p local-id=3D"ad574a07b80c">Testmanager, PMO</p>
+</td>
+</tr>
+<tr data-local-id=3D"d3b2a8fc-6217-4567-b70c-694485193b99">
+<td data-local-id=3D"a09875e9-fd45-4451-9b34-f31be77e2c38" class=3D"conflue=
+nceTd">
+<p local-id=3D"d964fcb26f3f">D12</p>
+</td>
+<td data-local-id=3D"5b287270-1743-4b81-af84-eeccd795cfa6" class=3D"conflue=
+nceTd">
+<p local-id=3D"92d39957f41d">Testf=C3=A4lle: f=C3=BCr Strang A die vorhande=
+nen Testf=C3=A4lle der Updates und Paketeinspielungen, f=C3=BCr Strang B Pr=
+ozesstests mit Rollen-Testbenutzern</p>
+</td>
+<td data-local-id=3D"c90598ca-a5ad-4eb4-a59a-f87aef89a17a" class=3D"conflue=
+nceTd">
+<p local-id=3D"d80b4147287d">Testmanagement</p>
+</td>
+<td data-local-id=3D"7130520c-4f70-4c34-bbe5-7292bce10c2e" class=3D"conflue=
+nceTd">
+<p local-id=3D"e868995b1b37">Testmanager, Key-User, Tester</p>
+</td>
+</tr>
+<tr data-local-id=3D"776c246d-05a3-45d3-bc7c-659b6b64bc3a">
+<td data-local-id=3D"16bea6eb-238a-4ee3-b9b9-e123426da80d" class=3D"conflue=
+nceTd">
+<p local-id=3D"62cae4be848e">D13</p>
+</td>
+<td data-local-id=3D"2ae1f7a3-823a-4428-b06d-3dab4a41d0c6" class=3D"conflue=
+nceTd">
+<p local-id=3D"76173c748f05">Cutover- &amp; Migrationsplan</p>
+</td>
+<td data-local-id=3D"1234d59e-efc3-4e28-b722-f2d94020ae33" class=3D"conflue=
+nceTd">
+<p local-id=3D"b9dd8d6deebe">offen</p>
+</td>
+<td data-local-id=3D"742f0d4b-0d0f-42d1-9739-5c6620da8e05" class=3D"conflue=
+nceTd">
+<p local-id=3D"aea72cc32d30">Projektleitung, Rollout-Team</p>
+</td>
+</tr>
+<tr data-local-id=3D"6fe14fcc-3b05-4be3-a343-9cbf139f27c3">
+<td data-local-id=3D"c56f171c-a4b3-4737-ad3b-be342282a516" class=3D"conflue=
+nceTd">
+<p local-id=3D"b5c302f6c5c1">D14</p>
+</td>
+<td data-local-id=3D"289f9fba-d805-40a5-a025-cd27c5a1963d" class=3D"conflue=
+nceTd">
+<p local-id=3D"4c5c0be54a3f">Notfall- &amp; Fallback-Konzept (Emergency Acc=
+ess)</p>
+</td>
+<td data-local-id=3D"ac6a0b2b-e489-4d05-bc14-ddd0d6c72e43" class=3D"conflue=
+nceTd">
+<p local-id=3D"cbcaadccd30c">offen</p>
+</td>
+<td data-local-id=3D"e55c7050-2544-4ad6-a9a6-fb0e9eb2fca7" class=3D"conflue=
+nceTd">
+<p local-id=3D"434f2953a238">IT-Betrieb, Support</p>
+</td>
+</tr>
+<tr data-local-id=3D"12a5345e-7466-47ee-944c-8a2cc1cd6f68">
+<td data-local-id=3D"d4d1fc53-f3ab-45f1-ac29-de5b2abbd713" class=3D"conflue=
+nceTd">
+<p local-id=3D"9fd21d303548">D15</p>
+</td>
+<td data-local-id=3D"a4e27d95-3a16-4df4-b25e-be672dad8758" class=3D"conflue=
+nceTd">
+<p local-id=3D"2da8c492bb6c">Betriebshandbuch &amp; Rezertifizierungs-Leitf=
+aden</p>
+</td>
+<td data-local-id=3D"62d06c23-9512-48a0-9b67-aa1e0b5d297b" class=3D"conflue=
+nceTd">
+<p local-id=3D"09edf09ad6ac">offen</p>
+</td>
+<td data-local-id=3D"34df170c-d7e6-4785-9cb5-f2f126b6275d" class=3D"conflue=
+nceTd">
+<p local-id=3D"c06d14a37b87">Fachbereichsleiter, IT-Betrieb</p>
+</td>
+</tr>
+<tr data-local-id=3D"a86b19ea-043b-469f-8618-82aa78cba6b5">
+<td data-local-id=3D"55eb39ad-f71e-464f-b0ff-a804b6063226" class=3D"conflue=
+nceTd">
+<p local-id=3D"935866f28691">D16</p>
+</td>
+<td data-local-id=3D"191e30cb-a4f9-4c6d-8bc1-3e125f9c5442" class=3D"conflue=
+nceTd">
+<p local-id=3D"3a09e680d2dd">Lizenzprognose der neuen Gesellschaft (Kapitel=
+ 9)</p>
+</td>
+<td data-local-id=3D"3d7d4bdf-c502-4c1e-bcd7-0278623e7feb" class=3D"conflue=
+nceTd">
+<p local-id=3D"c28c42c166dc">Kapitel 9</p>
+</td>
+<td data-local-id=3D"29f5cd2b-6c0a-4def-b6ce-5c9b57598d1d" class=3D"conflue=
+nceTd">
+<p local-id=3D"ae566de9989e">Gesch=C3=A4ftsf=C3=BChrung, CFO, IT-Leitung</p=
+>
+</td>
+</tr>
+<tr data-local-id=3D"52406076-23f7-4890-a6b0-702782899dea">
+<td data-local-id=3D"fda9ec8c-4c74-4948-9839-d6d7b9c28572" class=3D"conflue=
+nceTd">
+<p local-id=3D"f17a05491f16">D17</p>
+</td>
+<td data-local-id=3D"85d1d8b6-0493-491e-8ba0-f61182b456a6" class=3D"conflue=
+nceTd">
+<p local-id=3D"2ff194898c5c">Kapazit=C3=A4tsprognose Datenbank mit Historie=
+ der St=C3=A4nde</p>
+</td>
+<td data-local-id=3D"3fee7438-0214-4ad5-9934-f1d65f2de709" class=3D"conflue=
+nceTd">
+<p local-id=3D"5d0c9240bc5f">Excel und Word (aus Rmd)</p>
+</td>
+<td data-local-id=3D"1318fdb7-23da-4852-bad1-5437ef092a99" class=3D"conflue=
+nceTd">
+<p local-id=3D"9fea532d5cde">IT-Leitung, IT-Betrieb</p>
+</td>
+</tr>
+<tr data-local-id=3D"d08cd0b9-3763-452c-aebb-fcb40f2243b5">
+<td data-local-id=3D"267465cf-47bf-434f-8d80-89643468d319" class=3D"conflue=
+nceTd">
+<p local-id=3D"dd3e91d32339">D18</p>
+</td>
+<td data-local-id=3D"8e15ab94-660c-44d7-8172-4810444ef342" class=3D"conflue=
+nceTd">
+<p local-id=3D"1ff238995ecd">Sperrliste kontrollierter Funktionen</p>
+</td>
+<td data-local-id=3D"5965f48f-7667-4143-9e96-8d59ce233db5" class=3D"conflue=
+nceTd">
+<p local-id=3D"ad0586378991">Excel</p>
+</td>
+<td data-local-id=3D"35852392-155e-438e-8ced-878be6352b93" class=3D"conflue=
+nceTd">
+<p local-id=3D"cf0212e1b993">Fachbereichsleiter, IT</p>
+</td>
+</tr>
+<tr data-local-id=3D"b9350b7a-be05-4a10-a9e0-bee8320430e9">
+<td data-local-id=3D"c3a9a421-7f00-499e-acba-7328f7856141" class=3D"conflue=
+nceTd">
+<p local-id=3D"51102e95b372">D19</p>
+</td>
+<td data-local-id=3D"b46f42c3-d526-4844-bd91-9f60fd6b4d25" class=3D"conflue=
+nceTd">
+<p local-id=3D"73c440eee74b">Prozess-Rollen-Matrix: verantwortliche und aus=
+f=C3=BChrende Rollen je Prozessschritt</p>
+</td>
+<td data-local-id=3D"1a4c7e41-d493-487b-ad0f-8806146b98e8" class=3D"conflue=
+nceTd">
+<p local-id=3D"e902fb363b48">Excel</p>
+</td>
+<td data-local-id=3D"fd57348e-b5bb-4121-8f33-95bdb3e48e57" class=3D"conflue=
+nceTd">
+<p local-id=3D"eaf4b8532b57">Key-User, Prozessverantwortliche, IT</p>
+</td>
+</tr>
+<tr data-local-id=3D"4123975e-bffc-46ce-af2a-d37f70dd1388">
+<td data-local-id=3D"2c5feaa6-207a-4438-b777-7577b6fcc5c6" class=3D"conflue=
+nceTd">
+<p local-id=3D"cb8eebff3276">D20</p>
+</td>
+<td data-local-id=3D"35b47db1-9dea-46b4-80d7-358e3933d551" class=3D"conflue=
+nceTd">
+<p local-id=3D"4192f0762a21">Konsolidierung doppelter Rollen: je Paar aus A=
+OT-Rolle und Kopie aus der Oberfl=C3=A4che Ergebnis, Merge-Rolle und Umsetz=
+ung</p>
+</td>
+<td data-local-id=3D"e61b211b-1dd2-4be1-a1d0-d54feb228c20" class=3D"conflue=
+nceTd">
+<p local-id=3D"86c98ba875d7">Excel (aus Rmd)</p>
+</td>
+<td data-local-id=3D"a2ef3b7e-b342-4e52-bcfb-b5d4b4fd3711" class=3D"conflue=
+nceTd">
+<p local-id=3D"887d4cc18439">IT D365, Owner der Rollen, Kernteam</p>
+</td>
+</tr>
+<tr data-local-id=3D"659a3cc3-aa6f-4f3a-94a9-463e9af9167d">
+<td data-local-id=3D"c757759c-8258-4c8d-9285-095dc4414a9d" class=3D"conflue=
+nceTd">
+<p local-id=3D"1dfcdf559b14">D21</p>
+</td>
+<td data-local-id=3D"963c6142-43be-42e3-bc20-d1ac7a99c13f" class=3D"conflue=
+nceTd">
+<p local-id=3D"83e4dad87aa5">Lizenzprofil je Benutzer: was die Telemetrie b=
+raucht gegen das, was PPAC erwartet, zuweist und noch nicht zugewiesen hat<=
+/p>
+</td>
+<td data-local-id=3D"b0d19eed-65ee-45fe-87ec-e50436f22bce" class=3D"conflue=
+nceTd">
+<p local-id=3D"309e4bb92a48">Excel (aus Rmd)</p>
+</td>
+<td data-local-id=3D"ef60a956-c655-4e7a-aa02-3ff31c8fbff9" class=3D"conflue=
+nceTd">
+<p local-id=3D"8a08128d00af">Lizenzmanager, IT-Leitung, Fachbereichsleiter<=
+/p>
+</td>
+</tr>
+<tr data-local-id=3D"c3ae9761-c71b-4115-aeae-57052753786c">
+<td data-local-id=3D"2aa468fe-47d3-42a0-9c17-29ab23068bfa" class=3D"conflue=
+nceTd">
+<p local-id=3D"fa25f3e15683">D22</p>
+</td>
+<td data-local-id=3D"8156fe72-a6ba-4ed0-a78f-71428835ec92" class=3D"conflue=
+nceTd">
+<p local-id=3D"be18936373c8">UI-Aufgaben und ihre AOT-Pendants: Vergleich u=
+nd Ma=C3=9Fnahme je UI-Aufgabe</p>
+</td>
+<td data-local-id=3D"270934e1-ba52-4874-b4a3-fb85105bd67f" class=3D"conflue=
+nceTd">
+<p local-id=3D"836bfde43ad6">Excel (aus Rmd)</p>
+</td>
+<td data-local-id=3D"6d441c51-5ee6-486e-9af1-1e88dc407c98" class=3D"conflue=
+nceTd">
+<p local-id=3D"71ddeeddf471">IT D365, D365 Entwickler</p>
+</td>
+</tr>
+<tr data-local-id=3D"850a1228-c34e-4aab-8cf9-24fe85a82a76">
+<td data-local-id=3D"36facab3-9409-448d-b5d1-79da04797a6d" class=3D"conflue=
+nceTd">
+<p local-id=3D"7b8167101a65">D23</p>
+</td>
+<td data-local-id=3D"6e1bf39a-2454-45f7-8170-09894b24f476" class=3D"conflue=
+nceTd">
+<p local-id=3D"62169a7072ff">UI-Rechte und ihre AOT-Pendants: Vergleich und=
+ Ma=C3=9Fnahme je UI-Recht</p>
+</td>
+<td data-local-id=3D"f1af4f73-d715-499a-bb9c-7f4c92c387a6" class=3D"conflue=
+nceTd">
+<p local-id=3D"5c54710936cf">Excel (aus Rmd)</p>
+</td>
+<td data-local-id=3D"58b80cd8-f3fc-4a80-8e4c-f8f2f7560d4c" class=3D"conflue=
+nceTd">
+<p local-id=3D"fbd0dfe5b8b5">IT D365, D365 Entwickler</p>
+</td>
+</tr>
+<tr data-local-id=3D"6035197a-5f5d-4a28-913d-0583c895348e">
+<td data-local-id=3D"8a3d3115-f358-4778-8698-8117f80d43a3" class=3D"conflue=
+nceTd">
+<p local-id=3D"3c3e99290f1d">D24</p>
+</td>
+<td data-local-id=3D"2eb08b68-7c36-4c30-9be5-4080810470ad" class=3D"conflue=
+nceTd">
+<p local-id=3D"564f9ddb0398">Inventur der UI-Objekte: wo UI-Rollen, UI-Aufg=
+aben und UI-Rechte stecken</p>
+</td>
+<td data-local-id=3D"4a35f45c-820f-4abb-b0ba-3644577722b2" class=3D"conflue=
+nceTd">
+<p local-id=3D"ec5328a53ada">Excel (aus Rmd)</p>
+</td>
+<td data-local-id=3D"612036bf-6452-4c0e-9e13-7f02df6e75c4" class=3D"conflue=
+nceTd">
+<p local-id=3D"d31dc1b23057">IT D365, D365 Entwickler, Testmanager</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p local-id=3D"9003058c5d87"><strong>Dateinamen und Aufbau:</strong> Jede D=
+atei tr=C3=A4gt die Nummer des Deliverables als Pr=C3=A4fix, z. B. D05_Roll=
+enkatalog.xlsx. Die Excel-Deliverables (D05, D06, D07, D18 bis D24) haben d=
+enselben Aufbau: ein Blatt =E2=80=9EAnleitung=E2=80=9C, Datenbl=C3=A4tter m=
+it fester Kopfzeile und ein Blatt =E2=80=9EListen=E2=80=9C mit den Auswahlw=
+erten; blau markierte Spalten f=C3=BCllt die IT. Das Werkzeug der IT liest =
+sie ein; deshalb werden Bl=C3=A4tter und Kopfzeilen nicht umbenannt.</p>
+<p local-id=3D"fb3f54917f55"><strong>Kapazit=C3=A4tsprognose (D17):</strong=
+> Sie ist anders aufgebaut. Das erste Blatt zeigt den aktuellen Stand, jede=
+s weitere Blatt tr=C3=A4gt als Namen nur das Datum eines Stands. Neue St=C3=
+=A4nde kommen als Excel-Datei nach Data/Input/Kapazitaet; sie enthalten nur=
+ Mengen und Termine, keine Personendaten.</p>
+<p local-id=3D"acc6c60af27f"><strong>Ablage:</strong> Alle Deliverables lie=
+gen unter ihrem festen Namen im Ordner Data/Deliverables des Projekts und s=
+ind im Repository versioniert; die Rmd-Dateien, aus denen sie entstehen, li=
+egen in Data/Documentation. Ein neuer Lauf liest das bestehende Deliverable=
+, =C3=BCbernimmt die Eintr=C3=A4ge des Teams und ersetzt es; fr=C3=BChere S=
+t=C3=A4nde bleiben im Repository. Die erzeugten Sicherheitsobjekte liegen i=
+n Data/SecurityObjects, Berichte in Data/Reports; Berichte mit echten Benut=
+zerkennungen (Data/Reports/Klartext) kommen nicht ins Repository.</p>
+<p local-id=3D"583644b26beb"><strong>Ma=C3=9Fgebliche Listen:</strong> Roll=
+en stehen im Rollenkatalog (D05), die Zuordnung der Stellen in D06. Die Pro=
+zess-Rollen-Matrix (D19) enth=C3=A4lt Arbeitskopien beider Listen f=C3=BCr =
+die Workshops; ihre Ergebnisse =C3=BCbertr=C3=A4gt die IT nach D05 und D06.=
+</p>
+<h1 local-id=3D"91b48ba7cb8f" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-7.Rollenschnitt&amp;Stellenbeschreibungen:Praxisbei=
+spiel">7. Rollenschnitt &amp; Stellenbeschreibungen: Praxisbeispiel</h1>
+<h3 local-id=3D"98e50a66f231" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-DieHerausforderungmitStellenbeschreibungen">Die Her=
+ausforderung mit Stellenbeschreibungen</h3>
+<p local-id=3D"0fc48facc279">Stellenbeschreibungen aus der Personalabteilun=
+g sind ein essenzieller Ausgangspunkt, jedoch: - oft veraltet oder generisc=
+h formuliert (=E2=80=9EMitarbeit im Einkauf=E2=80=9C), - beschreiben die So=
+ll-Aufgabe, nicht die tats=C3=A4chlichen Klicks im System, - ber=C3=BCcksic=
+htigen keine Vertretungsregelungen.</p>
+<h3 local-id=3D"b3b20cdfc353" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-Best-PracticeL=C3=B6sungsansatz:Der=E2=80=9EModular=
+eStellenkoffer=E2=80=9C">Best-Practice L=C3=B6sungsansatz: Der =E2=80=9EMod=
+ulare Stellenkoffer=E2=80=9C</h3>
+<p local-id=3D"f82d0ad4b64d">Eine Stelle aus der Personalverwaltung wird in=
+ D365 nicht durch eine einzige Sammelrolle abgebildet, sondern durch mehrer=
+e Rollen: <strong>Grundrollen</strong>, die jede Person der Stelle erh=C3=
+=A4lt, und <strong>Zusatzrollen</strong>, die einzelne Personen bewusst erh=
+alten, z. B. f=C3=BCr kontrollierte Funktionen oder Vertretungen. Die Zuord=
+nung steht in D06:</p>
+<p local-id=3D"d9241dd0948a">+---------------------------------------------=
+---------------------------------+
+<br>
+| STELLENPROFIL (HR): Sachbearbeiter Einkauf / Operativer Einkauf&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+<br>
++--------------------------------------------------------------------------=
+----+
+<br>
+&nbsp; |
+<br>
+&nbsp; +---&gt; Grundrolle: "WIBU_Basis_Mitarbeiter_TM" (Team Member Lizenz=
+)
+<br>
+&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Zeiterfassung, Urlaub, eigene Best=
+ellanforderungen
+<br>
+&nbsp; |
+<br>
+&nbsp; +---&gt; Grundrolle: "WIBU_Einkauf_Sachbearbeiter_Act" (Activity Liz=
+enz)
+<br>
+&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Pflege von Bestellanforderungen, W=
+areneingangsauskunft
+<br>
+&nbsp; |
+<br>
+&nbsp; +---&gt; Grundrolle: "WIBU_Einkauf_Bestellabwicklung_SCM" (Supply Ch=
+ain Management Lizenz)
+<br>
+&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Bestellungen erfassen, buchen, Lie=
+ferantenkorrespondenz
+<br>
+&nbsp; |
+<br>
+&nbsp; +---&gt; Zusatzrolle / Vertretung: "WIBU_Kreditoren_Rechnungspruefun=
+g_Fin" (Finance Lizenz)
+<br>
+-Wird bewusst, befristet oder nur einzelnen Personen der Stelle zugewiesen<=
+/p>
+<p local-id=3D"811080637997"><strong>Vorteil:</strong> =C3=84ndert sich die=
+ Lizenzlogik von Microsoft oder die Aufgabenverteilung im Unternehmen, muss=
+ keine Rolle neu gebaut werden =E2=80=93 es wird lediglich die Zuweisung de=
+r Rollenbausteine angepasst.</p>
+<h1 local-id=3D"ef67e3757b63" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-8.Risiken&amp;Mitigation">8. Risiken &amp; Mitigati=
+on</h1>
+<p local-id=3D"507c0d5c2ce6">Risikomatrix und Gegenma=C3=9Fnahmen</p>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"default" data-local-id=3D"31=
+78b174-bbf8-4e48-b749-902e206e003e" class=3D"confluenceTable">
+<tbody>
+<tr data-local-id=3D"bff50bae-0ace-448c-a01e-5594b01202c3">
+<td data-local-id=3D"ff35ae43-3a34-40c7-ada8-8bec59bdeb1e" class=3D"conflue=
+nceTd">
+<p local-id=3D"f127dd5924c3">Risiko</p>
+</td>
+<td data-local-id=3D"b6695519-cfdd-41c1-b26f-d8e804c03d35" class=3D"conflue=
+nceTd">
+<p local-id=3D"fe1f19ed2304">Auswirkung</p>
+</td>
+<td data-local-id=3D"3bf4ef6f-00b8-4117-b1d3-4be7109891bc" class=3D"conflue=
+nceTd">
+<p local-id=3D"4c3dd4512325">Mitigationsmassnahme</p>
+</td>
+</tr>
+<tr data-local-id=3D"17232490-6e84-40af-8c76-fa66d45b7aab">
+<td data-local-id=3D"ff7eb776-7d98-4d9a-b347-eb86153295f3" class=3D"conflue=
+nceTd">
+<p local-id=3D"991478d94e0a">Microsoft verweigert Kollegen ohne passende Li=
+zenz den Zugriff</p>
+</td>
+<td data-local-id=3D"1b978b30-e9d2-46a0-b52e-ccfd14b1ed23" class=3D"conflue=
+nceTd">
+<p local-id=3D"ba430bf9770e">Die Kollegen k=C3=B6nnen nicht arbeiten; in de=
+n Gesellschaften, die bereits live sind, steht ein Teil des Tagesgesch=C3=
+=A4fts.</p>
+</td>
+<td data-local-id=3D"fe917845-b182-4d49-9806-a3ebbcc8c306" class=3D"conflue=
+nceTd">
+<p local-id=3D"1cddc2663d71">Strang A hat Vorrang: Bereinigte Rollen gehen =
+in Wellen nach Prod, sobald ihr Test bestanden ist, nicht erst in Phase 6 (=
+Kapitel 3).</p>
+</td>
+</tr>
+<tr data-local-id=3D"ec1e6655-833b-4145-8a53-63e6c6e8bd43">
+<td data-local-id=3D"784d62dd-0612-4622-8226-3aa60b68b817" class=3D"conflue=
+nceTd">
+<p local-id=3D"645898aaa838">Fachbereichs-Widerstand (=E2=80=98Fr=C3=BCher =
+durfte ich alles=E2=80=99)</p>
+</td>
+<td data-local-id=3D"b714478d-cd1e-40b1-b846-fcc4d8500f42" class=3D"conflue=
+nceTd">
+<p local-id=3D"b5e9acc08555">Verz=C3=B6gerung der Workshops, Eskalationen</=
+p>
+</td>
+<td data-local-id=3D"99b44cc1-934c-4cf5-be71-5ffb8e275b24" class=3D"conflue=
+nceTd">
+<p local-id=3D"adaab4d3bb55">Einbindung des Managements; transparente Kommu=
+nikation der Lizenzkosten und Revisionsrisiken je Rolle.</p>
+</td>
+</tr>
+<tr data-local-id=3D"973945c4-b405-4249-8e96-a793168bd3e2">
+<td data-local-id=3D"4c0c0903-34ff-4de8-9e83-42ec6fe66a42" class=3D"conflue=
+nceTd">
+<p local-id=3D"62ca1e55ccf9">Prozessblockade nach Go-Live</p>
+</td>
+<td data-local-id=3D"76132683-fb69-49c6-a459-2e593dddaf69" class=3D"conflue=
+nceTd">
+<p local-id=3D"2b31756d27ad">Stillstand im Tagesgesch=C3=A4ft, mangelnde Ak=
+zeptanz</p>
+</td>
+<td data-local-id=3D"feecf89e-19c0-432e-b224-1e26f36bdc90" class=3D"conflue=
+nceTd">
+<p local-id=3D"956cbb1f3b0c">Einsatz eines =E2=80=98Emergency Access Roles=
+=E2=80=99 (zeitlich limitierte Beistellrolle mit Logging) und 24/7 Hypercar=
+e-Support.</p>
+</td>
+</tr>
+<tr data-local-id=3D"1367ab25-e274-495b-8834-5867fff81d80">
+<td data-local-id=3D"cdc2c06c-23e8-48b7-9af7-f600a3393190" class=3D"conflue=
+nceTd">
+<p local-id=3D"d4d937ed18c2">Rollenwildwuchs (Role Explosion)</p>
+</td>
+<td data-local-id=3D"9796eba7-79ca-4fa8-a8e9-4372dfd70592" class=3D"conflue=
+nceTd">
+<p local-id=3D"911fad9eed4a">Unwartbare Sicherheitsstruktur, Kontrollverlus=
+t</p>
+</td>
+<td data-local-id=3D"811fb5b2-a86f-4cc2-895d-c83cd7bc95b1" class=3D"conflue=
+nceTd">
+<p local-id=3D"8d928a0d556d">Strikte Governance: Keine neuen Rollen ohne Fr=
+eigabe des Security Architects. Max. Wiederverwendung von Duties.</p>
+</td>
+</tr>
+<tr data-local-id=3D"880fc786-b998-46c1-aade-bd02dcfbcc7f">
+<td data-local-id=3D"da0364b8-628c-4ba3-a32a-8b05da1f4a8e" class=3D"conflue=
+nceTd">
+<p local-id=3D"20a692394c0d">Abweichende Lizenzberechnung durch Microsoft U=
+pdates</p>
+</td>
+<td data-local-id=3D"03d0e935-661f-4756-83c1-de6f99ad42c0" class=3D"conflue=
+nceTd">
+<p local-id=3D"9f5f45f1a80d">Unerwartete Nachforderungen bei Lizenzaudits</=
+p>
+</td>
+<td data-local-id=3D"c180db7f-041d-4d81-9cfe-db30c197de83" class=3D"conflue=
+nceTd">
+<p local-id=3D"57863454b475">Regelm=C3=A4=C3=9Figer Durchlauf automatisiert=
+er Lizenzreports gegen die D365 Licensing Graph Datenbank vor jedem Release=
+.</p>
+</td>
+</tr>
+<tr data-local-id=3D"d14d06bf-ff37-4bda-b2f3-3c03e939baa4">
+<td data-local-id=3D"02dee8ed-dc10-4ebb-8c1c-82ab97572479" class=3D"conflue=
+nceTd">
+<p local-id=3D"3be9c0a39ffa">Datenbankkapazit=C3=A4t vor dem Go-Live =C3=BC=
+berschritten</p>
+</td>
+<td data-local-id=3D"c9a29b40-a158-4613-899d-631ff7a3dd3b" class=3D"conflue=
+nceTd">
+<p local-id=3D"f1459520ace1">Zukaufkosten von 30 =E2=82=AC je GB und Monat;=
+ ohne Option m=C3=B6glicherweise Sperre von Kopier- und Wiederherstellungsv=
+org=C3=A4ngen (bei Microsoft zu best=C3=A4tigen).</p>
+</td>
+<td data-local-id=3D"b6bff6b9-9fa8-405f-bb19-a6330369cb48" class=3D"conflue=
+nceTd">
+<p local-id=3D"b9cc01d5e9b7">Prognose mit jedem neuen Stand gegen Ist pr=C3=
+=BCfen (D17); 45-Tage-Fenster planen; Bereinigungsjobs wie in INT f=C3=BCr =
+alle Sandboxen (Kapitel 10).</p>
+</td>
+</tr>
+<tr data-local-id=3D"b396d68d-5dc2-4cb5-a83a-16bac7d264e1">
+<td data-local-id=3D"5aaa7225-f1ba-42e8-b64d-dea757cb0c86" class=3D"conflue=
+nceTd">
+<p local-id=3D"c72256382b6c">Transaktionslose Sandbox deckt Tests nicht ab<=
+/p>
+</td>
+<td data-local-id=3D"dca01aff-3a09-4b2d-826c-789f1633f8ab" class=3D"conflue=
+nceTd">
+<p local-id=3D"55ded7d73678">Fehler werden erst in INT oder Prod gefunden.<=
+/p>
+</td>
+<td data-local-id=3D"304a79b4-dd89-4545-8ae9-4e0252b88600" class=3D"conflue=
+nceTd">
+<p local-id=3D"5709d7a49e18">Testarten den Umgebungen zuordnen; wer in TST =
+Buchungsdaten braucht, legt sie an oder testet in INT (Kapitel 5).</p>
+</td>
+</tr>
+<tr data-local-id=3D"9c9b3b50-980f-47f7-8de3-d081d2f53f5d">
+<td data-local-id=3D"25425d30-5ccb-4d5d-a23a-cabdf1f7a3c5" class=3D"conflue=
+nceTd">
+<p local-id=3D"0a5e21d04249">Lizenzbedarf der neuen Gesellschaft h=C3=B6her=
+ als gesch=C3=A4tzt</p>
+</td>
+<td data-local-id=3D"0bc53e99-125e-4ce6-855d-edd316588d73" class=3D"conflue=
+nceTd">
+<p local-id=3D"f2ddc6c65071">Budget=C3=BCberschreitung, z. B. Activity stat=
+t Team Member f=C3=BCr die Servicetechniker oder Commerce f=C3=BCr Innendie=
+nst und Vertrieb.</p>
+</td>
+<td data-local-id=3D"c4c98093-718f-4953-b40a-ad5e8e83c98a" class=3D"conflue=
+nceTd">
+<p local-id=3D"d0c8a6f3eae3">Lizenzziel je Rolle bis M=C3=A4rz 2027 festleg=
+en und mit dem Lizenzbericht pr=C3=BCfen (Kapitel 9).</p>
+</td>
+</tr>
+<tr data-local-id=3D"4a683ec2-ab9a-44e4-8b26-dd7bb43ea3ff">
+<td data-local-id=3D"0792ce8f-4a36-43df-b2ae-8bf3f2a985ce" class=3D"conflue=
+nceTd">
+<p local-id=3D"3b93589081f3">Go-Live verschiebt sich</p>
+</td>
+<td data-local-id=3D"513c3a90-30e0-4d69-9e9c-912b06346166" class=3D"conflue=
+nceTd">
+<p local-id=3D"29e237957962">Die drei 45-Tage-Fenster 2027 sind verbraucht,=
+ die neuen Lizenzen noch nicht aktiv: Die Fehlmenge bleibt auf dem Stand vo=
+r dem Go-Live und w=C3=A4chst weiter (Kapitel 10).</p>
+</td>
+<td data-local-id=3D"48838c89-17e6-4344-a3f7-a327cf4a80d7" class=3D"conflue=
+nceTd">
+<p local-id=3D"322fd178b3cb">Lizenzbeginn unabh=C3=A4ngig vom Go-Live-Termi=
+n festlegen oder ein Fenster in Reserve halten (Kapitel 10).</p>
+</td>
+</tr>
+<tr data-local-id=3D"dc738cde-96b3-4d08-9f88-c0d38ca4846b">
+<td data-local-id=3D"f0efffb6-beac-48cd-af1e-0dc0e7d007f4" class=3D"conflue=
+nceTd">
+<p local-id=3D"b91af8cbd9ba">Eine bereinigte Rolle bricht einen Prozess, de=
+n die vorhandenen Testf=C3=A4lle nicht abdecken</p>
+</td>
+<td data-local-id=3D"e68524cf-1eb9-45f7-ab50-1ca4f0302a17" class=3D"conflue=
+nceTd">
+<p local-id=3D"6060c05f5869">Stillstand eines Prozesses in Prod nach der Um=
+stellung (Strang A).</p>
+</td>
+<td data-local-id=3D"7b7ca200-3e89-455a-a417-1b6551291c8b" class=3D"conflue=
+nceTd">
+<p local-id=3D"0cd4bd05a791">Vor dem Entfernen die Nutzungsdaten pr=C3=BCfe=
+n; fehlende Testf=C3=A4lle erg=C3=A4nzen, bevor die Rolle umgestellt wird; =
+f=C3=A4llt etwas erst in Prod auf, die bisherigen Rollen wieder einspielen =
+(Phase 1).</p>
+</td>
+</tr>
+<tr data-local-id=3D"5526279f-20cc-476e-9ffd-aea909a97509">
+<td data-local-id=3D"cf81f67d-125d-44ce-b864-963035eb8192" class=3D"conflue=
+nceTd">
+<p local-id=3D"b8f867f21129">R=C3=BCckfall auf die bisherigen Rollen (Stran=
+g A)</p>
+</td>
+<td data-local-id=3D"30a2b3cc-fcd4-45df-b7ec-a315bd6563b9" class=3D"conflue=
+nceTd">
+<p local-id=3D"8b161f605081">Die bisherigen Rollen verlangen wieder die h=
+=C3=B6heren Lizenzen; Kollegen ohne diese Lizenzen k=C3=B6nnen erneut gespe=
+rrt werden.</p>
+</td>
+<td data-local-id=3D"89ab96ce-0924-47a2-b3ac-9a8afdd96ead" class=3D"conflue=
+nceTd">
+<p local-id=3D"70483c51f187">R=C3=BCckfall nur so lange wie n=C3=B6tig; die=
+ fehlende Funktion sofort nachbessern (Kapitel 5); vor dem R=C3=BCckfall di=
+e betroffenen Benutzer gegen ihre zugewiesenen Lizenzen pr=C3=BCfen (D21).<=
+/p>
+</td>
+</tr>
+<tr data-local-id=3D"41ccd400-fc07-4d2d-811c-fd8404c07f82">
+<td data-local-id=3D"706bc4df-f928-4044-97da-da63460dfed1" class=3D"conflue=
+nceTd">
+<p local-id=3D"0ae4842e4dbf">Nur eine Version einer doppelten Rolle wird ge=
+=C3=A4ndert</p>
+</td>
+<td data-local-id=3D"87053e78-d010-4735-aa61-38ccb54f8db1" class=3D"conflue=
+nceTd">
+<p local-id=3D"df2c64d0805f">Die Benutzer der anderen Version behalten ihre=
+ Rechte und Lizenzen; die Bereinigung wirkt nur teilweise, und beide Versio=
+nen laufen weiter auseinander.</p>
+</td>
+<td data-local-id=3D"6a872e51-b285-4ee5-96b5-afc56a890561" class=3D"conflue=
+nceTd">
+<p local-id=3D"230647715cb9">Erst konsolidieren, dann =C3=A4ndern (Prinzip =
+11): D20 vor jeder =C3=84nderung ausf=C3=BChren; ge=C3=A4ndert wird nur die=
+ zusammengef=C3=BChrte Rolle.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 local-id=3D"2bd7e71adfc7" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-9.StrangB:LizenzplanungderneuenGesellschaft">9. Str=
+ang B: Lizenzplanung der neuen Gesellschaft</h1>
+<p local-id=3D"3462ad58ec29">Die Planung beruht auf einer ersten Sch=C3=A4t=
+zung vom Oktober 2026 und dient als Grundlage f=C3=BCr die Budgetplanung. M=
+engen und Lizenzstufen werden bis M=C3=A4rz 2027 je Rolle best=C3=A4tigt (K=
+apitel 11).</p>
+<h3 local-id=3D"6afabf7f9fbd" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-Mengenger=C3=BCstundBudget">Mengenger=C3=BCst und B=
+udget</h3>
+<p local-id=3D"22e020161fbe">Lizenzbudget der neuen Gesellschaft (erste Sch=
+=C3=A4tzung)</p>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"default" data-local-id=3D"6a=
+9d2982-ccde-4233-a146-c31a3a291854" class=3D"confluenceTable">
+<colgroup>
+<col style=3D"width: 126.0px;">
+<col style=3D"width: 90.0px;">
+<col style=3D"width: 167.0px;">
+<col style=3D"width: 120.0px;">
+<col style=3D"width: 126.0px;">
+<col style=3D"width: 126.0px;">
+</colgroup>
+<tbody>
+<tr data-local-id=3D"f232b8bf-2246-44a3-b891-7e6098c5078c">
+<td data-local-id=3D"ad3a7916-9bf6-437d-bb68-8f594c0cfde5" class=3D"conflue=
+nceTd">
+<p local-id=3D"77fbfc1ad25e">Gruppe</p>
+</td>
+<td data-local-id=3D"c3fde985-76f4-4c8d-96d2-a481d829bdd9" class=3D"conflue=
+nceTd">
+<p local-id=3D"da3c5f5807d1">Benutzer</p>
+</td>
+<td data-local-id=3D"47aed047-d734-4807-af27-c3c95bf0db2d" class=3D"conflue=
+nceTd">
+<p local-id=3D"828d76f9878d">Lizenz</p>
+</td>
+<td data-local-id=3D"23a2ba83-0a81-42a0-aeb4-07dcdb1d8d6d" class=3D"conflue=
+nceTd">
+<p local-id=3D"08ca8be88aa8">=E2=82=AC je Benutzer</p>
+</td>
+<td data-local-id=3D"8e484297-6b5c-4634-8ca1-6c71708cbc16" class=3D"conflue=
+nceTd">
+<p local-id=3D"75b1d7157922">=E2=82=AC je Monat</p>
+</td>
+<td data-local-id=3D"edd85a4f-1822-4d62-b66b-3d0d9f48b46e" class=3D"conflue=
+nceTd">
+<p local-id=3D"fb190311a810">Kapazit=C3=A4t (GB)</p>
+</td>
+</tr>
+<tr data-local-id=3D"5d752967-b775-4c29-9ef2-9a424f74db75">
+<td data-local-id=3D"166e5d36-406a-4e7b-9f74-4ebc80a5b538" class=3D"conflue=
+nceTd">
+<p local-id=3D"07aea21c356a">Servicetechniker</p>
+</td>
+<td data-local-id=3D"5e5092f7-5979-46f7-a87a-0627fdf5ce71" class=3D"conflue=
+nceTd">
+<p local-id=3D"9bd91509086b">115</p>
+</td>
+<td data-local-id=3D"0e737982-9b9d-4fd4-8350-b52786849078" class=3D"conflue=
+nceTd">
+<p local-id=3D"9a29f376256d">Activity</p>
+</td>
+<td data-local-id=3D"8555407f-7cb4-4f63-adbe-c7cac4dd91bd" class=3D"conflue=
+nceTd">
+<p local-id=3D"4f08da2e1af6">46,80</p>
+</td>
+<td data-local-id=3D"67a922eb-dcbe-4eeb-bd66-b2be6a4d551b" class=3D"conflue=
+nceTd">
+<p local-id=3D"ba2ebc332161">5.382,00</p>
+</td>
+<td data-local-id=3D"bc4daa35-d768-4852-9555-b1643a6725c9" class=3D"conflue=
+nceTd">
+<p local-id=3D"d16b1d87c85d">115</p>
+</td>
+</tr>
+<tr data-local-id=3D"87b93fb7-59a4-41ad-9105-873078c81e65">
+<td data-local-id=3D"c5b580ee-95db-4272-ae7b-146685227270" class=3D"conflue=
+nceTd">
+<p local-id=3D"9f4b8c6c33b1">Innendienst</p>
+</td>
+<td data-local-id=3D"9467aa1e-e014-47a1-b80b-42dfb05473d5" class=3D"conflue=
+nceTd">
+<p local-id=3D"ed2fc99c549f">25</p>
+</td>
+<td data-local-id=3D"d22baf02-be80-4c6d-bafd-a4125b058f7e" class=3D"conflue=
+nceTd">
+<p local-id=3D"cb596764a9f5">SCM + Finance + Commerce</p>
+</td>
+<td data-local-id=3D"920bb596-26e2-40ce-9d4c-3c1690a0ad14" class=3D"conflue=
+nceTd">
+<p local-id=3D"57ea8a43b7f4">227,00</p>
+</td>
+<td data-local-id=3D"4e7bec91-b58d-44db-98d0-fa8b8c0170ff" class=3D"conflue=
+nceTd">
+<p local-id=3D"6885cae5a890">5.675,00</p>
+</td>
+<td data-local-id=3D"97234791-1f0f-4cfd-a23d-78e2da93c047" class=3D"conflue=
+nceTd">
+<p local-id=3D"994895ea4374">125</p>
+</td>
+</tr>
+<tr data-local-id=3D"f3cdb556-9b56-4e40-a651-92729485b17c">
+<td data-local-id=3D"c2f9bf8b-a8ec-460d-996a-21fc79748349" class=3D"conflue=
+nceTd">
+<p local-id=3D"9fe336cdfd10">Logistik, Disposition, Pr=C3=BCfdokumentation,=
+ Support, Artikelstammdaten, Shop, QM/QS</p>
+</td>
+<td data-local-id=3D"6631280a-836a-4139-9881-5e0d19d32837" class=3D"conflue=
+nceTd">
+<p local-id=3D"f86d14012805">30</p>
+</td>
+<td data-local-id=3D"bf603a28-b70a-458b-9d78-425d2f60b3a2" class=3D"conflue=
+nceTd">
+<p local-id=3D"c1db05df9c69">SCM + Finance</p>
+</td>
+<td data-local-id=3D"82296e21-c279-44cf-8156-981aaf738559" class=3D"conflue=
+nceTd">
+<p local-id=3D"bc6d8e67aac1">195,80</p>
+</td>
+<td data-local-id=3D"d2c8b525-193f-494e-8940-52d65c4a2a62" class=3D"conflue=
+nceTd">
+<p local-id=3D"d5b9c2d76144">5.874,00</p>
+</td>
+<td data-local-id=3D"c76d47e7-a3ff-443a-8555-873ab264cfa1" class=3D"conflue=
+nceTd">
+<p local-id=3D"bda41b1cc1db">150</p>
+</td>
+</tr>
+<tr data-local-id=3D"60a14cb9-a625-4168-9b30-8c8eaf3c07c3">
+<td data-local-id=3D"e99fa6fa-3368-4783-a3f8-f2c964a464e0" class=3D"conflue=
+nceTd">
+<p local-id=3D"41d191affe73">Vertrieb</p>
+</td>
+<td data-local-id=3D"c405285f-a73e-4f3f-8168-bd2eec48630d" class=3D"conflue=
+nceTd">
+<p local-id=3D"a414582d1ba2">15</p>
+</td>
+<td data-local-id=3D"c0ddab2a-3cbf-4605-8302-338a49e761e7" class=3D"conflue=
+nceTd">
+<p local-id=3D"650f59d8cf14">SCM + Finance + Commerce</p>
+</td>
+<td data-local-id=3D"97cd3820-33fc-4063-a8a6-57b464be4f55" class=3D"conflue=
+nceTd">
+<p local-id=3D"fd46744173e4">227,00</p>
+</td>
+<td data-local-id=3D"5c6ded4d-499b-4486-bbea-5abddba84f7f" class=3D"conflue=
+nceTd">
+<p local-id=3D"b4762960f3b6">3.405,00</p>
+</td>
+<td data-local-id=3D"12feaf0e-a319-4d54-a878-96fe7c5b9125" class=3D"conflue=
+nceTd">
+<p local-id=3D"fb7c0c4c02b5">75</p>
+</td>
+</tr>
+<tr data-local-id=3D"2870c0d5-30f7-4759-be27-2d69072f3693">
+<td data-local-id=3D"52f6b451-0f52-4ade-bd2c-e4ae2c35bd30" class=3D"conflue=
+nceTd">
+<p local-id=3D"b6e3ce3c5948">Summe</p>
+</td>
+<td data-local-id=3D"69d295c6-89a8-48c5-971b-b418e47a99da" class=3D"conflue=
+nceTd">
+<p local-id=3D"08407a45fda2">185</p>
+</td>
+<td data-local-id=3D"1cc93fb3-a0e5-45e4-b4dc-f6f5660cfd04" class=3D"conflue=
+nceTd">
+<p local-id=3D"39401d7659e2"></p>
+</td>
+<td data-local-id=3D"1f5fea55-8dac-4bc5-a9ce-32a71c02f63a" class=3D"conflue=
+nceTd">
+<p local-id=3D"13f072750e8a"></p>
+</td>
+<td data-local-id=3D"ea475f75-e98e-48aa-b2aa-32058f71d1ee" class=3D"conflue=
+nceTd">
+<p local-id=3D"497e603168c0">20.336,00</p>
+</td>
+<td data-local-id=3D"dd5bf73e-9de2-449f-9190-1e7e2470a8ef" class=3D"conflue=
+nceTd">
+<p local-id=3D"7cfc35fd36d3">465</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p local-id=3D"27147abd92b2">Das Budget betr=C3=A4gt 20.336,00 =E2=82=AC im=
+ Monat, also 244.032,00 =E2=82=AC im Jahr. Mit Team Member (7,50 =E2=82=AC)=
+ statt Activity f=C3=BCr die Servicetechniker sinkt es um 4.519,50 =E2=82=
+=AC auf 15.816,50 =E2=82=AC im Monat. Das Kontingent w=C3=A4chst dann um 11=
+5 GB weniger, sofern Team Member keine Kapazit=C3=A4t mitbringt (offen).</p=
+>
+<h3 local-id=3D"aeec06029c2c" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-Pr=C3=BCfpunktezumMengenger=C3=BCst">Pr=C3=BCfpunkt=
+e zum Mengenger=C3=BCst</h3>
+<p local-id=3D"4416841addb9">Pr=C3=BCfpunkte zum Mengenger=C3=BCst</p>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"default" data-local-id=3D"94=
+0b7302-f09c-4597-b093-db67b3d0f430" class=3D"confluenceTable">
+<tbody>
+<tr data-local-id=3D"20a177f3-4077-4356-8bae-cd59d283e061">
+<td data-local-id=3D"51a22e3c-e689-415c-9353-375904673355" class=3D"conflue=
+nceTd">
+<p local-id=3D"0af0e37c1f02">Gruppe</p>
+</td>
+<td data-local-id=3D"f699a6a7-afc9-4609-bbaa-a20f6d2210be" class=3D"conflue=
+nceTd">
+<p local-id=3D"4e1849cea08f">Pr=C3=BCffrage</p>
+</td>
+<td data-local-id=3D"ad19ad18-5035-40ba-aa7b-4752bc51b7a1" class=3D"conflue=
+nceTd">
+<p local-id=3D"40a56aff1b69">Wirkung</p>
+</td>
+</tr>
+<tr data-local-id=3D"c0e08482-0591-48de-bb3c-47e9a6a34d94">
+<td data-local-id=3D"d54b478b-75e3-4e83-8459-6946a288cc3b" class=3D"conflue=
+nceTd">
+<p local-id=3D"f5556a20feec">Alle Gruppen</p>
+</td>
+<td data-local-id=3D"3a0c7c9c-7025-4c8a-a239-7d43e36a0f4a" class=3D"conflue=
+nceTd">
+<p local-id=3D"1ff7c8991ce1">Wer hat bereits einen lizenzierten Benutzer in=
+ einer bestehenden Gesellschaft?</p>
+</td>
+<td data-local-id=3D"6a0f26d9-e44d-4816-b2b2-3d3ce032e68b" class=3D"conflue=
+nceTd">
+<p local-id=3D"940dc745cf52">Lizenzen gelten je Benutzer, nicht je Gesellsc=
+haft: Wer nur die neue Gesellschaft zus=C3=A4tzlich erh=C3=A4lt, braucht ke=
+ine neue Lizenz, bringt aber auch keine zus=C3=A4tzliche Kapazit=C3=A4t.</p=
+>
+</td>
+</tr>
+<tr data-local-id=3D"94ffc07d-ee0e-4f46-b81a-04a3dee626ff">
+<td data-local-id=3D"9f4723cd-60b6-43b3-b9a0-164be81b03fa" class=3D"conflue=
+nceTd">
+<p local-id=3D"3d866412eee1">Servicetechniker</p>
+</td>
+<td data-local-id=3D"a423d9a8-4e8a-42cf-82bd-aae77fda8492" class=3D"conflue=
+nceTd">
+<p local-id=3D"2c18047b9f81">Welche T=C3=A4tigkeiten =C3=BCbernehmen die Te=
+chniker im System: nur Auskunft, Materialentnahme, Stundenerfassung, Servic=
+eauftr=C3=A4ge?</p>
+</td>
+<td data-local-id=3D"09fd73ff-364c-4f64-b450-f9a421663ef1" class=3D"conflue=
+nceTd">
+<p local-id=3D"80c048632a83">Team Member statt Activity: 4.519,50 =E2=82=AC=
+ im Monat.</p>
+</td>
+</tr>
+<tr data-local-id=3D"24456cd5-cb5b-4c5f-9ede-a71e0ef11bb1">
+<td data-local-id=3D"980496e8-9e4d-4ff3-bc13-70f934f3a726" class=3D"conflue=
+nceTd">
+<p local-id=3D"49a0443c97f1">Innendienst und Vertrieb</p>
+</td>
+<td data-local-id=3D"07aa9513-4362-45fa-ab3b-38f299d80c96" class=3D"conflue=
+nceTd">
+<p local-id=3D"0ef3ddb2d5da">Werden Retail-Rabatte und -Preise (Commerce) i=
+n der neuen Gesellschaft genutzt? Pflegen alle Vertriebsmitarbeiter Preise?=
+</p>
+</td>
+<td data-local-id=3D"51a7bd2e-bccc-4052-b67e-e462d5d79716" class=3D"conflue=
+nceTd">
+<p local-id=3D"c626e070b796">Ohne Commerce 31,20 =E2=82=AC je Benutzer und =
+Monat, bei 40 Benutzern 1.248,00 =E2=82=AC. Preispflege als eigene Rolle nu=
+r f=C3=BCr die Pflegenden (Prinzip 3).</p>
+</td>
+</tr>
+<tr data-local-id=3D"adf5404c-0d7d-418c-9449-d7f5ed5a292d">
+<td data-local-id=3D"2aba55d7-9b31-40a5-af92-6cd4691a744c" class=3D"conflue=
+nceTd">
+<p local-id=3D"cedb598d92b7">Gruppe der 30 (Logistik u. a.)</p>
+</td>
+<td data-local-id=3D"722ee093-dd1a-4302-8cd8-e9881d9ef5e3" class=3D"conflue=
+nceTd">
+<p local-id=3D"88c072a3634e">Sieben Bereiche mit einer Lizenzstufe: Reicht =
+f=C3=BCr Support oder Pr=C3=BCfdokumentation Activity oder Team Member? Bra=
+ucht der Shop Commerce?</p>
+</td>
+<td data-local-id=3D"b2fc666d-ffb3-4007-82dd-2dd388c6fdba" class=3D"conflue=
+nceTd">
+<p local-id=3D"dc2fe788ab75">Aufteilung in Untergruppen mit eigener Lizenzs=
+tufe.</p>
+</td>
+</tr>
+<tr data-local-id=3D"c2a6d20f-280f-4cc1-aefe-e4e8dad18516">
+<td data-local-id=3D"64799f27-a706-4046-a8e6-3bce752fa156" class=3D"conflue=
+nceTd">
+<p local-id=3D"69405bf46f02">Preise</p>
+</td>
+<td data-local-id=3D"af7916b8-e841-489b-a0de-454ff183c6fa" class=3D"conflue=
+nceTd">
+<p local-id=3D"be7a992518cc">Entsprechen 195,80 =E2=82=AC und 227,00 =E2=82=
+=AC dem aktuellen Angebot f=C3=BCr Basis- plus Attach-Lizenzen?</p>
+</td>
+<td data-local-id=3D"8bb9050b-58c1-4cb5-9ba5-24072296993b" class=3D"conflue=
+nceTd">
+<p local-id=3D"2724eb09b381">Sicherheit des Budgets.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 local-id=3D"01c47c8a9971" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-VorgehenjeRolle">Vorgehen je Rolle</h3>
+<ol start=3D"1" local-id=3D"76ccb11d4502">
+<li local-id=3D"26e9dc007405">
+<p local-id=3D"fb3524f30022"><strong>Referenzrollen bestimmen:</strong> F=
+=C3=BCr jede Gruppe die Rollen, mit denen vergleichbare Mitarbeiter in den =
+Bestandsgesellschaften heute arbeiten.</p>
+</li>
+</ol>
+<ol start=3D"2" local-id=3D"e41bf867976f">
+<li local-id=3D"7e59b5893944">
+<p local-id=3D"61fb03502951"><strong>Lizenzbericht je Referenzrolle</strong=
+> mit report_role_license(): Welche Aufgaben und Objekte l=C3=B6sen welche =
+Lizenz aus? Werkzeugdaten und D365-Exporte stammen dabei immer aus derselbe=
+n Umgebung.</p>
+</li>
+</ol>
+<ol start=3D"3" local-id=3D"20eb05110c95">
+<li local-id=3D"5df428e7d159">
+<p local-id=3D"05afa1f4569b"><strong>Zielrolle ableiten:</strong> Lizenztre=
+iber entfernen oder in eine eigene Rolle auslagern (Prinzip 3). Die Rollens=
+=C3=A4tze heutiger Mitarbeiter werden nicht kopiert: In der Innendienst-Ana=
+lyse l=C3=B6sten bei allen ausgewerteten Benutzern andere Rollen dieselben =
+Basislizenzen aus.</p>
+</li>
+</ol>
+<ol start=3D"4" local-id=3D"14ec0e66c73e">
+<li local-id=3D"5a65c51ebc74">
+<p local-id=3D"814b8ea791ed"><strong>Zielrolle in D365 pr=C3=BCfen</strong>=
+ gegen die Ansicht =E2=80=9EZusammenfassung der Lizenznutzung=E2=80=9C.</p>
+</li>
+</ol>
+<ol start=3D"5" local-id=3D"dedda72a0898">
+<li local-id=3D"b5f4caa053d2">
+<p local-id=3D"89bba46b37de"><strong>Lizenzziel je Rolle bis M=C3=A4rz 2027=
+ festlegen;</strong> sp=C3=A4tere =C3=84nderungen nur mit neuem Lizenzberic=
+ht.</p>
+</li>
+</ol>
+<ol start=3D"6" local-id=3D"022e47b7ba93">
+<li local-id=3D"d2d8d24b40dd">
+<p local-id=3D"ace1767365b5"><strong>Im UAT</strong> ist =E2=80=9ERolle l=
+=C3=B6st die geplante Lizenz aus=E2=80=9C ein eigener Testfall (Kapitel 5).=
+</p>
+</li>
+</ol>
+<h3 local-id=3D"4f87bb095d10" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-ErsterRollenentwurfderLogistik">Erster Rollenentwur=
+f der Logistik</h3>
+<p local-id=3D"0e74b475518f">Die Logistik der neuen Gesellschaft (S+) hat e=
+inen ersten Entwurf ihrer Rollen vorgelegt: rund 11 Personen in Logistik, Q=
+M, Artikelstamm, Projektverwaltung und PKW-Prozessen. Er ist Ausgangspunkt =
+f=C3=BCr Workshop 1 und steht im Rollenkatalog (D05) und in der Prozess-Rol=
+len-Matrix (D19). Drei Punkte sind dabei zu kl=C3=A4ren:</p>
+<ul local-id=3D"cb75f79b6d24">
+<li local-id=3D"a054c155121b">
+<p local-id=3D"a2ea8adbbf06"><strong>=E2=80=9ELeitung=E2=80=9C und =E2=80=
+=9EMinijob=E2=80=9C sind eher Stellen als Rollen:</strong> Sie umfassen meh=
+rere Rollen und geh=C3=B6ren in die Zuordnung der Stellen (D06).</p>
+</li>
+<li local-id=3D"ccb07da9bf56">
+<p local-id=3D"b49f1411cfe4"><strong>=E2=80=9ESonstige Prozesse=E2=80=9C (I=
+nventur, Lagerplatzverwaltung, Ad-hoc-Themen) hat keine Rolle:</strong> Die=
+se Aufgaben werden einer Rolle zugeordnet.</p>
+</li>
+<li local-id=3D"53b323321a8b">
+<p local-id=3D"2641491a1633"><strong>Kontrollierte Funktionen:</strong> Sta=
+mmdatenpflege (Artikelstamm, QM/QS/Stammdaten) und Inventur (Bestandskorrek=
+tur) kommen auf die Sperrliste (D18).</p>
+</li>
+</ul>
+<h3 local-id=3D"14ba4df84703" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-LizenzundKapazit=C3=A4t(Prinzip8)">Lizenz und Kapaz=
+it=C3=A4t (Prinzip 8)</h3>
+<p local-id=3D"6b556d5b56d3">Die neuen Lizenzen bringen zusammen 465 GB Kap=
+azit=C3=A4t mit, und zwar ab dem Kauf, also voraussichtlich ab dem Go-Live.=
+ Solange Kapazit=C3=A4t zugekauft werden muss, ist jedes dieser GB 30 =E2=
+=82=AC im Monat wert:</p>
+<ul local-id=3D"1e813617cdf1">
+<li local-id=3D"6d2114a82f60">
+<p local-id=3D"3f4bd84d0019">Eine Activity-Lizenz kostet dann effektiv 16,8=
+0 =E2=82=AC statt 46,80 =E2=82=AC.</p>
+</li>
+<li local-id=3D"dda35612970c">
+<p local-id=3D"b483d304b123">Eine Herabstufung von SCM + Finance auf Activi=
+ty spart 149,00 =E2=82=AC, kostet aber 4 GB, also 120,00 =E2=82=AC.</p>
+</li>
+<li local-id=3D"5ff486fa240c">
+<p local-id=3D"63f6a0bad204">Das Entfernen einer Attach-Lizenz beh=C3=A4lt =
+die 5 GB; die Ersparnis z=C3=A4hlt voll.</p>
+</li>
+<li local-id=3D"1d14d069fd23">
+<p local-id=3D"c3a42cebc74a">Lizenzen fr=C3=BCher zu kaufen, nur um Kapazit=
+=C3=A4t zu gewinnen, lohnt nicht: Je GB kostet eine Activity-Lizenz 46,80 =
+=E2=82=AC, eine Volllizenz 39,16 bis 45,40 =E2=82=AC, der Zukauf 30,00 =E2=
+=82=AC.</p>
+</li>
+</ul>
+<p local-id=3D"e2dbd524c2a4">Nach der L=C3=B6schung von PRJ und Migrationss=
+andbox besteht voraussichtlich ein Puffer von mehreren hundert GB (D17). Da=
+nn z=C3=A4hlen Lizenzersparnisse voll; Team Member statt Activity f=C3=BCr =
+die Techniker verk=C3=BCrzt nur die Reichweite dieses Puffers. F=C3=BCr Str=
+ang A folgt daraus: Vor dem Go-Live, in der Engpassphase, werden zuerst Att=
+ach-Lizenzen entfernt, weil jede Herabstufung einer Volllizenz das Kontinge=
+nt um 4 bis 5 GB verringert.</p>
+<h1 local-id=3D"3e4cbe162f9b" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-10.Datenbankkapazit=C3=A4t">10. Datenbankkapazit=C3=
+=A4t</h1>
+<h3 local-id=3D"f560a231246f" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-Ausgangslage">Ausgangslage</h3>
+<p local-id=3D"2c26d4e8fba7">Das Kontingent des Tenants betr=C3=A4gt rund 7=
+00 GB. Die zuvor angezeigten 1,2 TB beruhten auf einem Anzeigefehler, den M=
+icrosoft korrigiert hat. Um die Belegung zu senken, wurden die Sandboxen be=
+reits unterschiedlich stark verkleinert: TST ist eine transaktionslose Kopi=
+e, INT l=C3=A4uft mit Bereinigungsjobs und kurzer Aufbewahrung (Kapitel 5).=
+ F=C3=BCr die neue Gesellschaft kommt die Migrationssandbox als Kopie von P=
+rod hinzu; sie wird einen Monat nach dem Go-Live gel=C3=B6scht. Bis dahin l=
+iegt die Belegung =C3=BCber dem Kontingent.</p>
+<p local-id=3D"0838355d38a6">F=C3=BCr die =C3=9Cbergangszeit gibt es im Pow=
+er Platform Admin Center eine Option, die das Kontingent kostenlos und befr=
+istet erh=C3=B6ht: f=C3=BCr jeweils 45 Tage, h=C3=B6chstens dreimal je Kale=
+nderjahr.</p>
+<p local-id=3D"d9910f7c443a"><strong>Belegung, Prognose und alle Zahlen ste=
+hen in der Kapazit=C3=A4tsprognose (D17).</strong> Sie wird mit jedem neuen=
+ Export aus dem Power Platform Admin Center fortgeschrieben; jeder Stand bl=
+eibt als eigenes Blatt erhalten. Dieses Kapitel beschreibt, wie der Bedarf =
+entsteht und was daraus folgt.</p>
+<h3 local-id=3D"a74a705f9e2d" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-WieVerbrauchundKontingententstehen">Wie Verbrauch u=
+nd Kontingent entstehen</h3>
+<ul local-id=3D"a909eb8b396c">
+<li local-id=3D"83284ec04500">
+<p local-id=3D"a11a19a1d717"><strong>Sandboxen wachsen in Spr=C3=BCngen:</s=
+trong> Bei jedem Refresh =C3=BCbernehmen sie den Stand von Prod; danach sen=
+ken Bereinigungsjobs oder die transaktionslose Kopie ihre Gr=C3=B6=C3=9Fe w=
+ieder. Auf Dauer w=C3=A4chst jede Sandbox deshalb anteilig mit Prod.</p>
+</li>
+<li local-id=3D"2283617e544e">
+<p local-id=3D"de5e583cf2a3"><strong>Jedes GB, das in Prod gespart wird, wi=
+rkt in jeder sp=C3=A4teren Kopie noch einmal.</strong> Bereinigungen in Pro=
+d haben deshalb die gr=C3=B6=C3=9Fte Hebelwirkung, auch wenn Prod l=C3=A4ng=
+ere Aufbewahrungsfristen braucht als die Sandboxen.</p>
+</li>
+<li local-id=3D"f5cd0041f816">
+<p local-id=3D"60bbc7b4437f"><strong>Kontingent:</strong> das Grundkontinge=
+nt, dazu die Kapazit=C3=A4t aus Lizenzen (5 GB je Volllizenz, 1 GB je Activ=
+ity-Lizenz; Team Member: offen). Neue Lizenzen z=C3=A4hlen ab dem Kauf.</p>
+</li>
+<li local-id=3D"574ac6e4e780">
+<p local-id=3D"dd5b978e7b5b"><strong>Zukauf:</strong> 30 =E2=82=AC je GB un=
+d Monat.</p>
+</li>
+</ul>
+<h3 local-id=3D"a7a72da17c79" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-WasdiePrognosezeigt">Was die Prognose zeigt</h3>
+<p local-id=3D"dd8365e825d3">Die Prognose (D17) rechnet drei Szenarien, die=
+ sich darin unterscheiden, wie PRJ und die Migrationssandbox bef=C3=BCllt s=
+ind: wie geplant als volle Kopien, bereinigt wie INT, und zus=C3=A4tzlich m=
+it einer transaktionslosen Migrationssandbox.</p>
+<p local-id=3D"e5b38dbc97fd"><strong>Vor dem Go-Live</strong> reicht das Ko=
+ntingent ohne die Option nicht, vor allem wegen der Migrationssandbox.</p>
+<p local-id=3D"13ad23737a67"><strong>Ab dem Go-Live</strong> bringen die ne=
+uen Lizenzen genug zus=C3=A4tzliche Kapazit=C3=A4t.</p>
+<p local-id=3D"c863c2067483"><strong>Nach der L=C3=B6schung</strong> von PR=
+J und Migrationssandbox verlaufen alle Szenarien gleich; es bleibt eine Res=
+erve, die mit dem Wachstum von Prod abnimmt.</p>
+<h3 local-id=3D"cdbb5de70d1e" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-=C3=9Cberbr=C3=BCckungbiszumGo-Live">=C3=9Cberbr=C3=
+=BCckung bis zum Go-Live</h3>
+<p local-id=3D"278dc5f2d1c2">Die Fenster der Option werden l=C3=BCckenlos r=
+=C3=BCckw=C3=A4rts ab dem Go-Live gelegt: Die Spitze vor dem Go-Live ist ge=
+deckt; offen bleibt die Zeit davor, in der die Fehlmenge am kleinsten ist. =
+F=C3=BCr diese Zeit gibt es zwei Wege: die Ma=C3=9Fnahmen unten umsetzen od=
+er Kapazit=C3=A4t zukaufen. Termine und H=C3=B6he der L=C3=BCcke stehen in =
+D17.</p>
+<p local-id=3D"56a3d0168f30">Verschiebt sich der Go-Live, ist im selben Jah=
+r kein Fenster mehr frei, und die neuen Lizenzen sind noch nicht aktiv. Der=
+ Lizenzbeginn wird deshalb unabh=C3=A4ngig vom Go-Live-Termin festgelegt, o=
+der ein Fenster bleibt in Reserve.</p>
+<h3 local-id=3D"746ed335dbd5" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-Ma=C3=9Fnahmen">Ma=C3=9Fnahmen</h3>
+<p local-id=3D"c8f5e9efac52">Ma=C3=9Fnahmen zur Senkung der Belegung; ihre =
+Wirkung in GB steht in D17</p>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"default" data-local-id=3D"f1=
+2e4794-0d6a-4c14-b469-d10e214ae58f" class=3D"confluenceTable">
+<tbody>
+<tr data-local-id=3D"11c2f02f-09de-4d03-aae6-ce1f1a3a9dbd">
+<td data-local-id=3D"727c024a-3122-42fb-a63c-d8d4aed9647b" class=3D"conflue=
+nceTd">
+<p local-id=3D"614f47ee6538">Ma=C3=9Fnahme</p>
+</td>
+<td data-local-id=3D"cdf9aaf0-2eba-418e-ae2b-5e7c2dcc9474" class=3D"conflue=
+nceTd">
+<p local-id=3D"0f13e236f357">Hinweis</p>
+</td>
+</tr>
+<tr data-local-id=3D"f7ad20a2-ba6d-4d4b-85b2-52a3ebd2aa80">
+<td data-local-id=3D"cb74f6fe-da56-46c3-9509-7397682593d7" class=3D"conflue=
+nceTd">
+<p local-id=3D"926ffc880049">PRJ und Migrationssandbox mit denselben Berein=
+igungsjobs wie INT betreiben</p>
+</td>
+<td data-local-id=3D"e27a9141-2821-46d3-9a2a-ba27632cdfe2" class=3D"conflue=
+nceTd">
+<p local-id=3D"f702a6875312">In INT erprobt; nach jedem Refresh einplanen.<=
+/p>
+</td>
+</tr>
+<tr data-local-id=3D"6cad3e77-7121-4e10-aef8-9886d496fd09">
+<td data-local-id=3D"35b22830-ebab-42ef-a752-e9592acf01c7" class=3D"conflue=
+nceTd">
+<p local-id=3D"667d605d2631">Migrationssandbox transaktionslos kopieren</p>
+</td>
+<td data-local-id=3D"8f2ed4d8-310d-488a-83df-42fc5dc96cb6" class=3D"conflue=
+nceTd">
+<p local-id=3D"eea3a1f09914">Nur wenn die Migrationsl=C3=A4ufe keine Bestan=
+dsbelege brauchen; die neue Gesellschaft hat in Prod noch keine. Die Genera=
+lprobe kann eine volle Kopie innerhalb eines Fensters nutzen.</p>
+</td>
+</tr>
+<tr data-local-id=3D"5d7ac031-8f98-41ea-ac8b-d63a4ee50a8b">
+<td data-local-id=3D"6dfc9f35-3c96-4742-a358-ec678deb650e" class=3D"conflue=
+nceTd">
+<p local-id=3D"472362f1746f">Aufbewahrungsfristen der Bereinigungsjobs in P=
+rod je Job pr=C3=BCfen</p>
+</td>
+<td data-local-id=3D"bc123938-8ce2-40e7-83c0-bc463a1e77cd" class=3D"conflue=
+nceTd">
+<p local-id=3D"2c390c7ae834">Wirkt in Prod und in jeder sp=C3=A4teren Kopie=
+. Wirkung messen: Tabellengr=C3=B6=C3=9Fen von INT und PRJ vergleichen. Buc=
+hungsdaten unterliegen Aufbewahrungsfristen und werden nicht gel=C3=B6scht.=
+</p>
+</td>
+</tr>
+<tr data-local-id=3D"da69f01d-2a6d-4557-bb5b-2a8d7ca26b4e">
+<td data-local-id=3D"c7700ad8-d1b8-4208-b9b8-d0de8f85771c" class=3D"conflue=
+nceTd">
+<p local-id=3D"8604c9021eca">Archivierung mit Dataverse long term retention=
+</p>
+</td>
+<td data-local-id=3D"bc5ed1ac-3c71-48e8-99fd-0bb5d614544e" class=3D"conflue=
+nceTd">
+<p local-id=3D"329ca2051f33">F=C3=BCr Buchungshistorie; Verf=C3=BCgbarkeit =
+je Version und Wirkung auf die Kapazit=C3=A4t pr=C3=BCfen.</p>
+</td>
+</tr>
+<tr data-local-id=3D"fc4665d3-2fb5-46aa-9889-71ebbee44479">
+<td data-local-id=3D"d590c121-6ba8-4998-86e6-3068bf51cced" class=3D"conflue=
+nceTd">
+<p local-id=3D"7e218fbf7527">Refresh-Regeln: TST weiter transaktionslos, PR=
+J nur bei Bedarf</p>
+</td>
+<td data-local-id=3D"dd6d693a-150c-4916-8149-bdd97ddee659" class=3D"conflue=
+nceTd">
+<p local-id=3D"d3f6d4c89e5a">Bedenken gegen Tests in TST: Testarten den Umg=
+ebungen zuordnen (Kapitel 5).</p>
+</td>
+</tr>
+<tr data-local-id=3D"f1544376-57c4-41d0-b491-5ed97c36d0e2">
+<td data-local-id=3D"e5cd69f9-080d-4ef5-a600-9a8f21a4c489" class=3D"conflue=
+nceTd">
+<p local-id=3D"66e6449aa689">PRJ und Migrationssandbox einen Monat nach dem=
+ Go-Live l=C3=B6schen</p>
+</td>
+<td data-local-id=3D"bf2b5742-5a11-425b-8bac-d92718afef79" class=3D"conflue=
+nceTd">
+<p local-id=3D"ca19b3bae9c1">Termin fest einplanen.</p>
+</td>
+</tr>
+<tr data-local-id=3D"b6a77342-c387-4819-b971-18ebfda3771d">
+<td data-local-id=3D"48668fb3-d390-4ef4-976b-df629bb07e99" class=3D"conflue=
+nceTd">
+<p local-id=3D"94c36ee27128">Zukauf nur f=C3=BCr die Restl=C3=BCcke</p>
+</td>
+<td data-local-id=3D"259b67b1-6e46-4c76-ac2f-5ebb45eb1970" class=3D"conflue=
+nceTd">
+<p local-id=3D"bcc66eadc3c4">Laufzeit und monatliche Anpassbarkeit vorab kl=
+=C3=A4ren.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 local-id=3D"96962485da54" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-OffenePunkte">Offene Punkte</h3>
+<ul local-id=3D"277778b96146">
+<li local-id=3D"9df6fcfeabec">
+<p local-id=3D"b818c38b1da0">Bringt Team Member Kapazit=C3=A4t mit? Z=C3=A4=
+hlen Attach-Lizenzen zus=C3=A4tzlich?</p>
+</li>
+<li local-id=3D"fef08fefe5f3">
+<p local-id=3D"c772e60f0d28">D=C3=BCrfen die 45-Tage-Fenster direkt aufeina=
+nder folgen?</p>
+</li>
+<li local-id=3D"6f77e502be41">
+<p local-id=3D"43ac0f0a1ea0">Woraus besteht der Teil der Belegung, der kein=
+er Umgebung zugeordnet ist (D17)?</p>
+</li>
+<li local-id=3D"a26912dcd496">
+<p local-id=3D"460390a4e0b1">Wird die Migrationssandbox vor der Generalprob=
+e erneut aus Prod kopiert?</p>
+</li>
+<li local-id=3D"66fc63f779d2">
+<p local-id=3D"515ed613ed91">Wird PRJ zusammen mit der Migrationssandbox ge=
+l=C3=B6scht?</p>
+</li>
+<li local-id=3D"1f52e897b0d0">
+<p local-id=3D"8bfdc006c4ff">Was sperrt Microsoft, wenn das Kontingent ohne=
+ Option =C3=BCberschritten ist, etwa das Kopieren und Wiederherstellen von =
+Umgebungen?</p>
+</li>
+<li local-id=3D"295e0443a077">
+<p local-id=3D"7e8e53dbae59">L=C3=A4sst sich Kapazit=C3=A4t monatlich zukau=
+fen und wieder reduzieren?</p>
+</li>
+</ul>
+<h1 local-id=3D"957b8e44a4c8" id=3D"D01D365FOBerechtigungskonzept&amp;Lizen=
+zoptimierungs-Strategie-11.N=C3=A4chsteSchrittebiszumGo-Live">11. N=C3=A4ch=
+ste Schritte bis zum Go-Live</h1>
+<p local-id=3D"e283b045025d">Stand 31.10.2026. Strang A l=C3=A4uft parallel=
+ zu allen =C3=BCbrigen Schritten und hat Vorrang. Die Termine der Fenster u=
+nd der L=C3=B6schung stehen in der Kapazit=C3=A4tsprognose (D17).</p>
+<p local-id=3D"d948ede45649">N=C3=A4chste Schritte bis zum Go-Live</p>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"center" data-local-id=3D"534=
+863d3-4836-46ff-9b0a-b4fd684cec94" class=3D"confluenceTable">
+<colgroup>
+<col style=3D"width: 215.0px;">
+<col style=3D"width: 291.0px;">
+<col style=3D"width: 253.0px;">
+</colgroup>
+<tbody>
+<tr data-local-id=3D"f979a628-28b8-4e22-855c-a5649ef42f3f">
+<td data-local-id=3D"bfa55163-40e1-4f22-86c1-8e73bbbdfdf3" class=3D"conflue=
+nceTd">
+<p local-id=3D"720a2517d4b2">Zeitraum</p>
+</td>
+<td data-local-id=3D"4f0a50bb-a983-4b4c-8275-52ce73e46dcb" class=3D"conflue=
+nceTd">
+<p local-id=3D"f33cf4ce2676">Lizenz und Rollen</p>
+</td>
+<td data-local-id=3D"6a656246-511a-4838-ad71-5d93e4117216" class=3D"conflue=
+nceTd">
+<p local-id=3D"052be0bfae9b">Kapazit=C3=A4t</p>
+</td>
+</tr>
+<tr data-local-id=3D"0dd661e9-ab27-46fd-94bc-1e44e16eabce">
+<td data-local-id=3D"465eb6ef-0307-4cd4-925e-c199b3519a95" class=3D"conflue=
+nceTd">
+<p local-id=3D"a15370232cce">Bis Mitte November 2026</p>
+</td>
+<td data-local-id=3D"41c5dc55-c7e1-476e-90df-d3bdef41c5f4" class=3D"conflue=
+nceTd">
+<p local-id=3D"97984aeaf4b4">Strang A: Tests der drei auf SCM reduzierten R=
+ollen abschlie=C3=9Fen, fehlende Funktionen nachbessern (Kapitel 5) und die=
+ Rollen nach bestandenem Test Mitte November live bringen, mit den bisherig=
+en Rollen als R=C3=BCckfallweg. Doppelte Rollen analysieren (D20), Ranglist=
+e der teuersten Rollen (D04) und Lizenzprofil je Benutzer (D21) erstellen. =
+Strang B: Strategiepapier (D01) abstimmen. Mengenger=C3=BCst pr=C3=BCfen: b=
+estehende Benutzer unter den 185, Aufteilung der Gruppe der 30. Pilot Innen=
+dienst: vollst=C3=A4ndiger Rollensatz eines Mitarbeiters.</p>
+</td>
+<td data-local-id=3D"c7af1b81-808d-4ed5-9775-8242635c83f7" class=3D"conflue=
+nceTd">
+<p local-id=3D"ab9e17fd90be">PRJ und Migrationssandbox mit den Bereinigungs=
+jobs von INT betreiben; pr=C3=BCfen, ob die Migrationssandbox transaktionsl=
+os sein kann. Offene Punkte aus Kapitel 10 mit Microsoft kl=C3=A4ren. Neuen=
+ Stand in D17 erfassen.</p>
+</td>
+</tr>
+<tr data-local-id=3D"f47b0390-5c81-4f36-b3da-8145d6bbc4c6">
+<td data-local-id=3D"6da3a6ed-819c-48bb-ba19-c5446a2a9311" class=3D"conflue=
+nceTd">
+<p local-id=3D"f4cd2ce797ce">Dezember 2026</p>
+</td>
+<td data-local-id=3D"4674bfbb-5e66-4aac-aa8b-a4bb2afdcb59" class=3D"conflue=
+nceTd">
+<p local-id=3D"51314bb001bf">Strang A: Lizenzwirkung der ersten Rollen pr=
+=C3=BCfen (D21); die n=C3=A4chsten Rollen der Rangliste bereinigen, testen =
+und umstellen. Merge-Rollen aus D20 pr=C3=BCfen und als Arbeitsgrundlage im=
+portieren; UI-Aufgaben und UI-Rechte vergleichen und inventarisieren (D22 b=
+is D24). Strang B: Workshop 1 Logistik mit D19 (Ablauf nach D08). T=C3=A4ti=
+gkeiten der Servicetechniker kl=C3=A4ren. Preise gegen das Angebot pr=C3=BC=
+fen.</p>
+</td>
+<td data-local-id=3D"4517e624-f8c9-4810-b7be-9378bf06d707" class=3D"conflue=
+nceTd">
+<p local-id=3D"72296be714d4">Tabellengr=C3=B6=C3=9Fen von INT und PRJ vergl=
+eichen; Aufbewahrungsfristen in Prod je Job pr=C3=BCfen. Entscheiden, wie d=
+ie L=C3=BCcke vor dem ersten Fenster 2027 gedeckt wird.</p>
+</td>
+</tr>
+<tr data-local-id=3D"0a0bb7d8-1efa-4f31-b2a0-683e4c356459">
+<td data-local-id=3D"8e705ed1-67dd-49ea-ab94-97828059329a" class=3D"conflue=
+nceTd">
+<p local-id=3D"ff2e7964ac1a">Januar 2027</p>
+</td>
+<td data-local-id=3D"3747b622-8d06-4e70-ab66-b4a211e92ba3" class=3D"conflue=
+nceTd">
+<p local-id=3D"1516db374ea9">Strang A: weitere Wellen nach der Rangliste. S=
+trang B: Aufgabenaufzeichnungen nach D09; Referenzrollen je Gruppe mit repo=
+rt_role_license() auswerten; Zielrollen in PRJ bauen.</p>
+</td>
+<td data-local-id=3D"87e64cf7-1fc9-4097-801d-5195b795ff01" class=3D"conflue=
+nceTd">
+<p local-id=3D"7f68d9fc0f3d">L=C3=BCcke decken (Ma=C3=9Fnahmen oder Zukauf)=
+. Fenster 1 nach D17.</p>
+</td>
+</tr>
+<tr data-local-id=3D"d254510d-383b-47a4-ad2e-53e44a7ca1b5">
+<td data-local-id=3D"beacca5b-8a17-436b-b225-40b7aa726ba1" class=3D"conflue=
+nceTd">
+<p local-id=3D"9509050a635a">Februar 2027</p>
+</td>
+<td data-local-id=3D"abf6e410-2ebe-43cf-bc0d-9e2e9d0dc993" class=3D"conflue=
+nceTd">
+<p local-id=3D"26f945810479">Workshops 2 bis 4 je Bereich (D08); Funktionst=
+rennung (D07) und Sperrliste (D18) best=C3=A4tigen.</p>
+</td>
+<td data-local-id=3D"00fb8511-0019-4372-976c-28ad7a53996e" class=3D"conflue=
+nceTd">
+<p local-id=3D"a37d8ff162b0">Neuen Stand in D17 erfassen und mit der Progno=
+se vergleichen.</p>
+</td>
+</tr>
+<tr data-local-id=3D"17bfa023-f0cc-4a73-980a-3808dcae0771">
+<td data-local-id=3D"acd809ea-3b2e-4508-b8e3-65f26d18a107" class=3D"conflue=
+nceTd">
+<p local-id=3D"8bfa98bf1832">M=C3=A4rz 2027</p>
+</td>
+<td data-local-id=3D"24c721a0-7741-4c21-bb9f-94bb51f76c1b" class=3D"conflue=
+nceTd">
+<p local-id=3D"ca034a6e3a51">Lizenzziel je Rolle festlegen und gegen die Zu=
+sammenfassung der Lizenznutzung in D365 pr=C3=BCfen.</p>
+</td>
+<td data-local-id=3D"6ee9c8b5-de63-4645-bf74-2b734603e088" class=3D"conflue=
+nceTd">
+<p local-id=3D"edd40e067146">Fenster 2 nach D17.</p>
+</td>
+</tr>
+<tr data-local-id=3D"0de9a31d-3d18-4bab-9298-b571d07d946b">
+<td data-local-id=3D"10427088-7710-4aa6-8c5e-a5081b41eff9" class=3D"conflue=
+nceTd">
+<p local-id=3D"00394931699c">April bis Mai 2027</p>
+</td>
+<td data-local-id=3D"bed44ad5-24c7-47bb-a023-f8bfc159447f" class=3D"conflue=
+nceTd">
+<p local-id=3D"93149d1f01c0">UAT mit Rollen-Testbenutzern; Lizenzverifikati=
+on als Testfall. Lizenzen so bestellen, dass sie zum Go-Live aktiv sind.</p=
+>
+</td>
+<td data-local-id=3D"d1097f93-7f22-4e98-a2c9-4c4b68e5a138" class=3D"conflue=
+nceTd">
+<p local-id=3D"4247b4be8d0d">Fenster 3 nach D17.</p>
+</td>
+</tr>
+<tr data-local-id=3D"f5101a9f-5e80-4c9a-bb81-f932bc3b66e3">
+<td data-local-id=3D"d9a4ccbc-2b6c-47bc-a4a8-01a02902fd90" class=3D"conflue=
+nceTd">
+<p local-id=3D"605f02ca654d">Juni 2027</p>
+</td>
+<td data-local-id=3D"ac3158c2-e8fb-407f-97ad-a419ecdc8221" class=3D"conflue=
+nceTd">
+<p local-id=3D"4390ac2ad3b3">Go-Live Mitte Juni 2027 (Strang B, Phase 6); R=
+ollenzuweisungen gegen den Lizenzbericht pr=C3=BCfen.</p>
+</td>
+<td data-local-id=3D"d1cd455e-9708-4fb7-8361-022397f2a7ef" class=3D"conflue=
+nceTd">
+<p local-id=3D"7d9014dfd8f2">Die neuen Lizenzen bringen 465 GB.</p>
+</td>
+</tr>
+<tr data-local-id=3D"a3e01e33-f966-41c2-876f-0c51d9d610ea">
+<td data-local-id=3D"b5d12fed-80b5-4264-be72-58c804cb6462" class=3D"conflue=
+nceTd">
+<p local-id=3D"d0f47b371b35">Juli 2027</p>
+</td>
+<td data-local-id=3D"dce44e85-dff8-4b70-b813-17a8adadff95" class=3D"conflue=
+nceTd">
+<p local-id=3D"758d4ba8e2b1">Hypercare; Abweichungen zwischen geplanter und=
+ ausgel=C3=B6ster Lizenz bereinigen.</p>
+</td>
+<td data-local-id=3D"24443853-5073-4fee-9eec-ddc847124c7e" class=3D"conflue=
+nceTd">
+<p local-id=3D"f7d42698e691">PRJ und Migrationssandbox l=C3=B6schen (Termin=
+ in D17).</p>
+</td>
+</tr>
+<tr data-local-id=3D"0ca739c1-ce4c-4cf5-9035-6200105dcfaa">
+<td data-local-id=3D"e88225cd-f697-4c7b-a26f-b17ca8100921" class=3D"conflue=
+nceTd">
+<p local-id=3D"3bbdabc81ce3">Ab August 2027</p>
+</td>
+<td data-local-id=3D"f6bff25b-6438-4073-8b46-2642c1abb2d0" class=3D"conflue=
+nceTd">
+<p local-id=3D"fe12c4efa9e0">Joiner-Mover-Leaver-Prozess und Rezertifizieru=
+ng (Phase 7).</p>
+</td>
+<td data-local-id=3D"d8d4710a-0c8b-4a98-952a-3f23a7d4cf04" class=3D"conflue=
+nceTd">
+<p local-id=3D"3089a2f4b75d">Neuen Stand in D17 erfassen und mit der Progno=
+se vergleichen.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p local-id=3D"5eda0640a7ae">&nbsp;</p>
+    </div>
+</body>
+</html>
+------=_Part_22_1966266926.1794046505075--
